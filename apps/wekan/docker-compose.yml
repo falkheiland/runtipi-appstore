@@ -61,4 +61,4 @@ services:
       - backend_network
 
 networks:
-  backend_network: {}
+  backend_network:
