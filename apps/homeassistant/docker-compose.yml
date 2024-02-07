@@ -11,7 +11,7 @@ services:
       - ${APP_PORT}:8123
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${APP_DATA_DIR}/data/config:/config
+      - ${APP_DATA_DIR}/config:/config
     networks:
       - tipi_main_network
     labels:
