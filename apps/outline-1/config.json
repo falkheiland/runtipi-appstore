@@ -1,0 +1,97 @@
+{
+  "$schema": "../schema.json",
+  "name": "Outline",
+  "port": 8223,
+  "available": true,
+  "exposable": true,
+  "id": "outline-1",
+  "tipi_version": 1,
+  "version": "0.75.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Outline is a knowledge base designed for teams. It's goals are to be fast, intuitive and support many integrations.",
+  "short_desc": "A home for all your docs",
+  "author": "outline",
+  "source": "https://github.com/outline/outline",
+  "website": "https://getoutline.com",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Database password",
+      "env_variable": "POSTGRES_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Secret key",
+      "min": 64,
+      "max": 64,
+      "env_variable": "SECRET_KEY"
+    },
+    {
+      "type": "random",
+      "label": "Utils secret",
+      "min": 64,
+      "max": 64,
+      "env_variable": "UTILS_SECRET"
+    },
+    {
+      "type": "random",
+      "label": "OIDC client ID",
+      "required": true,
+      "env_variable": "OIDC_CLIENT_ID"
+    },
+    {
+      "type": "random",
+      "label": "OIDC client secret",
+      "required": true,
+      "env_variable": "OIDC_CLIENT_SECRET"
+    },
+    {
+      "type": "text",
+      "label": "OIDC auth URI",
+      "required": true,
+      "env_variable": "OIDC_AUTH_URI"
+    },
+    {
+      "type": "text",
+      "label": "OIDC token URI",
+      "required": true,
+      "env_variable": "OIDC_TOKEN_URI"
+    },
+    {
+      "type": "text",
+      "label": "OIDC userinfo URI",
+      "required": true,
+      "env_variable": "OIDC_USERINFO_URI"
+    },
+    {
+      "type": "text",
+      "label": "OIDC logout URI",
+      "required": true,
+      "env_variable": "OIDC_LOGOUT_URI"
+    },
+    {
+      "type": "text",
+      "label": "OIDC username claim (default: preferred_username)",
+      "required": true,
+      "env_variable": "OIDC_USERNAME_CLAIM"
+    },
+    {
+      "type": "text",
+      "label": "OIDC display name (default: OpenID Connect)",
+      "required": true,
+      "env_variable": "OIDC_DISPLAY_NAME"
+    },
+    {
+      "type": "text",
+      "label": "OIDC scopes (default: openid profile email)",
+      "required": true,
+      "env_variable": "OIDC_SCOPES"
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ]
+}

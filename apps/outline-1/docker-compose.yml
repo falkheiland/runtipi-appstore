@@ -1,0 +1,102 @@
+version: "3.8"
+
+
+#https://danielpetrica.com/host-outline-with-docker-compose-and-traefik/
+# https://docs.getoutline.com/s/hosting/doc/docker-7pfeLP5a8t
+
+services:
+  outline-1-postgres:
+    container_name: outline-1-postgres
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=outline
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=outline
+    volumes:
+      - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
+    networks:
+      - backend_network
+
+  outline-1-redis:
+    container_name: outline-1-redis
+    image: redis:7
+    restart: unless-stopped
+    networks:
+      - backend_network
+
+  outline-1:
+    container_name: outline-1
+    image: docker.getoutline.com/outlinewiki/outline:0.75.2
+    restart: unless-stopped
+    environment:
+      # https://github.com/outline/outline/blob/main/.env.sample
+      # –––––––––––––––– REQUIRED ––––––––––––––––
+      - NODE_ENV=production
+      - SECRET_KEY=${SECRET_KEY}
+      - UTILS_SECRET=${UTILS_SECRET}
+      - DATABASE_URL=postgres://outline:${POSTGRES_PASSWORD}@outline-1-postgres:5432/outline
+      #- DATABASE_CONNECTION_POOL_MIN=
+      #- DATABASE_CONNECTION_POOL_MAX=
+      - PGSSLMODE=disable
+      - REDIS_URL=redis://outline-1-redis:6379
+      - URL=https://${APP_DOMAIN}
+      - PORT=3000
+      - FILE_STORAGE=local
+      - FILE_STORAGE_LOCAL_ROOT_DIR=/var/lib/outline/data
+      - FILE_STORAGE_UPLOAD_MAX_SIZE=26214400
+      #- FILE_STORAGE_IMPORT_MAX_SIZE=
+      #- FILE_STORAGE_WORKSPACE_IMPORT_MAX_SIZE=
+      # –––––––––––––– AUTHENTICATION ––––––––––––––
+      # Third party signin credentials, at least ONE OF EITHER Google, Slack,
+      # or Microsoft is required for a working installation or you'll have no sign-in
+      # options.
+      - OIDC_CLIENT_ID=${OIDC_CLIENT_ID}
+      - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET}
+      - OIDC_AUTH_URI=${OIDC_AUTH_URI}
+      - OIDC_TOKEN_URI=${OIDC_TOKEN_URI}
+      - OIDC_USERINFO_URI=${OIDC_USERINFO_URI}
+      - OIDC_LOGOUT_URI=${OIDC_LOGOUT_URI}
+      - OIDC_USERNAME_CLAIM=${OIDC_USERNAME_CLAIM} #preferred_username
+      - OIDC_DISPLAY_NAME=${OIDC_DISPLAY_NAME} #OpenID Connect
+      - OIDC_SCOPES=${OIDC_SCOPES} #openid profile email
+      # –––––––––––––––– OPTIONAL ––––––––––––––––
+      - FORCE_HTTPS=false
+    volumes:
+      - ${APP_DATA_DIR}/data/outline:/var/lib/outline/data
+    depends_on:
+      - outline-1-postgres
+      - outline-1-edis
+    networks:
+      - tipi_main_network
+      #- backend_network
+    labels:
+      # Main
+      traefik.enable: true
+      traefik.http.middlewares.outline-1-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.outline-1.loadbalancer.server.port: 3000
+      # Web
+      traefik.http.routers.outline-1-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.outline-1-insecure.entrypoints: web
+      traefik.http.routers.outline-1-insecure.service: outline-1
+      traefik.http.routers.outline-1-insecure.middlewares: outline-1-web-redirect
+      # Websecure
+      traefik.http.routers.outline-1.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.outline-1.entrypoints: websecure
+      traefik.http.routers.outline-1.service: outline-1
+      traefik.http.routers.outline-1.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.outline-1-local-insecure.rule: Host(`outline-1.${LOCAL_DOMAIN}`)
+      traefik.http.routers.outline-1-local-insecure.entrypoints: web
+      traefik.http.routers.outline-1-local-insecure.service: outline-1
+      traefik.http.routers.outline-1-local-insecure.middlewares: outline-1-web-redirect
+      # Local domain secure
+      traefik.http.routers.outline-1-local.rule: Host(`outline-1.${LOCAL_DOMAIN}`)
+      traefik.http.routers.outline-1-local.entrypoints: websecure
+      traefik.http.routers.outline-1-local.service: outline-1
+      traefik.http.routers.outline-1-local.tls: true
+
+
+
+networks:
+  backend_network:
