@@ -1,9 +1,10 @@
 {
   "$schema": "../schema.json",
-  "name": "Outline",
+  "name": "Outline (OIDC)",
   "port": 8223,
   "available": true,
   "exposable": true,
+  "force_expose": true,
   "id": "outline-1",
   "tipi_version": 1,
   "version": "0.75.2",
