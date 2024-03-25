@@ -37,13 +37,13 @@
       "env_variable": "UTILS_SECRET"
     },
     {
-      "type": "random",
+      "type": "password",
       "label": "OIDC Client ID",
       "required": true,
       "env_variable": "OIDC_CLIENT_ID"
     },
     {
-      "type": "random",
+      "type": "password",
       "label": "OIDC Client Secret",
       "required": true,
       "env_variable": "OIDC_CLIENT_SECRET"
