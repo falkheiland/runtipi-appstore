@@ -4,7 +4,7 @@ OIDC authentification version, without OIDC provider.
 
 _A fast, collaborative, knowledge base for your team built using React and Node.js._
 
-![outline.png](outline.png)
+<img alt="outline" src="outline.png">
 
 Outline is a full-featured knowledge base and is a great alternative to Notion, Obsidian and other similar apps.
 
@@ -22,16 +22,16 @@ Learn more at the official [website](https://getoutline.com)
 
 Before installing the app in runtipi, follow the steps below in your authentik (or alternative) instance.
 
-![01.png](01.png)
+<img alt="01" src="01.png">
 
-![02.png](02.png)
+<img alt="01" src="02.png">
 
-![03.png](03.png)
+<img alt="01" src="03.png">
 
-![04.png](04.png)
+<img alt="01" src="04.png">
 
-![05.png](05.png)
+<img alt="01" src="05.png">
 
-![06.png](06.png)
+<img alt="01" src="06.png">
 
-![07.png](07.png)
+<img alt="01" src="07.png">
