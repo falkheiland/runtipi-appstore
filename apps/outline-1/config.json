@@ -19,74 +19,74 @@
   "form_fields": [
     {
       "type": "random",
-      "label": "Database password",
+      "label": "Database Password",
       "env_variable": "POSTGRES_PASSWORD"
     },
     {
       "type": "random",
-      "label": "Secret key",
+      "label": "Secret Key",
       "min": 64,
       "max": 64,
       "env_variable": "SECRET_KEY"
     },
     {
       "type": "random",
-      "label": "Utils secret",
+      "label": "Utils Secret",
       "min": 64,
       "max": 64,
       "env_variable": "UTILS_SECRET"
     },
     {
       "type": "random",
-      "label": "OIDC client ID",
+      "label": "OIDC Client ID",
       "required": true,
       "env_variable": "OIDC_CLIENT_ID"
     },
     {
       "type": "random",
-      "label": "OIDC client secret",
+      "label": "OIDC Client Secret",
       "required": true,
       "env_variable": "OIDC_CLIENT_SECRET"
     },
     {
       "type": "text",
-      "label": "OIDC auth URI",
+      "label": "OIDC Authorize URL (example: https://outline.example.com/application/o/authorize/)",
       "required": true,
       "env_variable": "OIDC_AUTH_URI"
     },
     {
       "type": "text",
-      "label": "OIDC token URI",
+      "label": "OIDC Token URL (example: https://outline.example.com/application/o/token/)",
       "required": true,
       "env_variable": "OIDC_TOKEN_URI"
     },
     {
       "type": "text",
-      "label": "OIDC userinfo URI",
+      "label": "OIDC Userinfo URL (example: https://outline.example.com/application/o/userinfo/)",
       "required": true,
       "env_variable": "OIDC_USERINFO_URI"
     },
     {
       "type": "text",
-      "label": "OIDC logout URI",
+      "label": "OIDC Logout URL (example: https://outline.example.com/application/o/end-session/)",
       "required": true,
       "env_variable": "OIDC_LOGOUT_URI"
     },
     {
       "type": "text",
-      "label": "OIDC username claim (default: preferred_username)",
+      "label": "OIDC Username Claim (default: preferred_username)",
       "required": true,
       "env_variable": "OIDC_USERNAME_CLAIM"
     },
     {
       "type": "text",
-      "label": "OIDC display name (default: OpenID Connect)",
+      "label": "OIDC Display Name (default: OpenID Connect)",
       "required": true,
       "env_variable": "OIDC_DISPLAY_NAME"
     },
     {
       "type": "text",
-      "label": "OIDC scopes (default: openid profile email)",
+      "label": "OIDC Scopes (default: openid profile email)",
       "required": true,
       "env_variable": "OIDC_SCOPES"
     }
