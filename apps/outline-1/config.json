@@ -28,10 +28,8 @@
       "env_variable": "SECRET_KEY"
     },
     {
-      "type": "random",
+      "type": "text",
       "label": "Utils Secret",
-      "min": 32,
-      "max": 256,
       "env_variable": "UTILS_SECRET"
     },
     {
