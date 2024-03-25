@@ -66,7 +66,7 @@ services:
       - ${APP_DATA_DIR}/data/outline:/var/lib/outline/data
     depends_on:
       - outline-1-postgres
-      - outline-1-edis
+      - outline-1-redis
     networks:
       - tipi_main_network
       #- backend_network
