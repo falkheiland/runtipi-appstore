@@ -69,7 +69,7 @@ services:
       - outline-1-redis
     networks:
       - tipi_main_network
-      #- backend_network
+      - backend_network
     labels:
       # Main
       traefik.enable: true
