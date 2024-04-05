@@ -67,6 +67,8 @@ services:
     depends_on:
       - outline-1-postgres
       - outline-1-redis
+    ports:
+      - ${APP_PORT}:3000
     networks:
       - tipi_main_network
       - backend_network
