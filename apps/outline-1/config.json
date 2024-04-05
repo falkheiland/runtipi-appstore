@@ -46,25 +46,25 @@
     },
     {
       "type": "text",
-      "label": "OIDC Authorize URL (example: https://outline.example.com/application/o/authorize/)",
+      "label": "OIDC Authorize URL (example: https://auth.example.com/application/o/authorize/)",
       "required": true,
       "env_variable": "OIDC_AUTH_URI"
     },
     {
       "type": "text",
-      "label": "OIDC Token URL (example: https://outline.example.com/application/o/token/)",
+      "label": "OIDC Token URL (example: https://auth.example.com/application/o/token/)",
       "required": true,
       "env_variable": "OIDC_TOKEN_URI"
     },
     {
       "type": "text",
-      "label": "OIDC Userinfo URL (example: https://outline.example.com/application/o/userinfo/)",
+      "label": "OIDC Userinfo URL (example: https://auth.example.com/application/o/userinfo/)",
       "required": true,
       "env_variable": "OIDC_USERINFO_URI"
     },
     {
       "type": "text",
-      "label": "OIDC Logout URL (example: https://outline.example.com/application/o/end-session/)",
+      "label": "OIDC Logout URL (example: https://auth.example.com/application/o/end-session/)",
       "required": true,
       "env_variable": "OIDC_LOGOUT_URI"
     },
