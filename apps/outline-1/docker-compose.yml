@@ -27,7 +27,7 @@ services:
 
   outline-1:
     container_name: outline-1
-    image: docker.getoutline.com/outlinewiki/outline:0.75.2
+    image: outlinewiki/outline:0.75.2
     restart: unless-stopped
     environment:
       # https://github.com/outline/outline/blob/main/.env.sample
@@ -77,6 +77,7 @@ services:
       traefik.enable: true
       traefik.http.middlewares.outline-1-web-redirect.redirectscheme.scheme: https
       traefik.http.services.outline-1.loadbalancer.server.port: 3000
+      traefik.http.services.outline-1.loadbalancer.passhostheader: true
       # Web
       traefik.http.routers.outline-1-insecure.rule: Host(`${APP_DOMAIN}`)
       traefik.http.routers.outline-1-insecure.entrypoints: web

@@ -4,7 +4,6 @@
   "port": 8223,
   "available": true,
   "exposable": true,
-  "force_expose": true,
   "id": "outline-1",
   "tipi_version": 1,
   "version": "0.75.2",
@@ -76,7 +75,7 @@
     },
     {
       "type": "text",
-      "label": "OIDC Display Name (default: OpenID Connect)",
+      "label": "OIDC Display Name (default: outline-1)",
       "required": true,
       "env_variable": "OIDC_DISPLAY_NAME"
     },
