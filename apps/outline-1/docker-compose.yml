@@ -16,16 +16,14 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
     networks:
-      - backend_network
-      #- tipi_main_network
+      - tipi_main_network
 
   outline-1-redis:
     container_name: outline-1-redis
     image: redis:7
     restart: unless-stopped
     networks:
-      - backend_network
-      #- tipi_main_network
+      - tipi_main_network
 
   outline-1:
     container_name: outline-1
@@ -71,7 +69,6 @@ services:
       - outline-1-redis
     networks:
       - tipi_main_network
-      - backend_network
     labels:
       # Main
       traefik.enable: true
@@ -98,6 +95,3 @@ services:
       traefik.http.routers.outline-1-local.entrypoints: websecure
       traefik.http.routers.outline-1-local.service: outline-1
       traefik.http.routers.outline-1-local.tls: true
-
-networks:
-  backend_network:
