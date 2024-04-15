@@ -16,8 +16,8 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
     networks:
-      #- backend_network
-      - tipi_main_network
+      - backend_network
+      #- tipi_main_network
 
   outline-1-redis:
     container_name: outline-1-redis
@@ -70,7 +70,7 @@ services:
       - outline-1-postgres
       - outline-1-redis
     networks:
-      #- tipi_main_network
+      - tipi_main_network
       - backend_network
     labels:
       # Main
