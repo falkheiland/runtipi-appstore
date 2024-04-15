@@ -24,8 +24,8 @@ services:
     image: redis:7
     restart: unless-stopped
     networks:
-      #- backend_network
-      - tipi_main_network
+      - backend_network
+      #- tipi_main_network
 
   outline-1:
     container_name: outline-1
@@ -43,7 +43,7 @@ services:
       - PGSSLMODE=disable
       - REDIS_URL=redis://outline-1-redis:6379
       - URL=https://${APP_DOMAIN}
-      #- PORT=3000
+      - PORT=3001
       - FILE_STORAGE=local
       #- FILE_STORAGE_LOCAL_ROOT_DIR=/var/lib/outline/data
       - FILE_STORAGE_UPLOAD_MAX_SIZE=26214400
@@ -70,13 +70,13 @@ services:
       - outline-1-postgres
       - outline-1-redis
     networks:
-      - tipi_main_network
-      #- backend_network
+      #- tipi_main_network
+      - backend_network
     labels:
       # Main
       traefik.enable: true
       traefik.http.middlewares.outline-1-web-redirect.redirectscheme.scheme: https
-      traefik.http.services.outline-1.loadbalancer.server.port: 3000
+      traefik.http.services.outline-1.loadbalancer.server.port: 3001
       traefik.http.services.outline-1.loadbalancer.passhostheader: true
       # Web
       traefik.http.routers.outline-1-insecure.rule: Host(`${APP_DOMAIN}`)
@@ -99,7 +99,5 @@ services:
       traefik.http.routers.outline-1-local.service: outline-1
       traefik.http.routers.outline-1-local.tls: true
 
-
-
-# networks:
-#   backend_network:
+networks:
+  backend_network:
