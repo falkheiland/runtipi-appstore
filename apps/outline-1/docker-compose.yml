@@ -16,14 +16,16 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
     networks:
-      - backend_network
+      #- backend_network
+      - tipi_main_network
 
   outline-1-redis:
     container_name: outline-1-redis
     image: redis:7
     restart: unless-stopped
     networks:
-      - backend_network
+      #- backend_network
+      - tipi_main_network
 
   outline-1:
     container_name: outline-1
@@ -67,11 +69,9 @@ services:
     depends_on:
       - outline-1-postgres
       - outline-1-redis
-    ports:
-      - ${APP_PORT}:3000
     networks:
       - tipi_main_network
-      - backend_network
+      #- backend_network
     labels:
       # Main
       traefik.enable: true
@@ -101,5 +101,5 @@ services:
 
 
 
-networks:
-  backend_network:
+# networks:
+#   backend_network:
