@@ -22,13 +22,15 @@
       "env_variable": "POSTGRES_PASSWORD"
     },
     {
-      "type": "password",
-      "label": "Secret Key (`openssl rand -hex 32`) ",
+      "type": "random",
+      "label": "Secret Key",
+      "min": 64,
       "env_variable": "SECRET_KEY"
     },
     {
       "type": "random",
       "label": "Utils Secret",
+      "min": 32,
       "env_variable": "UTILS_SECRET"
     },
     {

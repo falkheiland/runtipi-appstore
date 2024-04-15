@@ -32,7 +32,7 @@ services:
     environment:
       # https://github.com/outline/outline/blob/main/.env.sample
       # –––––––––––––––– REQUIRED ––––––––––––––––
-      - NODE_ENV=production
+      #- NODE_ENV=production
       - SECRET_KEY=${SECRET_KEY}
       - UTILS_SECRET=${UTILS_SECRET}
       - DATABASE_URL=postgres://outline:${POSTGRES_PASSWORD}@outline-1-postgres:5432/outline
@@ -41,9 +41,9 @@ services:
       - PGSSLMODE=disable
       - REDIS_URL=redis://outline-1-redis:6379
       - URL=https://${APP_DOMAIN}
-      - PORT=3000
+      #- PORT=3000
       - FILE_STORAGE=local
-      - FILE_STORAGE_LOCAL_ROOT_DIR=/var/lib/outline/data
+      #- FILE_STORAGE_LOCAL_ROOT_DIR=/var/lib/outline/data
       - FILE_STORAGE_UPLOAD_MAX_SIZE=26214400
       #- FILE_STORAGE_IMPORT_MAX_SIZE=
       #- FILE_STORAGE_WORKSPACE_IMPORT_MAX_SIZE=
