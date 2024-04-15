@@ -22,8 +22,8 @@
       "env_variable": "POSTGRES_PASSWORD"
     },
     {
-      "type": "random",
-      "label": "Secret Key",
+      "type": "password",
+      "label": "Secret Key (`openssl rand -hex 32`) ",
       "env_variable": "SECRET_KEY"
     },
     {
@@ -63,7 +63,7 @@
     },
     {
       "type": "text",
-      "label": "OIDC Logout URL (example: https://auth.example.com/application/o/end-session/)",
+      "label": "OIDC Logout URL (example: https://auth.example.com/application/o/{{Application-Name}}/end-session/)",
       "required": true,
       "env_variable": "OIDC_LOGOUT_URI"
     },
