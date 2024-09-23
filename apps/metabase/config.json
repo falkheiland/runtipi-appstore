@@ -4,6 +4,7 @@
   "port": 8680,
   "available": true,
   "exposable": true,
+  "dynamic_config": true,
   "id": "metabase",
   "tipi_version": 2,
   "version": "v0.50.24",
