@@ -16,7 +16,7 @@
       "type": "password",
       "label": "akadmin Password",
       "required": true,
-      "hint": "The usernmae of the inital user is akadmin",
+      "hint": "Password for the inital user akadmin",
       "min": 8,
       "env_variable": "AUTHENTIK_BOOTSTRAP_PASSWORD"
     },
