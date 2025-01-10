@@ -1,22 +1,31 @@
-## Install Information
+# Authentik
 
-*Initial Install May take a bit to start up!*
+Authentik is an open-source Identity Provider that emphasizes flexibility and versatility, with support for a wide set of protocols.
 
-To start the initial setup, navigate to https://<your server's IP or hostname>:8770/if/flow/initial-setup/.
+Authentik is a versatile and secure open-source Identity Provider (IdP) and Single Sign-On (SSO) solution. Here are some of its key features:
+
+- **Self-hosting**: You can host authentik anywhere, giving you full control over your data.
+- **Multi-Factor Authentication (MFA)**: Adds an extra layer of security to your authentication processes.
+- **Conditional Access**: Allows you to set specific conditions for access based on various factors.
+- **Application Proxy**: Provides secure access to your applications.
+- **Protocol Support**: Supports a wide range of protocols including SAML2, OAuth2, OIDC, SCIM, LDAP, and RADIUS.
+- **Federation Support**: Enables integration with other identity providers using protocols like SAML2, OAuth2, and LDAP.
+- **Customizable Workflows**: Use pre-built workflows or customize every step of authentication through configurable templates and comprehensive APIs.
+- **User and Admin Interfaces**: Offers user-focused and task-oriented dashboards for managing users, groups, tokens, credentials, and application integrations.
+- **Security**: Emphasizes security with open-source code continuously reviewed by experts.
+
+You can find more details on their [official website](https://goauthentik.io/).
+
+## Installation
+
+The Iinitial installation cat take up to several minutes to complete.
+
+To start the initial setup, navigate to:
+
+    https://<your server's IP or hostname>:8770/if/flow/initial-setup/
 
 There you are prompted to set a password for the akadmin user (the default user).
-
-## What is authentik?
-
-authentik is an open-source Identity Provider that emphasizes flexibility and versatility. It can be seamlessly integrated into existing environments to support new protocols. authentik is also a great solution for implementing sign-up, recovery, and other similar features in your application, saving you the hassle of dealing with them.
 
 ## Docs
 
 Visit the [documentation](https://goauthentik.io/docs/) for more information
-
-## Screenshots
-
-| Light | Dark |
-| --- | --- |
-| [![](https://camo.githubusercontent.com/49bdfe06ba218e307e6eb171bf5c88e96b1302be81cdb9f9e33a39ba1e269479/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f617070735f6c696768742e6a7067)](https://camo.githubusercontent.com/49bdfe06ba218e307e6eb171bf5c88e96b1302be81cdb9f9e33a39ba1e269479/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f617070735f6c696768742e6a7067) | [![](https://camo.githubusercontent.com/32ed9376350e9bb727396ec149de406b2d7b150ea6770343d5ecb405aa0b51fe/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f617070735f6461726b2e6a7067)](https://camo.githubusercontent.com/32ed9376350e9bb727396ec149de406b2d7b150ea6770343d5ecb405aa0b51fe/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f617070735f6461726b2e6a7067) |
-| [![](https://camo.githubusercontent.com/52bf3c54e399ecffcdde04089f1939c23c21acf4f53beeb1fa3893573359fbae/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f61646d696e5f6c696768742e6a7067)](https://camo.githubusercontent.com/52bf3c54e399ecffcdde04089f1939c23c21acf4f53beeb1fa3893573359fbae/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f61646d696e5f6c696768742e6a7067) | [![](https://camo.githubusercontent.com/09a804e359f3950b2b8e2fcf59374de6669cad1aeb39efc064dfec880327024f/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f61646d696e5f6461726b2e6a7067)](https://camo.githubusercontent.com/09a804e359f3950b2b8e2fcf59374de6669cad1aeb39efc064dfec880327024f/68747470733a2f2f676f61757468656e74696b2e696f2f696d672f73637265656e5f61646d696e5f6461726b2e6a7067) |
