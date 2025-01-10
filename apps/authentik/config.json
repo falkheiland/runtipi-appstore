@@ -14,6 +14,13 @@
   "form_fields": [
     {
       "type": "random",
+      "label": "akadmin Password",
+      "hint": "The usernmae of the inital user is akadmin",
+      "min": 8,
+      "env_variable": "AUTHENTIK_BOOTSTRAP_PASSWORD"
+    },
+    {
+      "type": "random",
       "label": "DB Password",
       "min": 40,
       "env_variable": "AUTHENTIK_DB_PASSWORD"
