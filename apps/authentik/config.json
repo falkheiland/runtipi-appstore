@@ -22,6 +22,12 @@
     },
     {
       "type": "random",
+      "label": "akadmin Token",
+      "min": 40,
+      "env_variable": "AUTHENTIK_BOOTSTRAP_TOKEN"
+    },
+    {
+      "type": "random",
       "label": "DB Password",
       "min": 40,
       "env_variable": "AUTHENTIK_DB_PASSWORD"
