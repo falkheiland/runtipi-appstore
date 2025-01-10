@@ -13,20 +13,6 @@
   "categories": ["security"],
   "form_fields": [
     {
-      "type": "password",
-      "label": "akadmin Password",
-      "required": true,
-      "hint": "Password for the inital user akadmin",
-      "min": 8,
-      "env_variable": "AUTHENTIK_BOOTSTRAP_PASSWORD"
-    },
-    {
-      "type": "random",
-      "label": "akadmin Token",
-      "min": 40,
-      "env_variable": "AUTHENTIK_BOOTSTRAP_TOKEN"
-    },
-    {
       "type": "random",
       "label": "DB Password",
       "min": 40,
