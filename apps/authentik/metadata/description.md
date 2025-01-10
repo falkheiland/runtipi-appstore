@@ -18,7 +18,7 @@ You can find more details on their [official website](https://goauthentik.io/).
 
 ## Installation
 
-The Iinitial installation cat take up to several minutes to complete.
+The initial installation can take several minutes to complete.
 
 To start the initial setup, navigate to:
 
