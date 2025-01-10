@@ -35,7 +35,8 @@
     {
       "type": "random",
       "label": "Secret Key",
-      "min": 50,
+      "min": 60,
+      "max": 60,
       "env_variable": "AUTHENTIK_SECRET_KEY"
     },
     {
