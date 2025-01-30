@@ -11,7 +11,7 @@
   "source": "https://github.com/getwud/wud",
   "website": "https://getwud.github.io/wud/",
   "categories": ["utilities"],
-  "https": true,
+  "https": false,
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
   "dynamic_config": true,
