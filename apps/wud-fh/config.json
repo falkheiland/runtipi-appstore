@@ -5,7 +5,7 @@
   "name": "WUD-FH",
   "description": "WUD (aka What's up Docker?) gets you notified when a new version of your Docker Container is available.",
   "version": "8.0.1",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "short_desc": "Keep your containers up-to-date!",
   "author": "WUD",
   "source": "https://github.com/getwud/wud",
