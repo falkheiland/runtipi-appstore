@@ -44,7 +44,7 @@
       "env_variable": "WUD_AUTH_OIDC_0_CLIENTSECRET"
     },
     {
-      "type": "fqdn",
+      "type": "text",
       "label": "OIDC Discovery URL",
       "env_variable": "WUD_AUTH_OIDC_0_DISCOVERY"
     },
