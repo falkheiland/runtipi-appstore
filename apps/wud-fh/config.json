@@ -27,6 +27,7 @@
       "placeholder": "admin",
       "max": 50,
       "min": 3,
+      "required": false,
       "env_variable": "WUD_AUTH_BASIC_ADMIN_USER"
     },
     {
@@ -37,6 +38,7 @@
       "placeholder": "$$apr1$$ByFM2Pmi$.2XCuU22T8Nq7D8PpLWv//",
       "max": 50,
       "min": 3,
+      "required": false,
       "env_variable": "WUD_AUTH_BASIC_ADMIN_HASH"
     },
     {
@@ -60,13 +62,13 @@
     },
     {
       "type": "text",
-      "label": "Github username",
+      "label": "GHCR Github username",
       "required": false,
       "env_variable": "WUD_REGISTRY_GHCR_0_USERNAME"
     },
     {
       "type": "password",
-      "label": "Github password or Github Personal Token",
+      "label": "GHCR Github password or Github Personal Token",
       "required": false,
       "env_variable": "WUD_REGISTRY_GHCR_0_Token"
     },
@@ -84,13 +86,13 @@
     },
     {
       "type": "text",
-      "label": "Github username",
+      "label": "LSCR Github username",
       "required": false,
       "env_variable": "WUD_REGISTRY_LSCR_0_USERNAME"
     },
     {
       "type": "password",
-      "label": "Github token",
+      "label": "LSCR Github token",
       "required": false,
       "env_variable": "WUD_REGISTRY_LSCR_0_Token"
     },
