@@ -17,5 +17,116 @@
   "dynamic_config": true,
   "created_at": 1737893450825,
   "updated_at": 1737893450825,
-  "$schema": "../app-info-schema.json"
+  "$schema": "../app-info-schema.json",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Admin User Name",
+      "hint": "The username to access the admin panel",
+      "default": "admin",
+      "placeholder": "admin",
+      "max": 50,
+      "min": 3,
+      "env_variable": "WUD_AUTH_BASIC_ADMIN_USER"
+    },
+    {
+      "type": "password",
+      "label": "Admin User Password",
+      "hint": "The htpasswd compliant hash password to access the admin panel, The default password is 'password'",
+      "default": "$$apr1$$ByFM2Pmi$.2XCuU22T8Nq7D8PpLWv//",
+      "placeholder": "$$apr1$$ByFM2Pmi$.2XCuU22T8Nq7D8PpLWv//",
+      "max": 50,
+      "min": 3,
+      "env_variable": "WUD_AUTH_BASIC_ADMIN_HASH"
+    },
+    {
+      "type": "text",
+      "label": "OIDC Client ID",
+      "required": false,
+      "env_variable": "WUD_AUTH_OIDC_0_CLIENTID"
+    },
+    {
+      "type": "password",
+      "label": "OIDC Client Secret",
+      "required": false,
+      "env_variable": "WUD_AUTH_OIDC_0_CLIENTSECRET"
+    },
+    {
+      "type": "fqdn",
+      "label": "OIDC Discovery URL",
+      "placeholder": "https://<your_auth_public_domain>/.well-known/openid-configuration",
+      "required": false,
+      "env_variable": "WUD_AUTH_OIDC_0_DISCOVERY"
+    },
+    {
+      "type": "text",
+      "label": "Github username",
+      "required": false,
+      "env_variable": "WUD_REGISTRY_GHCR_0_USERNAME"
+    },
+    {
+      "type": "password",
+      "label": "Github password or Github Personal Token",
+      "required": false,
+      "env_variable": "WUD_REGISTRY_GHCR_0_Token"
+    },
+    {
+      "type": "text",
+      "label": "A valid Docker Hub Login",
+      "required": false,
+      "env_variable": "WUD_REGISTRY_HUB_0_LOGIN"
+    },
+    {
+      "type": "password",
+      "label": "A valid Docker Hub Token",
+      "required": false,
+      "env_variable": "WUD_REGISTRY_HUB_0_PASSWORD"
+    },
+    {
+      "type": "text",
+      "label": "Github username",
+      "required": false,
+      "env_variable": "WUD_REGISTRY_LSCR_0_USERNAME"
+    },
+    {
+      "type": "password",
+      "label": "Github token",
+      "required": false,
+      "env_variable": "WUD_REGISTRY_LSCR_0_Token"
+    },
+    {
+      "type": "password",
+      "label": "Pushover User Key",
+      "required": false,
+      "env_variable": "WUD_TRIGGER_PUSHOVER_0_USER"
+    },
+    {
+      "type": "password",
+      "label": "Pushover API Token",
+      "required": false,
+      "env_variable": "WUD_TRIGGER_PUSHOVER_0_TOKEN"
+    },
+    {
+      "type": "text",
+      "label": "Scheduling options: Valid CRON expression",
+      "hint": "The default value is '0 1 * * *' which means that the watcher will run every day at 1:00 AM",
+      "default": "0 1 * * *",
+      "placeholder": "0 1 * * *",
+      "env_variable": "WUD_WATCHER_0_CRON"
+    },
+    {
+      "type": "boolean",
+      "label": "If WUD must monitor all containers by default",
+      "hint": "Watch all containers regardless of their status (created, paused, exited, restarting, running...)",
+      "default": true,
+      "env_variable": "WUD_WATCHER_0_WATCHALL"
+    },
+    {
+      "type": "boolean",
+      "label": "Observe all containers by default",
+      "hint": "Configure WUD to disable WATCHBYDEFAULT feature.",
+      "default": false,
+      "env_variable": "WUD_WATCHER_0_WATCHBYDEFAULT"
+    }
+  ]
 }
