@@ -32,8 +32,8 @@
     {
       "type": "password",
       "label": "Admin User Password (Hash)",
-      "hint": "The htpasswd compliant hash password ( $apr1$ByFM2Pmi$.2XCuU22T8Nq7D8PpLWv// ) to access the admin panel. The default password is 'password'",
-      "default": "$apr1$ByFM2Pmi$.2XCuU22T8Nq7D8PpLWv//",
+      "hint": "The htpasswd compliant hash password ( $$apr1$$ByFM2Pmi$$.2XCuU22T8Nq7D8PpLWv// ) to access the admin panel. The default password is 'password'",
+      "default": "$$apr1$$ByFM2Pmi$$.2XCuU22T8Nq7D8PpLWv//",
       "max": 50,
       "min": 3,
       "required": false,
