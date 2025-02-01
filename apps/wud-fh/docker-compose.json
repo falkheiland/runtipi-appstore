@@ -9,8 +9,36 @@
         {
           "hostPath": "/var/run/docker.sock",
           "containerPath": "/var/run/docker.sock"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/wud-fh",
+          "containerPath": "/store"
         }
-      ]
+      ],
+      "environment": {
+        "WUD_AUTH_BASIC_ADMIN_USER": "${WUD_AUTH_BASIC_ADMIN_USER}",
+        "WUD_AUTH_BASIC_ADMIN_HASH": "${WUD_AUTH_BASIC_ADMIN_HASH}",
+        "WUD_AUTH_OIDC_0_CLIENTID": "${WUD_AUTH_OIDC_0_CLIENTID}",
+        "WUD_AUTH_OIDC_0_CLIENTSECRET": "${WUD_AUTH_OIDC_0_CLIENTSECRET}",
+        "WUD_AUTH_OIDC_0_DISCOVERY": "${WUD_AUTH_OIDC_0_DISCOVERY}",
+        "WUD_REGISTRY_GHCR_0_USERNAME": "${WUD_REGISTRY_GHCR_0_USERNAME}",
+        "WUD_REGISTRY_GHCR_0_TOKEN": "${WUD_REGISTRY_GHCR_0_TOKEN}",
+        "WUD_REGISTRY_HUB_0_LOGIN": "${WUD_REGISTRY_HUB_0_LOGIN}",
+        "WUD_REGISTRY_HUB_0_PASSWORD": "${WUD_REGISTRY_HUB_0_PASSWORD}",
+        "WUD_REGISTRY_LSCR_0_USERNAME": "${WUD_REGISTRY_LSCR_0_USERNAME}",
+        "WUD_REGISTRY_LSCR_0_TOKEN": "${WUD_REGISTRY_LSCR_0_TOKEN}",
+        "WUD_TRIGGER_PUSHOVER_0_USER": "${WUD_TRIGGER_PUSHOVER_0_USER}",
+        "WUD_TRIGGER_PUSHOVER_0_TOKEN": "${WUD_TRIGGER_PUSHOVER_0_TOKEN}",
+        "WUD_WATCHER_0_CRON": "${WUD_WATCHER_0_CRON}",
+        "WUD_WATCHER_0_WATCHALL": "${WUD_WATCHER_0_WATCHALL}",
+        "WUD_WATCHER_0_WATCHBYDEFAULT": "${WUD_WATCHER_0_WATCHBYDEFAULT}"
+      },
+      "healthCheck": {
+        "test": "curl --fail http://localhost:3000/health || exit 1",
+        "retries": 3,
+        "interval": "30s",
+        "timeout": "10s"
+      }
     }
   ],
   "$schema": "../dynamic-compose-schema.json"
