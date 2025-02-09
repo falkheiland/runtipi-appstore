@@ -40,7 +40,7 @@
         }
       ],
       "environment": {
-        "VIRTUAL_HOST": "{APP_DOMAIN}"
+        "VIRTUAL_HOST": "${APP_DOMAIN}"
       }
     },
     {
