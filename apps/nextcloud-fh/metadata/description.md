@@ -1,4 +1,4 @@
-# Nextcloud FH
+# Nextcloud-FH
 
 Nextcloud server, a safe home for all your data.
 
