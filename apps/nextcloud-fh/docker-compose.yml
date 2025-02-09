@@ -1,6 +1,5 @@
 services:
   nextcloud-fh:
-    container_name: nextcloud_fh
     image: nextcloud:30.0.5-fpm-alpine
     restart: unless-stopped
     volumes:
@@ -35,6 +34,8 @@ services:
       - ${APP_DATA_DIR}/data/nextcloud-fh:/var/www/html:cached
     environment:
       - VIRTUAL_HOST=${APP_DOMAIN}
+    depends_on:
+      - nextcloud-fh
     networks:
       - tipi_main_network
     labels:

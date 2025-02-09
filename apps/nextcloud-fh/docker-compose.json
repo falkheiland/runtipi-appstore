@@ -2,7 +2,6 @@
   "services": [
     {
       "name": "nextcloud-fh",
-      "container_name": "nextcloud_fh",
       "image": "nextcloud:30.0.5-fpm-alpine",
       "isMain": false,
       "volumes": [
@@ -41,7 +40,8 @@
       ],
       "environment": {
         "VIRTUAL_HOST": "${APP_DOMAIN}"
-      }
+      },
+      "dependsOn": ["nextcloud-fh"]
     },
     {
       "name": "nextcloud-fh-cron",
