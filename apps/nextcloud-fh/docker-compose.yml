@@ -1,6 +1,6 @@
 services:
   nextcloud-fh:
-    container_name: nextcloud-fh
+    container_name: nextcloud_fh
     image: nextcloud:30.0.5-fpm-alpine
     restart: unless-stopped
     volumes:
@@ -12,8 +12,8 @@ services:
       - POSTGRES_PASSWORD=${NEXTCLOUD_FH_DB_PASSWORD}
       - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_FH_ADMIN_PASSWORD}
       - NEXTCLOUD_ADMIN_USER=${NEXTCLOUD_FH_ADMIN_USER}
-      - NEXTCLOUD_TRUSTED_DOMAINS=${APP_HOST} ${APP_DOMAIN} nextcloud-fh.${LOCAL_DOMAIN}
-      - TRUSTED_PROXIES=['127.0.0.1', '172.16.0.0/12']
+      - NEXTCLOUD_TRUSTED_DOMAINS=${APP_DOMAIN}
+      - TRUSTED_PROXIES='127.0.0.1','172.16.0.0/12'
       - REDIS_HOST=nextcloud-fh-redis
     depends_on:
       - nextcloud-fh-db
@@ -34,7 +34,7 @@ services:
       - ${APP_DATA_DIR}/data/nextcloud-fh-web/nginx.conf:/etc/nginx/nginx.conf:ro
       - ${APP_DATA_DIR}/data/nextcloud-fh:/var/www/html:cached
     environment:
-      - VIRTUAL_HOST={APP_DOMAIN}
+      - VIRTUAL_HOST=${APP_DOMAIN}
     networks:
       - tipi_main_network
     labels:
