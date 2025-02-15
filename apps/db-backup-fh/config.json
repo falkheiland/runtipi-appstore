@@ -1,0 +1,19 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "db-backup-fh",
+  "id": "db-backup-fh",
+  "available": true,
+  "short_desc": "Backup databases",
+  "author": "Dave Conroy",
+  "categories": ["automation", "data"],
+  "description": "Backup multiple database types on a scheduled basis with many customizable options.",
+  "tipi_version": 1,
+  "port": 65535,
+  "version": "4.1.15",
+  "source": "https://github.com/tiredofit/docker-db-backup",
+  "exposable": false,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1739613710956,
+  "updated_at": 1739613710956,
+  "dynamic_config": true
+}

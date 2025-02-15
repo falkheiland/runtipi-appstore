@@ -1,0 +1,69 @@
+{
+  "services": [
+    {
+      "name": "template-fh",
+      "image": "<image>",
+      "isMain": false,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/template-fh",
+          "containerPath": "/path/in/app"
+        }
+      ],
+      "environment": {
+        "ENV": "env"
+      },
+      "dependsOn": ["template-fh-db", "template-fh-redis"]
+    },
+    {
+      "name": "template-fh-web",
+      "image": "<image>",
+      "internalPort": <port>,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/template-fh-web/file.xyz",
+          "containerPath": "/path/in/app/to/file.xyz"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/template-fh",
+          "containerPath": "/path/in/app"
+        }
+      ],
+      "environment": {
+        "VIRTUAL_HOST": "${APP_DOMAIN}"
+      },
+      "dependsOn": ["template-fh"]
+    },
+    {
+      "name": "template-fh-cron",
+      "image": "<image>",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/template-fh",
+          "containerPath": "/path/in/app"
+        }
+      ],
+      "entrypoint": ["/cron.sh"],
+      "dependsOn": ["template-fh", "template-fh-redis"]
+    },
+    {
+      "name": "template-fh-redis",
+      "image": "<image>"
+    },
+    {
+      "name": "template-fh-db",
+      "image": "<image>",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/db",
+          "containerPath": "/path/in/app"
+        }
+      ],
+      "environment": {
+        "ENV": "env"
+      }
+    }
+  ],
+  "$schema": "../dynamic-compose-schema.json"
+}
