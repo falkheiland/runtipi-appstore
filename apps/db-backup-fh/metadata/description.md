@@ -17,7 +17,7 @@ Consult the backup configuration [here](https://github.com/tiredofit/docker-db-b
 - docker-compose.yml
 
 ```yml
-
+services:
   db-backup-fh:
     pull_policy: missing
     environment:
