@@ -4,18 +4,15 @@ Backup multiple database types on a scheduled basis with many customizable optio
 
 ## Installation
 
-During the installation from the tipi app store you will getting asked in the dialog "Install db-backup-fh" for Reverse proxy settings. this can be ignored, since db-backup-fh does not provide a web ui.
+During the installation from the tipi app store you will getting asked in the dialog "Install db-backup-fh" for Reverse proxy settings. This can be ignored, since db-backup-fh does not provide a web ui.
 
-## Usage
+## Jobs
 
-To be able to backup and restore databases, the db containers to be backed up have to on the same network as the db-backup-fh service (default in tipi v3.8.5).
-
-To configure backup jobs, you have to configure them in `app-data/db-backup-fh/data/scripts-pre/backup_config.sh` and restarting the app. there is a commented section useable as a template in the script.
-Consult the backup configuration [here](https://github.com/tiredofit/docker-db-backup?tab=readme-ov-file#job-backup-options).
-
-### Jobs
+To be able to backup and restore databases, the db containers to be backed up have to on the same network as the db-backup-fh service (default in tipi v3.8.4).
 
 To define jobs you have to use a user-config. Create a folder `user-config/db-backup-fh` with a file `docker-compose.yml`. Configure your jobs as environment vars.
+
+Consult the backup configuration [here](https://github.com/tiredofit/docker-db-backup?tab=readme-ov-file#job-backup-options) for more.
 
 - docker-compose.yml
 
@@ -34,7 +31,7 @@ To define jobs you have to use a user-config. Create a folder `user-config/db-ba
       - DEFAULT_CLEANUP_TIME=1440
 ```
 
-### Backup
+## Backup
 
 Manual backups can be executed by using:
 
@@ -43,7 +40,7 @@ docker exec -it db-backup-fh bash
 backup-now
 ```
 
-### Restore
+## Restore
 
 A Restore can be initiated by using:
 
