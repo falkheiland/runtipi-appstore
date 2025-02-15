@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "name": "db-backup-fh",
+      "image": "tiredofit/db-backup:4.1.15",
+      "isMain": false,
+      "volumes": [
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime:ro"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/backup",
+          "containerPath": "/backup"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/scripts-pre",
+          "containerPath": "/assets/scripts/pre"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/scripts-post",
+          "containerPath": "/assets/scripts/post"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/logs",
+          "containerPath": "/logs"
+        }
+      ]
+    }
+  ],
+  "$schema": "../dynamic-compose-schema.json"
+}

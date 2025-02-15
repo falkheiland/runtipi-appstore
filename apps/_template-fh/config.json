@@ -1,0 +1,42 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Template-fh",
+  "id": "template-fh",
+  "available": true,
+  "short_desc": "<short description>",
+  "author": "<author>",
+  "port": <port>,
+  "categories": ["<category>"],
+  "description": "<long description>",
+  "tipi_version": <version>,
+  "version": "<image version>",
+  "source": "<source>",
+  "website": "<website>",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "<label>",
+      "hint": "<hint>",
+      "required": true,
+      "env_variable": "ENV"
+    },
+    {
+      "type": "password",
+      "label": "<label>",
+      "hint": "<hint>",
+      "required": true,
+      "env_variable": "ENV"
+    },
+    {
+      "type": "random",
+      "label": "<label>",
+      "min": <min>,
+      "env_variable": "ENV"
+    }
+  ],
+  "created_at": 0000000000000,
+  "updated_at": 0000000000000,
+  "dynamic_config": true
+}

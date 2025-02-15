@@ -1,0 +1,16 @@
+services:
+  db-backup-fh:
+    image: tiredofit/db-backup:4.1.15
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${APP_DATA_DIR}/data/backup:/backup
+      - ${APP_DATA_DIR}/data/scripts-pre:/assets/scripts/post
+      - ${APP_DATA_DIR}/data/scripts-post:/assets/scripts/post
+      - ${APP_DATA_DIR}/data/logs:/logs
+    networks:
+      - tipi_main_network
+    labels:
+      # Runtipi managed
+      runtipi.managed: true
+
