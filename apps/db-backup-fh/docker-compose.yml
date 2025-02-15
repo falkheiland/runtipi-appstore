@@ -1,6 +1,6 @@
 services:
   template-fh:
-    image: <image>
+    image: tiredofit/db-backup:4.1.15
     restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro
