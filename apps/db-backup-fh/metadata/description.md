@@ -26,7 +26,7 @@ services:
       - DB01_HOST=runtipi-db
       - DB01_NAME=tipi
       - DB01_USER=tipi
-      - DB01_PASS=<POSTGRES_PASSWORD from runtipi/.env>
+      - DB01_PASS=${POSTGRES_PASSWORD}
       - CONTAINER_ENABLE_MONITORING=FALSE
       - DEFAULT_CLEANUP_TIME=1440
 ```
