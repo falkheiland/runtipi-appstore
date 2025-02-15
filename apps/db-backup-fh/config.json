@@ -12,6 +12,7 @@
   "version": "4.1.15",
   "source": "https://github.com/tiredofit/docker-db-backup",
   "exposable": false,
+  "no_gui": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1739613710956,
   "updated_at": 1739613710956,

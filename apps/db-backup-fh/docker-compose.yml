@@ -1,5 +1,5 @@
 services:
-  template-fh:
+  db-backup-fh:
     image: tiredofit/db-backup:4.1.15
     restart: unless-stopped
     volumes:
@@ -8,9 +8,6 @@ services:
       - ${APP_DATA_DIR}/data/scripts-pre:/assets/scripts/post
       - ${APP_DATA_DIR}/data/scripts-post:/assets/scripts/post
       - ${APP_DATA_DIR}/data/logs:/logs
-
-    environment:
-      - ENV=env
     networks:
       - tipi_main_network
     labels:

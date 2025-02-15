@@ -25,10 +25,7 @@
           "hostPath": "${APP_DATA_DIR}/data/logs",
           "containerPath": "/logs"
         }
-      ],
-      "environment": {
-        "ENV": "env"
-      }
+      ]
     }
   ],
   "$schema": "../dynamic-compose-schema.json"
