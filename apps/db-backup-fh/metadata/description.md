@@ -21,14 +21,14 @@ services:
   db-backup-fh:
     pull_policy: missing
     environment:
+      - CONTAINER_ENABLE_MONITORING=FALSE
+      - DEFAULT_CLEANUP_TIME=1440
       # DB01 tipi
       - DB01_TYPE=pgsql
       - DB01_HOST=runtipi-db
       - DB01_NAME=tipi
       - DB01_USER=tipi
       - DB01_PASS=${POSTGRES_PASSWORD}
-      - CONTAINER_ENABLE_MONITORING=FALSE
-      - DEFAULT_CLEANUP_TIME=1440
 ```
 
 ## Backup
