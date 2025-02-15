@@ -2,6 +2,10 @@
 
 Backup multiple database types on a scheduled basis with many customizable options.
 
+## Installation
+
+During the installation from the tipi app store you will getting asked in the dialog "Install db-backup-fh" for Reverse proxy settings. this can be ignored, since db-backup-fh does not provide a web ui.
+
 ## Usage
 
 To be able to backup and restore databases, the db containers to be backed up have to on the same network as the db-backup-fh service (default in tipi v3.8.5).
