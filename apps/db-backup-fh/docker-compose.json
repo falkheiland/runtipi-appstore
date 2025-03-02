@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "db-backup-fh",
-      "image": "tiredofit/db-backup:4.1.15",
+      "image": "tiredofit/db-backup:4.1.16",
       "isMain": false,
       "volumes": [
         {
