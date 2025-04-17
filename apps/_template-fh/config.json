@@ -1,6 +1,6 @@
 {
   "$schema": "../app-info-schema.json",
-  "name": "Template-fh",
+  "name": "Template-FH",
   "id": "template-fh",
   "available": true,
   "short_desc": "<short description>",
