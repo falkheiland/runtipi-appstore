@@ -1,6 +1,6 @@
 services:
   nextcloud-fh:
-    image: nextcloud:31.0.2-fpm-alpine
+    image: nextcloud:31.0.4-fpm-alpine
     restart: unless-stopped
     volumes:
       - ${APP_DATA_DIR}/data/nextcloud-fh:/var/www/html:cached
@@ -68,7 +68,7 @@ services:
 
   nextcloud-fh-cron:
     container_name: nextcloud-fh-cron
-    image: nextcloud:31.0.2-fpm-alpine
+    image: nextcloud:31.0.4-fpm-alpine
     restart: unless-stopped
     volumes:
       - ${APP_DATA_DIR}/data/nextcloud-fh:/var/www/html
