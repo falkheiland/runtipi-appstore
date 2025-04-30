@@ -1,0 +1,56 @@
+services:
+  freshrss-fh:
+    container_name: freshrss-fh
+    image: freshrss/freshrss:1.26.1
+    restart: unless-stopped
+    ports:
+      - ${APP_PORT}:80
+    volumes:
+      - ${APP_DATA_DIR}/data/data:/var/www/FreshRSS/data
+      - ${APP_DATA_DIR}/data/extensions:/var/www/FreshRSS/extensions
+    environment:
+      # https://hub.docker.com/r/freshrss/freshrss
+      #- PUID=1000
+      #- PGID=1000
+      - TZ=${TZ}
+      - CRON_MIN=5,20,35,50
+      - BASE_URL=${APP_DOMAIN}
+      # OIDC
+      # https://freshrss.github.io/FreshRSS/en/admins/16_OpenID-Connect.html
+      - TRUSTED_PROXIES='127.0.0.1','172.16.0.0/12'
+      - OIDC_ENABLED=1
+      - OIDC_PROVIDER_METADATA_URL=${OIDC_PROVIDER_METADATA_URL}
+      - OIDC_CLIENT_ID=${OIDC_CLIENT_ID}
+      - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET}
+      - OIDC_REMOTE_USER_CLAIM=preferred_username
+      - OIDC_SCOPES=openid email profile
+      - OIDC_X_FORWARDED_HEADERS=X-Forwarded-Port X-Forwarded-Proto X-Forwarded-Host
+    networks:
+      - tipi_main_network
+    labels:
+      # Main
+      traefik.enable: true
+      traefik.http.middlewares.freshrss-fh-redirect.redirectscheme.scheme: https
+      traefik.http.services.freshrss-fh.loadbalancer.server.port: <port>
+      # Web
+      traefik.http.routers.freshrss-fh-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.freshrss-fh-insecure.entrypoints: web
+      traefik.http.routers.freshrss-fh-insecure.service: freshrss-fh
+      traefik.http.routers.freshrss-fh-insecure.middlewares: freshrss-fh-redirect
+      # Websecure
+      traefik.http.routers.freshrss-fh.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.freshrss-fh.entrypoints: websecure
+      traefik.http.routers.freshrss-fh.service: template-fh
+      traefik.http.routers.freshrss-fh.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.freshrss-fh-local-insecure.rule: Host(`template-fh.${LOCAL_DOMAIN}`)
+      traefik.http.routers.freshrss-fh-local-insecure.entrypoints: web
+      traefik.http.routers.freshrss-fh-local-insecure.service: freshrss-fh
+      traefik.http.routers.freshrss-fh-local-insecure.middlewares: freshrss-fh-redirect
+      # Local domain secure
+      traefik.http.routers.freshrss-fh-local.rule: Host(`template-fh.${LOCAL_DOMAIN}`)
+      traefik.http.routers.freshrss-fh-local.entrypoints: websecure
+      traefik.http.routers.freshrss-fh-local.service: freshrss-fh
+      traefik.http.routers.freshrss-fh-local.tls: true
+      # Runtipi managed
+      runtipi.managed: true
