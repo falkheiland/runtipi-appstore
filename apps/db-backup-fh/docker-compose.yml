@@ -1,6 +1,6 @@
 services:
   db-backup-fh:
-    image: tiredofit/db-backup:4.1.17
+    image: tiredofit/db-backup:4.1.18
     restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro
