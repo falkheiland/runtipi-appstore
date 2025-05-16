@@ -72,7 +72,7 @@
     },
     {
       "name": "authentik-fh-db",
-      "image": "postgres:12-alpine",
+      "image": "postgres:13-alpine",
       "healthCheck": {
         "test": "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}",
         "startPeriod": "20s",
