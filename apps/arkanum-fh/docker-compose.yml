@@ -1,6 +1,6 @@
 services:
   arkanum-fh:
-    image: gitea.ocram85.com/arkanum/arkanum:1.8.3
+    image: gitea.ocram85.com/arkanum/arkanum:1.9.0
     container_name: arkanum-fh
     environment:
       - PUID=1000
