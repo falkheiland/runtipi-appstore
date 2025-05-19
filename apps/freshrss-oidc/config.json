@@ -32,7 +32,9 @@
       "hint": "1 for true, 0 for false",
       "required": false,
       "placeholder": "0",
-      "default": "0",
+      "default": 0,
+      "min": 0,
+      "max": 1,
       "env_variable": "OIDC_ENABLED"
     },
     {
