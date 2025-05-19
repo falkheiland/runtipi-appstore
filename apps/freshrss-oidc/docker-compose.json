@@ -25,8 +25,8 @@
         "OIDC_PROVIDER_METADATA_URL": "${OIDC_PROVIDER_METADATA_URL}",
         "OIDC_CLIENT_ID": "${OIDC_CLIENT_ID}",
         "OIDC_CLIENT_SECRET": "${OIDC_CLIENT_SECRET}",
-        "OIDC_REMOTE_USER_CLAIM": "${OIDC_REMOTE_USER_CLAIM",
-        "OIDC_SCOPES": "${OIDC_SCOPES",
+        "OIDC_REMOTE_USER_CLAIM": "${OIDC_REMOTE_USER_CLAIM}",
+        "OIDC_SCOPES": "${OIDC_SCOPES}",
         "OIDC_X_FORWARDED_HEADERS": "X-Forwarded-Port X-Forwarded-Proto X-Forwarded-Host"
       },
       "extraLabels": {
