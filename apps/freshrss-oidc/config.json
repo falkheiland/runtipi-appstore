@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
-  "name": "FreshRSS-FH",
-  "id": "freshRSS-fh",
+  "name": "FreshRSS-OIDC",
+  "id": "freshrss-oidc",
   "available": true,
   "short_desc": "FreshRSS is a self-hosted RSS feed aggregator.",
   "author": "FreshRSS",
@@ -9,7 +9,7 @@
   "categories": ["media"],
   "description": "It is lightweight, easy to work with, powerful, and customizable. This version supports OIDC auth",
   "tipi_version": 1,
-  "version": "1.26.1",
+  "version": "1.26.2",
   "source": "https://github.com/FreshRSS/FreshRSS",
   "website": "https://freshrss.org/",
   "exposable": true,
@@ -53,7 +53,7 @@
       "env_variable": "ENV"
     }
   ],
-  "created_at": 1744881742271,
-  "updated_at": 1744881742271,
+  "created_at": 1747646537584,
+  "updated_at": 1747646537584,
   "dynamic_config": true
 }

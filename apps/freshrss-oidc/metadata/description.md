@@ -1,4 +1,4 @@
-# FreshRSS-FH
+# FreshRSS-OIDC
 
 FreshRSS is a self-hosted RSS feed aggregator.
 
