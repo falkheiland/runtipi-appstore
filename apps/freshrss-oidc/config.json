@@ -20,8 +20,9 @@
     {
       "type": "text",
       "label": "Cron job to refresh feeds at specified minutes",
-      "hint": "5,20,35,50",
+      "hint": "Defaults to 5,20,35,50",
       "required": false,
+      "placeholder": "5,20,35,50",
       "default": "5,20,35,50",
       "env_variable": "CRON_MIN"
     },
@@ -30,13 +31,15 @@
       "label": "Activates OIDC support",
       "hint": "1 for true, 0 for false",
       "required": false,
+      "placeholder": "0",
       "default": "0",
       "env_variable": "OIDC_ENABLED"
     },
     {
       "type": "text",
       "label": "The config URL",
-      "hint": "Usually looks like: <issuer>/.well-known/openid-configuration",
+      "hint": "https://auth.example.com/.well-known/openid-configuration",
+      "placeholder": "https://auth.example.com/.well-known/openid-configuration",
       "required": false,
       "env_variable": "OIDC_PROVIDER_METADATA_URL"
     },
@@ -55,24 +58,20 @@
     {
       "type": "text",
       "label": "The claim to use as the username within FreshRSS",
-      "hint": "Defaults to preferred_username. Depending on what you choose here, and your identity provider, you will need to adjust the scopes you request so that this claim will be accessible. Refer to your identity providers documentation.",
+      "hint": "Defaults to preferred_username.",
       "required": false,
+      "placeholder": "preferred_username",
       "default": "preferred_username",
       "env_variable": "OIDC_REMOTE_USER_CLAIM"
     },
     {
       "type": "text",
       "label": "The OIDC scopes to request separated by an empty space",
-      "hint": "Defaults to openid. As mentioned previously, make sure the scopes you pick contain whatever OIDC_REMOTE_USER_CLAIM you chose. For example, Authelia would require setting this value to openid profile to make preferred_username accessible.",
+      "hint": "Defaults to openid email profile",
       "required": false,
+      "placeholder": "openid email profile",
       "default": "openid email profile",
       "env_variable": "OIDC_SCOPES"
-    },
-    {
-      "type": "random",
-      "label": "<label>",
-      "min": 8,
-      "env_variable": "ENV"
     }
   ],
   "created_at": 1747646537584,
