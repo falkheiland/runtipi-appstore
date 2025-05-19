@@ -55,6 +55,7 @@
       "type": "password",
       "label": "OIDC: Client Secret",
       "min": 40,
+      "max": 200,
       "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
       "required": false,
       "env_variable": "OIDC_CLIENT_SECRET"
