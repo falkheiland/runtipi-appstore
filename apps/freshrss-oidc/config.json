@@ -40,20 +40,22 @@
     {
       "type": "text",
       "label": "OIDC: Config URL",
-      "hint": "https://auth.example.com/.well-known/openid-configuration",
-      "placeholder": "https://auth.example.com/.well-known/openid-configuration",
+      "hint": "https://auth.example.com/application/o/freshrss-oidc/.well-known/openid-configuration",
+      "placeholder": "https://auth.example.com/application/o/freshrss-oidc/.well-known/openid-configuration",
       "required": false,
       "env_variable": "OIDC_PROVIDER_METADATA_URL"
     },
     {
       "type": "text",
       "label": "OIDC: Client ID",
+      "placeholder": "CFMwEDuOICa...tzVRQM4INDg",
       "required": false,
       "env_variable": "OIDC_CLIENT_ID"
     },
     {
       "type": "password",
       "label": "OIDC: Client Secret",
+      "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
       "required": false,
       "env_variable": "OIDC_CLIENT_SECRET"
     },
