@@ -2,17 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "name": "freshrss-oidc",
+      "name": "freshrss",
       "image": "freshrss/freshrss:1.26.2",
       "internalPort": 80,
       "isMain": true,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/freshrss-oidc/data",
+          "hostPath": "${APP_DATA_DIR}/data",
           "containerPath": "/var/www/FreshRSS/data"
         },
         {
-          "hostPath": "${APP_DATA_DIR}/data/freshrss-oidc/extensions",
+          "hostPath": "${APP_DATA_DIR}/extensions",
           "containerPath": "/var/www/FreshRSS/extensions"
         }
       ],
