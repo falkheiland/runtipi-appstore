@@ -19,9 +19,9 @@
     {
       "type": "text",
       "label": "Cron job to refresh feeds at specified minutes",
-      "hint": "Defaults to 5,20,35,50",
+      "hint": "5,20,35,50",
       "required": false,
-      "default": "5,20,35,50",
+      "placeholder": "5,20,35,50",
       "env_variable": "CRON_MIN"
     },
     {
@@ -30,7 +30,6 @@
       "hint": "1 for true, 0 for false",
       "required": false,
       "placeholder": "0",
-      "default": 0,
       "min": 0,
       "max": 1,
       "env_variable": "OIDC_ENABLED"
@@ -62,17 +61,17 @@
     {
       "type": "text",
       "label": "OIDC: Claim",
-      "hint": "Defaults to preferred_username.",
+      "hint": "preferred_username",
       "required": false,
-      "default": "preferred_username",
+      "placeholder": "preferred_username",
       "env_variable": "OIDC_REMOTE_USER_CLAIM"
     },
     {
       "type": "text",
       "label": "OIDC: Scopes",
-      "hint": "Defaults to openid email profile",
+      "hint": "openid email profile",
       "required": false,
-      "default": "openid email profile",
+      "placeholder": "openid email profile",
       "env_variable": "OIDC_SCOPES"
     }
   ],
