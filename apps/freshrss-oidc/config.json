@@ -28,7 +28,7 @@
     },
     {
       "type": "number",
-      "label": "Activates OIDC support",
+      "label": "OIDC: Activation",
       "hint": "1 for true, 0 for false",
       "required": false,
       "placeholder": "0",
@@ -39,7 +39,7 @@
     },
     {
       "type": "text",
-      "label": "The config URL",
+      "label": "OIDC: Config URL",
       "hint": "https://auth.example.com/.well-known/openid-configuration",
       "placeholder": "https://auth.example.com/.well-known/openid-configuration",
       "required": false,
@@ -47,19 +47,19 @@
     },
     {
       "type": "text",
-      "label": "The OIDC client id from your issuer.",
+      "label": "OIDC: Client ID",
       "required": false,
       "env_variable": "OIDC_CLIENT_ID"
     },
     {
       "type": "password",
-      "label": "The OIDC client secret issuer",
+      "label": "OIDC: Client Secret",
       "required": false,
       "env_variable": "OIDC_CLIENT_SECRET"
     },
     {
       "type": "text",
-      "label": "The claim to use as the username within FreshRSS",
+      "label": "OIDC: Claim",
       "hint": "Defaults to preferred_username.",
       "required": false,
       "placeholder": "preferred_username",
@@ -68,7 +68,7 @@
     },
     {
       "type": "text",
-      "label": "The OIDC scopes to request separated by an empty space",
+      "label": "OIDC: Scopes",
       "hint": "Defaults to openid email profile",
       "required": false,
       "placeholder": "openid email profile",
