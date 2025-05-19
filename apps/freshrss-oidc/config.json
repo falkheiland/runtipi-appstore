@@ -9,10 +9,12 @@
   "categories": ["media"],
   "description": "It is lightweight, easy to work with, powerful, and customizable. This version supports OIDC auth",
   "tipi_version": 1,
+  "min_tipi_version": "v4.1.0",
   "version": "1.26.2",
   "source": "https://github.com/FreshRSS/FreshRSS",
   "website": "https://freshrss.org/",
   "exposable": true,
+  "force_expose": true,
   "supported_architectures": ["arm64", "amd64"],
   "form_fields": [
     {
@@ -36,15 +38,35 @@
       "label": "The config URL",
       "hint": "Usually looks like: <issuer>/.well-known/openid-configuration",
       "required": false,
-      "default": "5,20,35,50",
-      "env_variable": "CRON_MIN"
+      "env_variable": "OIDC_PROVIDER_METADATA_URL"
+    },
+    {
+      "type": "text",
+      "label": "The OIDC client id from your issuer.",
+      "required": false,
+      "env_variable": "OIDC_CLIENT_ID"
     },
     {
       "type": "password",
-      "label": "<label>",
-      "hint": "<hint>",
-      "required": true,
-      "env_variable": "ENV"
+      "label": "The OIDC client secret issuer",
+      "required": false,
+      "env_variable": "OIDC_CLIENT_SECRET"
+    },
+    {
+      "type": "text",
+      "label": "The claim to use as the username within FreshRSS",
+      "hint": "Defaults to preferred_username. Depending on what you choose here, and your identity provider, you will need to adjust the scopes you request so that this claim will be accessible. Refer to your identity providers documentation.",
+      "required": false,
+      "default": "preferred_username",
+      "env_variable": "OIDC_REMOTE_USER_CLAIM"
+    },
+    {
+      "type": "text",
+      "label": "The OIDC scopes to request separated by an empty space",
+      "hint": "Defaults to openid. As mentioned previously, make sure the scopes you pick contain whatever OIDC_REMOTE_USER_CLAIM you chose. For example, Authelia would require setting this value to openid profile to make preferred_username accessible.",
+      "required": false,
+      "default": "openid email profile",
+      "env_variable": "OIDC_SCOPES"
     },
     {
       "type": "random",

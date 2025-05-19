@@ -6,10 +6,6 @@ It is lightweight, easy to work with, powerful, and customizable.
 
 This version supports OIDC auth.
 
-## Comments
-
-Something
-  
 ## Links
 
 <https://freshrss.org/>
@@ -17,3 +13,7 @@ Something
 <https://github.com/FreshRSS/FreshRSS>
 
 <https://hub.docker.com/r/freshrss/freshrss>
+
+## OpenID-Connect
+
+<https://freshrss.github.io/FreshRSS/en/admins/16_OpenID-Connect.html>
