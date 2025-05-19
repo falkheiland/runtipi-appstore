@@ -1,14 +1,30 @@
 {
-  "$schema": "../app-info-schema.json",
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
   "name": "Template-FH",
   "id": "template-fh",
   "available": true,
   "short_desc": "<short description>",
   "author": "<author>",
-  "port": <port>,
-  "categories": ["<category>"],
+  "port": 1,
+  "categories": [
+    "network",
+    "media",
+    "development",
+    "automation",
+    "social",
+    "utilities",
+    "photography",
+    "security",
+    "featured",
+    "books",
+    "data",
+    "music",
+    "finance",
+    "gaming",
+    "ai"
+  ],
   "description": "<long description>",
-  "tipi_version": <version>,
+  "tipi_version": 1,
   "version": "<image version>",
   "source": "<source>",
   "website": "<website>",
@@ -32,11 +48,11 @@
     {
       "type": "random",
       "label": "<label>",
-      "min": <min>,
+      "min": 0,
       "env_variable": "ENV"
     }
   ],
-  "created_at": 0000000000000,
-  "updated_at": 0000000000000,
+  "created_at": 1747644401954,
+  "updated_at": 1747644401954,
   "dynamic_config": true
 }

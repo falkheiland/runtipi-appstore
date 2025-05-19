@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
   "id": "arkanum-fh",
   "available": true,
   "port": 8153,
@@ -61,6 +62,5 @@
   "supported_architectures": ["arm64", "amd64"],
   "dynamic_config": true,
   "created_at": 1737116464890,
-  "updated_at": 1737116464890,
-  "$schema": "../app-info-schema.json"
+  "updated_at": 1737116464890
 }

@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
   "id": "wud-fh",
   "available": true,
   "port": 9001,
@@ -17,7 +18,6 @@
   "dynamic_config": true,
   "created_at": 1737893450825,
   "updated_at": 1737893450825,
-  "$schema": "../app-info-schema.json",
   "form_fields": [
     {
       "type": "text",

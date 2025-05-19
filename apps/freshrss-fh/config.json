@@ -1,5 +1,5 @@
 {
-  "$schema": "../app-info-schema.json",
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
   "name": "FreshRSS-FH",
   "id": "freshRSS-fh",
   "available": true,
@@ -49,7 +49,7 @@
     {
       "type": "random",
       "label": "<label>",
-      "min": <min>,
+      "min": 8,
       "env_variable": "ENV"
     }
   ],

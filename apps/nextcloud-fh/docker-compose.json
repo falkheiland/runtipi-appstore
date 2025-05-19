@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
       "name": "nextcloud-fh",
@@ -74,6 +75,5 @@
         "POSTGRES_PASSWORD": "${NEXTCLOUD_FH_DB_PASSWORD}"
       }
     }
-  ],
-  "$schema": "../dynamic-compose-schema.json"
+  ]
 }

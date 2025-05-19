@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
       "name": "wud-fh",
@@ -40,6 +41,5 @@
         "timeout": "10s"
       }
     }
-  ],
-  "$schema": "../dynamic-compose-schema.json"
+  ]
 }
