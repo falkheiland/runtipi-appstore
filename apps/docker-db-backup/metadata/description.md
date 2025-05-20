@@ -23,6 +23,21 @@ docker network create shared_docker-db-backup_network
 c2317150d36e   shared_docker-db-backup_network                               bridge    local
 ```
 
+edit docker-db-backup user-config:
+
+`runtipi/user-config/appstore/docker-db-backup/docker-compose.yml`
+
+```
+services:
+  docker-db-backup:
+    networks:
+      - shared_docker-db-backup_network
+
+networks:
+  shared_docker-db-backup_network:
+    external: true
+```
+
 edit tipi-compose (tipi db):
 
 `runtipi/user-config/tipi-compose.yml`
