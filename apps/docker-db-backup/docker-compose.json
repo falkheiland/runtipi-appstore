@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "name": "db-backup-fh",
+      "name": "docker-db-backup",
       "image": "tiredofit/db-backup:4.1.18",
       "isMain": false,
       "volumes": [
@@ -26,7 +26,13 @@
           "hostPath": "${APP_DATA_DIR}/data/logs",
           "containerPath": "/logs"
         }
-      ]
+      ],
+      "environment": {
+        "CONTAINER_ENABLE_MONITORING": "false",
+        "DEFAULT_CLEANUP_TIME": "${DEFAULT_CLEANUP_TIME:-1440}",
+        "DEFAULT_SKIP_AVAILABILITY_CHECK": "${DEFAULT_SKIP_AVAILABILITY_CHECK:-true}"
+      },
+      "extraLabels": {}
     }
   ]
 }
