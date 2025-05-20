@@ -39,7 +39,8 @@ c2317150d36e   shared_docker-db-backup_network                               bri
   services:
     docker-db-backup:
       networks:
-        - shared_docker-db-backup_network
+        shared_docker-db-backup_network:
+          gw_priority: 0
 
   networks:
     shared_docker-db-backup_network:
@@ -54,7 +55,8 @@ c2317150d36e   shared_docker-db-backup_network                               bri
   services:
     runtipi-db:
       networks:
-        - shared_docker-db-backup_network
+        shared_docker-db-backup_network:
+          gw_priority: 0
 
   networks:
     shared_docker-db-backup_network:
@@ -75,7 +77,8 @@ c2317150d36e   shared_docker-db-backup_network                               bri
   services:
     my-app-db:
       networks:
-        - shared_docker-db-backup_network
+        shared_docker-db-backup_network:
+          gw_priority: 0
 
   networks:
     shared_docker-db-backup_network:
