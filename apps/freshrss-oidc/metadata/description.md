@@ -35,3 +35,11 @@ When setting up a new FreshRSS instance with OIDC, follow these steps carefully 
     6. Complete the remaining setup steps
 
     ⚠️ Important: Using a random username instead of your actual OIDC identity as the default user may result in no administrator access to your instance.
+
+## Backup
+
+configs and sqlite are located in
+
+```
+runtipi/app-data/{{appstore}}/freshrss-oidc/data/data/users/*
+```
