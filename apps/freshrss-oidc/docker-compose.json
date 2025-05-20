@@ -19,8 +19,6 @@
       "environment": {
         "VIRTUAL_HOST": "${APP_DOMAIN}",
         "TZ": "${TZ}",
-        "PUID": "1000",
-        "PGID": "1000",
         "CRON_MIN": "${CRON_MIN}",
         "TRUSTED_PROXY": "172.16.0.1/12",
         "OIDC_ENABLED": "${OIDC_ENABLED}",

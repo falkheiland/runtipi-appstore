@@ -18,12 +18,11 @@ This version supports OIDC auth.
 
 <https://freshrss.github.io/FreshRSS/en/admins/16_OpenID-Connect.html>
 
-
 Initial Setup Process
 
 When setting up a new FreshRSS instance with OIDC, follow these steps carefully to ensure proper administrator access:
 
-    1. Configure your OIDC environment variables (see configuration section below)
+    1. Configure your OIDC environment variables
     2. Start your FreshRSS instance
     3. Access the Web interface – it will immediately attempt to authenticate you via your OIDC provider
     4. After successful authentication, you’ll be directed to the setup wizard
@@ -35,6 +34,19 @@ When setting up a new FreshRSS instance with OIDC, follow these steps carefully 
     6. Complete the remaining setup steps
 
     ⚠️ Important: Using a random username instead of your actual OIDC identity as the default user may result in no administrator access to your instance.
+
+## RSS reader app
+
+https://freshrss.example.com/i/?c=auth
+
+- Allow API access (required for mobile apps and sharing user queries)
+
+https://freshrss.example.com/i/?c=user
+
+- External access via API
+- set API password
+- click: Check API status via: https://freshrss.example.com/api/
+- use API address for your RSS reader app (Google Reader compatible API for FeedMe)
 
 ## Backup
 
