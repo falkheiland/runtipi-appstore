@@ -28,7 +28,7 @@
         }
       ],
       "environment": {
-        "CONTAINER_ENABLE_MONITORING": "false",
+        "CONTAINER_ENABLE_MONITORING": "${CONTAINER_ENABLE_MONITORING:-false}",
         "DEFAULT_CLEANUP_TIME": "${DEFAULT_CLEANUP_TIME:-1440}",
         "DEFAULT_SKIP_AVAILABILITY_CHECK": "${DEFAULT_SKIP_AVAILABILITY_CHECK:-true}"
       },
