@@ -1,0 +1,81 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "FreshRSS-OIDC",
+  "id": "freshrss-oidc",
+  "available": true,
+  "short_desc": "FreshRSS is a self-hosted RSS feed aggregator.",
+  "author": "FreshRSS",
+  "port": 9003,
+  "categories": ["media"],
+  "description": "It is lightweight, easy to work with, powerful, and customizable. This version supports OIDC auth",
+  "tipi_version": 1,
+  "min_tipi_version": "v4.1.0",
+  "version": "1.26.2",
+  "source": "https://github.com/FreshRSS/FreshRSS",
+  "website": "https://freshrss.org/",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Cron job to refresh feeds at specified minutes",
+      "hint": "5,20,35,50",
+      "required": false,
+      "placeholder": "5,20,35,50",
+      "env_variable": "CRON_MIN"
+    },
+    {
+      "type": "number",
+      "label": "OIDC: Activation",
+      "hint": "1 for true, 0 for false",
+      "required": false,
+      "placeholder": "0",
+      "min": 0,
+      "max": 1,
+      "env_variable": "OIDC_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Config URL",
+      "hint": "https://auth.example.com/application/o/freshrss-oidc/.well-known/openid-configuration",
+      "placeholder": "https://auth.example.com/application/o/freshrss-oidc/.well-known/openid-configuration",
+      "required": false,
+      "env_variable": "OIDC_PROVIDER_METADATA_URL"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Client ID",
+      "placeholder": "CFMwEDuOICa...tzVRQM4INDg",
+      "required": false,
+      "env_variable": "OIDC_CLIENT_ID"
+    },
+    {
+      "type": "password",
+      "label": "OIDC: Client Secret",
+      "min": 40,
+      "max": 200,
+      "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
+      "required": false,
+      "env_variable": "OIDC_CLIENT_SECRET"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Claim",
+      "hint": "preferred_username",
+      "required": false,
+      "placeholder": "preferred_username",
+      "env_variable": "OIDC_REMOTE_USER_CLAIM"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Scopes",
+      "hint": "openid email profile",
+      "required": false,
+      "placeholder": "openid email profile",
+      "env_variable": "OIDC_SCOPES"
+    }
+  ],
+  "created_at": 1747646537584,
+  "updated_at": 1747646537584,
+  "dynamic_config": true
+}

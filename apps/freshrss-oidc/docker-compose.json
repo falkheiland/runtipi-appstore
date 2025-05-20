@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "freshrss",
+      "image": "freshrss/freshrss:1.26.2",
+      "internalPort": 80,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/var/www/FreshRSS/data"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/extensions",
+          "containerPath": "/var/www/FreshRSS/extensions"
+        }
+      ],
+      "environment": {
+        "VIRTUAL_HOST": "${APP_DOMAIN}",
+        "TZ": "${TZ}",
+        "CRON_MIN": "${CRON_MIN}",
+        "TRUSTED_PROXY": "172.16.0.1/12",
+        "OIDC_ENABLED": "${OIDC_ENABLED}",
+        "OIDC_PROVIDER_METADATA_URL": "${OIDC_PROVIDER_METADATA_URL}",
+        "OIDC_CLIENT_ID": "${OIDC_CLIENT_ID}",
+        "OIDC_CLIENT_SECRET": "${OIDC_CLIENT_SECRET}",
+        "OIDC_REMOTE_USER_CLAIM": "${OIDC_REMOTE_USER_CLAIM}",
+        "OIDC_SCOPES": "${OIDC_SCOPES}",
+        "OIDC_X_FORWARDED_HEADERS": "X-Forwarded-Port X-Forwarded-Proto X-Forwarded-Host"
+      },
+      "extraLabels": {
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M1.compress": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.browserXssFilter": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.forceSTSHeader": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.frameDeny": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.referrerPolicy": "no-referrer-when-downgrade",
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.stsSeconds": "31536000",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}.middlewares": "${APP_ID}-M1,${APP_ID}-M2",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-local.middlewares": "${APP_ID}-M1,${APP_ID}-M2"
+      }
+    }
+  ]
+}
