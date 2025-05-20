@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "docker-db-backup",
+  "id": "docker-db-backup",
+  "available": true,
+  "short_desc": "Backup databases",
+  "author": "Dave Conroy",
+  "categories": ["automation", "data"],
+  "description": "Backup multiple database types on a scheduled basis with many customizable options.",
+  "tipi_version": 1,
+  "port": 65535,
+  "version": "4.1.18",
+  "source": "https://github.com/tiredofit/docker-db-backup",
+  "exposable": false,
+  "no_gui": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "boolean",
+      "label": "Enable Monitoring",
+      "hint": "Enable monitoring for this service",
+      "required": false,
+      "env_variable": "CONTAINER_ENABLE_MONITORING"
+    },
+    {
+      "type": "number",
+      "label": "Default Cleanup Time",
+      "hint": "Defaults to 1440 minutes (24 hours) - Set to 0 to disable",
+      "min": 60,
+      "max": 99999,
+      "required": false,
+      "env_variable": "DEFAULT_CLEANUP_TIME"
+    },
+    {
+      "type": "boolean",
+      "label": "Skip Availability Check",
+      "hint": "Skip availability check for this service",
+      "required": false,
+      "env_variable": "DEFAULT_SKIP_AVAILABILITY_CHECK"
+    }
+  ],
+  "created_at": 1747734020740,
+  "updated_at": 1747734020740
+}

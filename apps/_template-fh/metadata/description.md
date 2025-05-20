@@ -3,10 +3,6 @@
 <Description 1>
 
 <Description 2>
-
-## Comments
-
-Something
   
 ## Links
 
@@ -15,3 +11,7 @@ Something
 <<ProjectRepo>>
 
 <<ImageRepo>>
+
+## Misc
+
+Something
