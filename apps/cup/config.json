@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Cup",
+  "id": "cup",
+  "available": true,
+  "short_desc": "The easiest way to check for your container updates.",
+  "author": "sergi0g",
+  "port": 9004,
+  "categories": ["utilities"],
+  "description": "Cup is the easiest way to check for container image updates.",
+  "tipi_version": 1,
+  "min_tipi_version": "v4.1.0",
+  "version": "latest",
+  "source": "https://github.com/sergi0g/cup",
+  "website": "https://cup.sergi0g.dev/",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [],
+  "created_at": 1747902816222,
+  "updated_at": 1747902816222,
+  "dynamic_config": true
+}
