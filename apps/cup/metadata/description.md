@@ -18,17 +18,36 @@ Configurations are done via a user-config.
 
 - create a folder structure like that:
 
+```
+user-config/{{APP_STORE_ID}}/cup/
+├── cup.json
+└── docker-compose.yml
+```
 
 - docker-compose.yml:
 
 ```yml
 services:
-  volumes:
-      - ${RUNTIPI_APP_DATA_PATH}/user-config/${APP_STORE_ID}/${APP_NAME}/cup.json:/config/cup.json
   cup:
+    volumes:
+        - ${RUNTIPI_APP_DATA_PATH}/user-config/${APP_STORE_ID}/${APP_NAME}/cup.json:/config/cup.json
     command: -c /config/cup.json serve
 ```
 
 - cup.json:
 
-  <https://cup.sergi0g.dev/docs/configuration#configuration-file>
+<https://cup.sergi0g.dev/docs/configuration#configuration-file>
+
+example:
+
+```
+{
+  "refresh_interval": "0 6,12,18 * * * *",
+  "registries": {
+    "public.ecr.aws": {
+      "ignore": true
+    }
+  },
+  "ignore_update_type": "major"
+}
+```
