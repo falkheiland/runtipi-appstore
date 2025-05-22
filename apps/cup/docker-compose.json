@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "cup",
+      "image": "ghcr.io/sergi0g/cup:latest",
+      "internalPort": 8000,
+      "isMain": true,
+      "command": "serve",
+      "volumes": [
+        {
+          "hostPath": "/var/run/docker.sock",
+          "containerPath": "/var/run/docker.sock"
+        }
+      ]
+    }
+  ]
+}
