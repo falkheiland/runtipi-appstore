@@ -1,17 +1,21 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
-  "id": "authentik-fh",
+  "name": "Authentik",
+  "id": "authentik",
   "available": true,
-  "port": 9000,
-  "name": "Authentik-FH",
-  "description": "The authentication glue you need.",
-  "version": "2025.4.1",
-  "tipi_version": 9,
   "short_desc": "The authentication glue you need.",
   "author": "Authentik Security Inc.",
+  "port": 9000,
+  "https": true,
+  "categories": ["security"],
+  "description": "authentik is an open-source Identity Provider that emphasizes flexibility and versatility, with support for a wide set of protocols.",
+  "min_tipi_version": "v4.1.0",
+  "tipi_version": 1,
+  "version": "2025.4.1",
   "source": "https://github.com/goauthentik/authentik",
   "website": "https://goauthentik.io",
-  "categories": ["security"],
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
   "form_fields": [
     {
       "type": "random",
@@ -45,11 +49,7 @@
       "env_variable": "AUTHENTIK_ERROR_REPORTING__ENABLED"
     }
   ],
-  "https": true,
-  "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
-  "dynamic_config": true,
-  "min_tipi_version": "v3.8.0",
-  "created_at": 1737820254382,
-  "updated_at": 1737820254382
+  "created_at": 1747988183970,
+  "updated_at": 1747988183970,
+  "dynamic_config": true
 }
