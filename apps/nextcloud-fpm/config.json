@@ -20,20 +20,20 @@
       "label": "Nextcloud user",
       "hint": "The username which you will use to sign in to nextcloud.",
       "required": true,
-      "env_variable": "NEXTCLOUD_FPM_ADMIN_USER"
+      "env_variable": "NEXTCLOUD_ADMIN_USER"
     },
     {
       "type": "password",
       "label": "Nextcloud password",
       "hint": "The password which you will use to sign in to nextcloud.",
       "required": true,
-      "env_variable": "NEXTCLOUD_FPM_ADMIN_PASSWORD"
+      "env_variable": "NEXTCLOUD_ADMIN_PASSWORD"
     },
     {
       "type": "random",
       "label": "Nextcloud database password",
       "min": 32,
-      "env_variable": "NEXTCLOUD_FPM_DB_PASSWORD"
+      "env_variable": "NEXTCLOUD_DB_PASSWORD"
     }
   ],
   "created_at": 1747993033000,
