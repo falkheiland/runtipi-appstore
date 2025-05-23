@@ -10,7 +10,7 @@
   "categories": ["security"],
   "description": "authentik is an open-source Identity Provider that emphasizes flexibility and versatility, with support for a wide set of protocols.",
   "min_tipi_version": "v4.1.0",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "2025.4.1",
   "source": "https://github.com/goauthentik/authentik",
   "website": "https://goauthentik.io",
