@@ -2,66 +2,66 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "name": "nextcloud-fh",
+      "name": "nextcloud-fpm",
       "image": "nextcloud:31.0.4-fpm-alpine",
       "isMain": false,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fh",
+          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fpm",
           "containerPath": "/var/www/html:cached"
         }
       ],
       "environment": {
-        "POSTGRES_HOST": "nextcloud-fh-db",
+        "POSTGRES_HOST": "nextcloud-fpm-db",
         "POSTGRES_DB": "nextcloud",
         "POSTGRES_USER": "nextcloud",
-        "POSTGRES_PASSWORD": "${NEXTCLOUD_FH_DB_PASSWORD}",
-        "NEXTCLOUD_ADMIN_PASSWORD": "${NEXTCLOUD_FH_ADMIN_PASSWORD}",
-        "NEXTCLOUD_ADMIN_USER": "${NEXTCLOUD_FH_ADMIN_USER}",
+        "POSTGRES_PASSWORD": "${NEXTCLOUD_FPM_DB_PASSWORD}",
+        "NEXTCLOUD_ADMIN_PASSWORD": "${NEXTCLOUD_FPM_ADMIN_PASSWORD}",
+        "NEXTCLOUD_ADMIN_USER": "${NEXTCLOUD_FPM_ADMIN_USER}",
         "NEXTCLOUD_TRUSTED_DOMAINS": "${APP_DOMAIN}",
         "TRUSTED_PROXIES": "127.0.0.1 172.16.0.0/12",
-        "REDIS_HOST": "nextcloud-fh-redis"
+        "REDIS_HOST": "nextcloud-fpm-redis"
       },
-      "dependsOn": ["nextcloud-fh-db", "nextcloud-fh-redis"]
+      "dependsOn": ["nextcloud-fpm-db", "nextcloud-fpm-redis"]
     },
     {
-      "name": "nextcloud-fh-web",
+      "name": "nextcloud-fpm-web",
       "image": "nginx:latest",
       "internalPort": 80,
       "isMain": true,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fh-web/nginx.conf",
+          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fpm-web/nginx.conf",
           "containerPath": "/etc/nginx/nginx.conf:ro"
         },
         {
-          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fh",
+          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fpm",
           "containerPath": "/var/www/html:cached"
         }
       ],
       "environment": {
         "VIRTUAL_HOST": "${APP_DOMAIN}"
       },
-      "dependsOn": ["nextcloud-fh"]
+      "dependsOn": ["nextcloud-fpm"]
     },
     {
-      "name": "nextcloud-fh-cron",
+      "name": "nextcloud-fpm-cron",
       "image": "nextcloud:31.0.4-fpm-alpine",
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fh",
+          "hostPath": "${APP_DATA_DIR}/data/nextcloud-fpm",
           "containerPath": "/var/www/html"
         }
       ],
       "entrypoint": ["/cron.sh"],
-      "dependsOn": ["nextcloud-fh", "nextcloud-fh-redis"]
+      "dependsOn": ["nextcloud-fpm", "nextcloud-fpm-redis"]
     },
     {
-      "name": "nextcloud-fh-redis",
+      "name": "nextcloud-fpm-redis",
       "image": "redis:alpine"
     },
     {
-      "name": "nextcloud-fh-db",
+      "name": "nextcloud-fpm-db",
       "image": "postgres:16-alpine",
       "volumes": [
         {
@@ -72,7 +72,7 @@
       "environment": {
         "POSTGRES_DB": "nextcloud",
         "POSTGRES_USER": "nextcloud",
-        "POSTGRES_PASSWORD": "${NEXTCLOUD_FH_DB_PASSWORD}"
+        "POSTGRES_PASSWORD": "${NEXTCLOUD_FPM_DB_PASSWORD}"
       }
     }
   ]

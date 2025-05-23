@@ -1,14 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
-  "name": "Nextcloud-FH",
-  "id": "nextcloud-fh",
+  "name": "Nextcloud-FPM",
+  "id": "nextcloud-fpm",
   "available": true,
   "short_desc": "Nextcloud server, a safe home for all your data.",
   "author": "nextcloud",
   "port": 9002,
   "categories": ["data"],
   "description": "Remote collaboration made easy.",
-  "tipi_version": 5,
+  "tipi_version": 1,
   "version": "31.0.4-fpm-alpine",
   "source": "https://github.com/nextcloud/server",
   "website": "https://nextcloud.com",
@@ -20,23 +20,23 @@
       "label": "Nextcloud user",
       "hint": "The username which you will use to sign in to nextcloud.",
       "required": true,
-      "env_variable": "NEXTCLOUD_FH_ADMIN_USER"
+      "env_variable": "NEXTCLOUD_FPM_ADMIN_USER"
     },
     {
       "type": "password",
       "label": "Nextcloud password",
       "hint": "The password which you will use to sign in to nextcloud.",
       "required": true,
-      "env_variable": "NEXTCLOUD_FH_ADMIN_PASSWORD"
+      "env_variable": "NEXTCLOUD_FPM_ADMIN_PASSWORD"
     },
     {
       "type": "random",
       "label": "Nextcloud database password",
       "min": 32,
-      "env_variable": "NEXTCLOUD_FH_DB_PASSWORD"
+      "env_variable": "NEXTCLOUD_FPM_DB_PASSWORD"
     }
   ],
-  "created_at": 1738432792668,
-  "updated_at": 1738432792668,
+  "created_at": 1747993033000,
+  "updated_at": 1747993033000,
   "dynamic_config": true
 }
