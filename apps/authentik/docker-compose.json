@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "name": "authentik-fh",
+      "name": "authentik",
       "image": "ghcr.io/goauthentik/server:2025.4.1",
       "command": "server",
       "isMain": true,
@@ -14,8 +14,8 @@
         }
       ],
       "environment": {
-        "AUTHENTIK_REDIS__HOST": "authentik-fh-redis",
-        "AUTHENTIK_POSTGRESQL__HOST": "authentik-fh-db",
+        "AUTHENTIK_REDIS__HOST": "authentik-redis",
+        "AUTHENTIK_POSTGRESQL__HOST": "authentik-db",
         "AUTHENTIK_POSTGRESQL__USER": "authentik",
         "AUTHENTIK_POSTGRESQL__NAME": "authentik",
         "AUTHENTIK_POSTGRESQL__PASSWORD": "${AUTHENTIK_DB_PASSWORD}",
@@ -24,7 +24,7 @@
         "AUTHENTIK_DISABLE_UPDATE_CHECK": "${AUTHENTIK_DISABLE_UPDATE_CHECK}",
         "AUTHENTIK_ERROR_REPORTING__ENABLED": "${AUTHENTIK_ERROR_REPORTING__ENABLED}"
       },
-      "dependsOn": ["authentik-fh-db", "authentik-fh-redis"],
+      "dependsOn": ["authentik-db", "authentik-redis"],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/authentik-media",
@@ -37,12 +37,12 @@
       ]
     },
     {
-      "name": "authentik-fh-worker",
+      "name": "authentik-worker",
       "image": "ghcr.io/goauthentik/server:2025.4.1",
       "command": "worker",
       "environment": {
-        "AUTHENTIK_REDIS__HOST": "authentik-fh-redis",
-        "AUTHENTIK_POSTGRESQL__HOST": "authentik-fh-db",
+        "AUTHENTIK_REDIS__HOST": "authentik-redis",
+        "AUTHENTIK_POSTGRESQL__HOST": "authentik-db",
         "AUTHENTIK_POSTGRESQL__USER": "authentik",
         "AUTHENTIK_POSTGRESQL__NAME": "authentik",
         "AUTHENTIK_POSTGRESQL__PASSWORD": "${AUTHENTIK_DB_PASSWORD}",
@@ -50,7 +50,7 @@
         "AUTHENTIK_DISABLE_STARTUP_ANALYTICS": "${AUTHENTIK_DISABLE_STARTUP_ANALYTICS}",
         "AUTHENTIK_ERROR_REPORTING__ENABLED": "${AUTHENTIK_ERROR_REPORTING__ENABLED}"
       },
-      "dependsOn": ["authentik-fh-db", "authentik-fh-redis"],
+      "dependsOn": ["authentik-db", "authentik-redis"],
       "volumes": [
         {
           "hostPath": "/var/run/docker.sock",
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "name": "authentik-fh-db",
+      "name": "authentik-db",
       "image": "postgres:16-alpine",
       "healthCheck": {
         "test": "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}",
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "name": "authentik-fh-redis",
+      "name": "authentik-redis",
       "image": "redis:alpine",
       "healthCheck": {
         "test": "redis-cli ping | grep PONG",
