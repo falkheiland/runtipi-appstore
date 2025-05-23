@@ -2,58 +2,58 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "name": "template-fh",
+      "name": "template",
       "image": "<image>",
       "isMain": false,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/template-fh",
+          "hostPath": "${APP_DATA_DIR}/data/template",
           "containerPath": "/path/in/app"
         }
       ],
       "environment": {
         "ENV": "env"
       },
-      "dependsOn": ["template-fh-db", "template-fh-redis"]
+      "dependsOn": ["template-db", "template-redis"]
     },
     {
-      "name": "template-fh-web",
+      "name": "template-web",
       "image": "<image>",
       "internalPort": 0,
       "isMain": true,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/template-fh-web/file.xyz",
+          "hostPath": "${APP_DATA_DIR}/data/template-web/file.xyz",
           "containerPath": "/path/in/app/to/file.xyz"
         },
         {
-          "hostPath": "${APP_DATA_DIR}/data/template-fh",
+          "hostPath": "${APP_DATA_DIR}/data/template",
           "containerPath": "/path/in/app"
         }
       ],
       "environment": {
         "VIRTUAL_HOST": "${APP_DOMAIN}"
       },
-      "dependsOn": ["template-fh"]
+      "dependsOn": ["template"]
     },
     {
-      "name": "template-fh-cron",
+      "name": "template-cron",
       "image": "<image>",
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/template-fh",
+          "hostPath": "${APP_DATA_DIR}/data/template",
           "containerPath": "/path/in/app"
         }
       ],
       "entrypoint": ["/cron.sh"],
-      "dependsOn": ["template-fh", "template-fh-redis"]
+      "dependsOn": ["template", "template-redis"]
     },
     {
-      "name": "template-fh-redis",
+      "name": "template-redis",
       "image": "<image>"
     },
     {
-      "name": "template-fh-db",
+      "name": "template-db",
       "image": "<image>",
       "volumes": [
         {

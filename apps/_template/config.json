@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
-  "name": "Template-FH",
-  "id": "template-fh",
+  "name": "Template",
+  "id": "template",
   "available": false,
   "short_desc": "<short description>",
   "author": "<author>",
