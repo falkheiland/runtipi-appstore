@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "name": "wud-fh",
-      "image": "getwud/wud:8.0.1",
+      "name": "wud",
+      "image": "getwud/wud:main",
       "isMain": true,
       "internalPort": 3000,
       "volumes": [
@@ -12,7 +12,7 @@
           "containerPath": "/var/run/docker.sock"
         },
         {
-          "hostPath": "${APP_DATA_DIR}/data/wud-fh",
+          "hostPath": "${APP_DATA_DIR}/data/wud",
           "containerPath": "/store"
         }
       ],
