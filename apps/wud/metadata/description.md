@@ -1,4 +1,4 @@
-# WUD-FH
+# WUD
 
 Keep your containers up-to-date!
 
