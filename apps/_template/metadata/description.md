@@ -1,4 +1,4 @@
-# Template-FH
+# Template
 
 <Description 1>
 
