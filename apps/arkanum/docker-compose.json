@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "name": "arkanum-fh",
-      "image": "gitea.ocram85.com/arkanum/arkanum:1.9.0",
+      "name": "arkanum",
+      "image": "gitea.ocram85.com/arkanum/arkanum:next",
       "isMain": true,
       "internalPort": 8443,
       "environment": {
