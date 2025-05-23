@@ -45,7 +45,7 @@
       "dependsOn": ["nextcloud"]
     },
     {
-      "name": "nextcloud",
+      "name": "nextcloud-cron",
       "image": "nextcloud:31.0.4-fpm-alpine",
       "volumes": [
         {
