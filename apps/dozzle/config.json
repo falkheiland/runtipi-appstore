@@ -1,0 +1,98 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Dozzle",
+  "id": "dozzle",
+  "available": true,
+  "short_desc": "Realtime log viewer for containers. Supports Docker, Swarm and K8s.",
+  "author": "Amir Raminfar",
+  "port": 9005,
+  "categories": ["utilities"],
+  "description": "Dozzle is a small lightweight application with a web based interface to monitor Docker logs. It doesn’t store any log files. It is for live monitoring of your container logs only.",
+  "tipi_version": 1,
+  "version": "latest",
+  "source": "https://github.com/amir20/dozzle",
+  "website": "https://dozzle.dev",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Auth Provider",
+      "hint": "'Use none' for no authentication, 'forward-proxy' for forward-auth or 'simple' for username 'admin' and password 'password'. To change credentials, consult the instructions on the app description.",
+      "default": "none",
+      "required": true,
+      "env_variable": "DOZZLE_AUTH_PROVIDER",
+      "options": [
+        {
+          "label": "none",
+          "value": "none"
+        },
+        {
+          "label": "simple",
+          "value": "simple"
+        },
+        {
+          "label": "forward-proxy",
+          "value": "forward-proxy"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "label": "Enable Container Actions",
+      "hint": "Dozzle supports container actions, which allows you to start, stop and restart containers from the dropdown menu on the right next to the container stats.",
+      "default": true,
+      "required": false,
+      "env_variable": "DOZZLE_ENABLE_ACTIONS"
+    },
+    {
+      "type": "boolean",
+      "label": "Enable Attaching and Executing Commands",
+      "hint": "Dozzle supports attaching or executing commands within containers.",
+      "default": true,
+      "required": false,
+      "env_variable": "DOZZLE_ENABLE_SHELL"
+    },
+    {
+      "type": "boolean",
+      "label": "Disable Data Collection of Analytics",
+      "hint": "Dozzle collects anonymous user configurations using a simple beacon written in Go.",
+      "default": true,
+      "required": false,
+      "env_variable": "DOZZLE_NO_ANALYTICS"
+    },
+    {
+      "type": "text",
+      "label": "Header for Remote-User to map to the username e.g. johndoe",
+      "hint": "forward-proxy only, authentik: X-authentik-username",
+      "placeholder": "X-authentik-username",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DOZZLE_AUTH_HEADER_USER"
+    },
+    {
+      "type": "text",
+      "label": "Header for Remote-Email to map to the user's email address",
+      "hint": "forward-proxy only, authentik: X-authentik-email",
+      "placeholder": "X-authentik-email",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DOZZLE_AUTH_HEADER_EMAIL"
+    },
+    {
+      "type": "text",
+      "label": "Header for Remote-Name to be a display name like John Doe",
+      "hint": "forward-proxy only, authentik: X-authentik-name",
+      "placeholder": "X-authentik-name",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DOZZLE_AUTH_HEADER_NAME"
+    }
+  ],
+  "created_at": 1748346955693,
+  "updated_at": 1748346955693,
+  "dynamic_config": true
+}
