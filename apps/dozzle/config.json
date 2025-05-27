@@ -64,7 +64,8 @@
     {
       "type": "text",
       "label": "Header for Remote-User to map to the username e.g. johndoe",
-      "hint": "authentik: X-authentik-username",
+      "hint": "forward-proxy only, authentik: X-authentik-username",
+      "placeholder": "X-authentik-username",
       "required": false,
       "min": 3,
       "max": 50,
@@ -73,7 +74,8 @@
     {
       "type": "text",
       "label": "Header for Remote-Email to map to the user's email address",
-      "hint": "authentik: X-authentik-email",
+      "hint": "forward-proxy only, authentik: X-authentik-email",
+      "placeholder": "X-authentik-email",
       "required": false,
       "min": 3,
       "max": 50,
@@ -82,7 +84,8 @@
     {
       "type": "text",
       "label": "Header for Remote-Name to be a display name like John Doe",
-      "hint": "authentik: X-authentik-name",
+      "hint": "forward-proxy only, authentik: X-authentik-name",
+      "placeholder": "X-authentik-name",
       "required": false,
       "min": 3,
       "max": 50,
