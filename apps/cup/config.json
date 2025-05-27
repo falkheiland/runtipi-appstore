@@ -64,7 +64,7 @@
       "pattern_error": "Invalid cron expression"
     },
     {
-      "type": "fqdnip",
+      "type": "text",
       "label": "Socket",
       "hint": "Specify a custom Docker socket.",
       "placeholder": "tcp://localhost:2375",
