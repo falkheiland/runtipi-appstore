@@ -60,6 +60,33 @@
       "default": true,
       "required": false,
       "env_variable": "DOZZLE_NO_ANALYTICS"
+    },
+    {
+      "type": "text",
+      "label": "Header for Remote-User to map to the username e.g. johndoe",
+      "hint": "authentik: X-authentik-username",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DOZZLE_AUTH_HEADER_USER"
+    },
+    {
+      "type": "text",
+      "label": "Header for Remote-Email to map to the user's email address",
+      "hint": "authentik: X-authentik-email",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DOZZLE_AUTH_HEADER_EMAIL"
+    },
+    {
+      "type": "text",
+      "label": "Header for Remote-Name to be a display name like John Doe",
+      "hint": "authentik: X-authentik-name",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DOZZLE_AUTH_HEADER_NAME"
     }
   ],
   "created_at": 1748346955693,
