@@ -8,15 +8,91 @@
   "port": 9004,
   "categories": ["utilities"],
   "description": "Cup is the easiest way to check for container image updates.",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "min_tipi_version": "v4.1.0",
   "version": "latest",
   "source": "https://github.com/sergi0g/cup",
   "website": "https://cup.sergi0g.dev/",
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "boolean",
+      "label": "Enable agent mode",
+      "hint": "Expose only the server API without the dashboard.",
+      "default": false,
+      "required": false,
+      "env_variable": "CUP_AGENT"
+    },
+    {
+      "type": "text",
+      "label": "Ignore specific update types",
+      "hint": "none, major, minor, patch",
+      "default": "none",
+      "required": false,
+      "env_variable": "CUP_IGNORE_UPDATE_TYPE ",
+      "options": [
+        {
+          "label": "none",
+          "value": "none"
+        },
+        {
+          "label": "major",
+          "value": "major"
+        },
+        {
+          "label": "minor",
+          "value": "minor"
+        },
+        {
+          "label": "patch",
+          "value": "patch"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Automatic refresh interval",
+      "hint": "cron expression",
+      "placeholder": "0 */30 * * * *",
+      "default": "0 */30 * * * *",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "CUP_REFRESH_INTERVAL",
+      "regex": "^([*\\/\\d,-]+\\s+){5,6}[*\\/\\d,-]+$",
+      "pattern_error": "Invalid cron expression"
+    },
+    {
+      "type": "text",
+      "label": "Socket",
+      "hint": "Specify a custom Docker socket.",
+      "placeholder": "tcp://localhost:2375",
+      "required": false,
+      "min": 10,
+      "max": 128,
+      "env_variable": "CUP_SOCKET"
+    },
+    {
+      "type": "text",
+      "label": "Set theme",
+      "hint": "default, blue",
+      "default": "default",
+      "required": false,
+      "env_variable": "CUP_THEME ",
+      "options": [
+        {
+          "label": "default",
+          "value": "default"
+        },
+        {
+          "label": "blue",
+          "value": "blue"
+        }
+      ]
+    }
+  ],
   "created_at": 1747902816222,
-  "updated_at": 1747902816222,
+  "updated_at": 1748333588312,
   "dynamic_config": true
 }

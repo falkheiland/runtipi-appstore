@@ -33,23 +33,83 @@
   "form_fields": [
     {
       "type": "text",
-      "label": "<label>",
-      "hint": "<hint>",
+      "label": "label",
+      "hint": "hint",
+      "placeholder": "placeholder",
+      "default": "default",
       "required": true,
-      "env_variable": "ENV"
-    },
-    {
-      "type": "password",
-      "label": "<label>",
-      "hint": "<hint>",
-      "required": true,
-      "env_variable": "ENV"
+      "min": 3,
+      "max": 50,
+      "env_variable": "TEMPLATE_TEXT_VARIABLE",
+      "options": [
+        {
+          "label": "option1",
+          "value": "option1"
+        },
+        {
+          "label": "option2",
+          "value": "option2"
+        }
+      ],
+      "regex": "^[\\w\\-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$",
+      "pattern_error": "Invalid email"
     },
     {
       "type": "random",
-      "label": "<label>",
-      "min": 0,
-      "env_variable": "ENV"
+      "label": "label",
+      "hint": "hint",
+      "encoding": "base64",
+      "min": 32,
+      "max": 32,
+      "env_variable": "TEMPLATE_RANDOM_VARIABLE"
+    },
+    {
+      "type": "password",
+      "label": "label",
+      "hint": "hint",
+      "placeholder": "placeholder",
+      "required": true,
+      "min": 8,
+      "max": 128,
+      "env_variable": "TEMPLATE_PASSWORD_VARIABLE",
+      "pattern_error": "Invalid password: Must have 1 lowercase, 1 uppercase, 1 special character, 1 digit and no $.",
+      "regex": "^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\\w\\d\\s:])([^\\s$]){8,128}$"
+    },
+    {
+      "type": "boolean",
+      "label": "boolean",
+      "hint": "hint",
+      "default": true,
+      "required": true,
+      "env_variable": "TEMPLATE_BOOLEAN_VARIABLE"
+    },
+    {
+      "type": "number",
+      "label": "label",
+      "hint": "hint",
+      "required": true,
+      "min": 1,
+      "max": 65535,
+      "placeholder": "12345",
+      "env_variable": "TEMPLATE_NUMBER_VARIABLE"
+    },
+    {
+      "type": "fqdnip",
+      "label": "label",
+      "hint": "hint",
+      "required": true,
+      "min": 8,
+      "max": 128,
+      "env_variable": "TEMPLATE_FQDNIP_VARIABLE"
+    },
+    {
+      "type": "email",
+      "label": "label",
+      "hint": "hint",
+      "required": true,
+      "min": 6,
+      "max": 64,
+      "env_variable": "TEMPLATE_EMAIL_VARIABLE"
     }
   ],
   "created_at": 1747644401954,
