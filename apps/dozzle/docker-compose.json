@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "dozzle",
+      "image": "amir20/dozzle:latest",
+      "internalPort": 8080,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "/var/run/docker.sock",
+          "containerPath": "/var/run/docker.sock"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/data"
+        }
+      ],
+      "environment": {
+        "DOZZLE_NO_ANALYTICS": "${DOZZLE_NO_ANALYTICS:-true}",
+        "DOZZLE_AUTH_PROVIDER": "${DOZZLE_AUTH_PROVIDER:-none}",
+        "DOZZLE_ENABLE_ACTIONS": "${DOZZLE_ENABLE_ACTIONS:-true}",
+        "DOZZLE_ENABLE_SHELL": "${DOZZLE_ENABLE_SHELL:-true}"
+      }
+    }
+  ]
+}
