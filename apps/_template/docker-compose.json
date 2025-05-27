@@ -34,7 +34,17 @@
       "environment": {
         "VIRTUAL_HOST": "${APP_DOMAIN}"
       },
-      "dependsOn": ["template"]
+      "dependsOn": ["template"],
+      "extraLabels": {
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M1.compress": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.browserXssFilter": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.forceSTSHeader": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.frameDeny": true,
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.referrerPolicy": "no-referrer-when-downgrade",
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-M2.headers.stsSeconds": "31536000",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}.middlewares": "${APP_ID}-M1,${APP_ID}-M2",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-local.middlewares": "${APP_ID}-M1,${APP_ID}-M2"
+      }
     },
     {
       "name": "template-cron",

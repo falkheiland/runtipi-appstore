@@ -12,7 +12,14 @@
           "hostPath": "/var/run/docker.sock",
           "containerPath": "/var/run/docker.sock"
         }
-      ]
+      ],
+      "environment": {
+        "CUP_AGENT": "${CUP_AGENT:-false}",
+        "CUP_IGNORE_UPDATE_TYPE": "${CUP_IGNORE_UPDATE_TYPE:-none}",
+        "CUP_REFRESH_INTERVAL": "${CUP_REFRESH_INTERVAL:-0 */30 * * *}",
+        "CUP_SOCKET": "${CUP_SOCKET}",
+        "CUP_THEME": "${CUP_THEME:-default}"
+      }
     }
   ]
 }
