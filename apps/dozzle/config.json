@@ -63,5 +63,6 @@
     }
   ],
   "created_at": 1748346955693,
-  "updated_at": 1748346955693
+  "updated_at": 1748346955693,
+  "dynamic_config": true
 }
