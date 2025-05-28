@@ -17,6 +17,7 @@ This is the repository for my Custom Tipi App Store.
 | Arkanum          | An opinionated VS Code distribution.                                                                    | https://arkanum.dev                           | yes            | 8153 |
 | Authentik        | The authentication glue you need.                                                                       | https://goauthentik.io                        | yes            | 9000 |
 | Cup              | The easiest way to check for your container updates.                                                    | https://cup.sergi0g.dev                       | yes            | 9004 |
+| Crowdsec         | Curated thread intelligence curated by the crowd.                                                       | https://www.crowdsec.net/                     | yes            | 9006 |
 | docker-db-backup | Backup databases.                                                                                       | https://github.com/tiredofit/docker-db-backup | yes            | n.a. |
 | Dozzle           | Realtime log viewer for containers. Supports Docker, Swarm and K8s.                                     | https://dozzle.dev                            | yes            | 9005 |
 | FreshRSS-OIDC    | FreshRSS is a self-hosted RSS feed aggregator. OIDC support.                                            | https://freshrss.org                          | yes            | 9003 |
