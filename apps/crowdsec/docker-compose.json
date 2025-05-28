@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "crowdsec",
+      "image": "crowdsecurity/crowdsec:v1.6.8",
+      "isMain": false,
+      "volumes": [
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true
+        },
+        {
+          "hostPath": "/var/run/docker.sock",
+          "containerPath": "/var/run/docker.sock",
+          "readOnly": true
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/crowdsec/acquis.yaml",
+          "containerPath": "/etc/crowdsec/acquis.yaml"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/crowdsec",
+          "containerPath": "/etc/crowdsec"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/crowdsec/db",
+          "containerPath": "/var/lib/crowdsec/data"
+        },
+        {
+          "hostPath": "/var/log/auth.log",
+          "containerPath": "/var/log/auth.log",
+          "readOnly": true
+        },
+        {
+          "hostPath": "/var/log/crowdsec",
+          "containerPath": "/var/log/crowdsec",
+          "readOnly": true
+        }
+      ],
+      "environment": {
+        "COLLECTIONS": "crowdsecurity/linux crowdsecurity/traefik crowdsecurity/http-cve crowdsecurity/whitelist-good-actors crowdsecurity/sshd",
+        "GID": "${GID-1000}"
+      }
+    },
+    {
+      "name": "crowdsec-bouncer-traefik",
+      "image": "fbonalair/traefik-crowdsec-bouncer:latest",
+      "isMain": false,
+      "environment": {
+        "CROWDSEC_BOUNCER_API_KEY": "${CROWDSEC_BOUNCER_API_KEY}",
+        "CROWDSEC_AGENT_HOST": "crowdsec:8080"
+      },
+      "dependsOn": ["crowdsec"]
+    },
+    {
+      "name": "crowdsec-dashboard",
+      "image": "metabase/metabase",
+      "internalPort": 3000,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/crowdsec-dashboard/data",
+          "containerPath": "/data"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/crowdsec/db",
+          "containerPath": "/metabase-data"
+        }
+      ],
+      "environment": {
+        "MB_DB_FILE": "/data/metabase.db",
+        "MGID": "${GID-1000}"
+      },
+      "dependsOn": ["crowdsec"]
+    }
+  ]
+}

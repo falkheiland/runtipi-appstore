@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Crowdsec",
+  "id": "crowdsec",
+  "available": true,
+  "short_desc": "Participative security solution offering crowdsourced protection against malicious IPs and access to the most advanced real-world CTI.",
+  "author": "crowdsecurity",
+  "port": 9006,
+  "categories": ["security", "utilities"],
+  "description": "CrowdSec is a free, modern & collaborative behavior detection engine, coupled with a global IP reputation network. It stacks on fail2ban's philosophy but is IPV6 compatible and 60x faster (Go vs Python), it uses Grok patterns to parse logs and YAML scenarios to identify behaviors. CrowdSec is engineered for modern Cloud / Containers / VM-based infrastructures (by decoupling detection and remediation). Once detected you can remedy threats with various bouncers (firewall block, nginx http 403, Captchas, etc.) while the aggressive IP can be sent to CrowdSec for curation before being shared among all users to further improve everyone's security. See FAQ or read below for more.",
+  "tipi_version": 1,
+  "version": "1.6.8",
+  "source": "https://github.com/crowdsecurity/crowdsec",
+  "website": "https://crowdsec.net",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Bouncer API Key",
+      "hint": "For initial start, use a random string and change it later as specified in the description!",
+      "placeholder": "Random string",
+      "required": true,
+      "min": 10,
+      "max": 100,
+      "env_variable": "CROWDSEC_BOUNCER_API_KEY"
+    }
+  ],
+  "created_at": 1748426471082,
+  "updated_at": 1748426471082,
+  "dynamic_config": true
+}
