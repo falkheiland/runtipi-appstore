@@ -36,3 +36,7 @@ Issues and PRs are welcome.
 ## Contact
 
 use channel `appstores/falk's appstore` on the [Runtipi Discord](https://discord.gg/Bu9qEPnHsc).
+
+## License
+
+This project is licensed under the GNU GENERAL PUBLIC LICENSE.
