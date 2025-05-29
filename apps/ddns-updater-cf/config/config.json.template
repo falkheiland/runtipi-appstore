@@ -1,13 +1,13 @@
 {
   "settings": [
     {
-      "provider": "{{DDNS_SETTINGS_PROVIDER}}",
-      "zone_identifier": "{{DDNS_SETTINGS_ZONE_IDENTIFIER}}",
-      "domain": "{{DDNS_SETTINGS_DOMAIN}}",
-      "ttl": {{DDNS_SETTINGS_TTL}},
-      "token": "{{DDNS_SETTINGS_TOKEN}}",
-      "ip_version": "{{DDNS_SETTINGS_IP_VERSION}}",
-      "ipv6_suffix": "{{DDNS_SETTINGS_IPV6_SUFFIX}}"
+      "provider": "cloudflare",
+      "zone_identifier": "{{DDNSUPDATER_CF_ZONE_IDENTIFIER}}",
+      "domain": "{{DDNSUPDATER_CF_DOMAIN}}",
+      "ttl": {{DDNSUPDATER_CF_TTL}},
+      "token": "{{DDNSUPDATER_CF_TOKEN}}",
+      "ip_version": "{{DDNSUPDATER_CF_IP_VERSION}}",
+      "ipv6_suffix": "{{DDNSUPDATER_CF_IPV6_SUFFIX}}"
     }
   ]
 }

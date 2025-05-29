@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
-  "name": "ddns-updater",
-  "id": "ddns-updater",
+  "name": "ddns-updater-cf",
+  "id": "ddns-updater-cf",
   "available": true,
   "short_desc": "Container to update DNS records periodically with WebUI for many DNS providers,",
   "author": "Quentin McGaw",
@@ -56,19 +56,10 @@
     },
     {
       "type": "text",
-      "label": "Provider",
-      "placeholder": "Cloudflare",
-      "required": true,
-      "min": 3,
-      "max": 50,
-      "env_variable": "DDNS_SETTINGS_PROVIDER"
-    },
-    {
-      "type": "text",
       "label": "Zone ID",
       "hint": "Zone ID of your site",
       "placeholder": "dfb50ababdd120a7663b2181eaebab23",
-      "required": false,
+      "required": true,
       "min": 3,
       "max": 50,
       "env_variable": "DDNS_SETTINGS_ZONE_IDENTIFIER"
@@ -99,7 +90,7 @@
       "label": "Token",
       "hint": "API Token, configured with DNS edit permissions for your DNS name's zone.",
       "placeholder": "Oh5mSAHQQOr_Gg3FIHd5qekdy2SPpKFR4iXr89cS",
-      "required": false,
+      "required": true,
       "min": 3,
       "max": 50,
       "env_variable": "DDNS_SETTINGS_TOKEN"
