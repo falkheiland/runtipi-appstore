@@ -87,10 +87,10 @@
       "type": "number",
       "label": "label",
       "hint": "hint",
+      "placeholder": "12345",
       "required": true,
       "min": 1,
       "max": 65535,
-      "placeholder": "12345",
       "env_variable": "TEMPLATE_NUMBER_VARIABLE"
     },
     {

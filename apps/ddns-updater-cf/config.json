@@ -1,0 +1,144 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "ddns-updater-cf",
+  "id": "ddns-updater-cf",
+  "available": true,
+  "short_desc": "Container to update DNS records periodically with WebUI for many DNS providers,",
+  "author": "Quentin McGaw",
+  "port": 9007,
+  "categories": ["network"],
+  "description": "Program to keep DNS A and/or AAAA records updated for multiple DNS providers.",
+  "tipi_version": 1,
+  "version": "v2",
+  "source": "https://github.com/qdm12/ddns-updater",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "fqdnip",
+      "label": "Resolver Address",
+      "hint": "A plaintext DNS address to use to resolve your domain names defined in your settings only.",
+      "placeholder": "1.1.1.1:53",
+      "default": "1.1.1.1:53",
+      "required": false,
+      "min": 8,
+      "max": 128,
+      "env_variable": "DDNSUPDATER_RESOLVER_ADDRESS"
+    },
+    {
+      "type": "text",
+      "label": "Notifications",
+      "hint": "pushover, none",
+      "placeholder": "none",
+      "default": "generic",
+      "required": false,
+      "env_variable": "DDNSUPDATER_PUSHOVER_ENABLED",
+      "options": [
+        {
+          "label": "Pushover",
+          "value": "pushover"
+        },
+        {
+          "label": "none",
+          "value": "generic"
+        }
+      ]
+    },
+    {
+      "type": "password",
+      "label": "Pushover API Token",
+      "hint": "The API Token is displayed at the top of the application page.",
+      "placeholder": "aa67g4keevoau18enuh97ofu1coi8v",
+      "required": false,
+      "min": 8,
+      "max": 128,
+      "env_variable": "DDNSUPDATER_PUSHOVER_APITOKEN"
+    },
+    {
+      "type": "password",
+      "label": "Pushover User Key",
+      "hint": "At your Pushover dashboard you can view your User Key in the top right.",
+      "placeholder": "u51m9v62k4buqkqjeo1nkm1pumcdg1",
+      "required": false,
+      "min": 8,
+      "max": 128,
+      "env_variable": "DDNSUPDATER_PUSHOVER_USERKEY"
+    },
+    {
+      "type": "text",
+      "label": "Pushover Devices",
+      "hint": "Comma separated list of Pushover Devices",
+      "placeholder": "device1,device2",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNSUPDATER_PUSHOVER_DEVICES"
+    },
+    {
+      "type": "text",
+      "label": "Zone ID",
+      "hint": "Zone ID of your site",
+      "placeholder": "dfb50ababdd120a7663b2181eaebab23",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNSUPDATER_CF_ZONE_IDENTIFIER"
+    },
+    {
+      "type": "text",
+      "label": "Domain",
+      "hint": "It can be example.com, sub.example.com or *.example.com.",
+      "placeholder": "example.com",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNSUPDATER_CF_DOMAIN"
+    },
+    {
+      "type": "number",
+      "label": "TTL",
+      "hint": "integer value for record TTL in seconds (specify 1 for automatic)",
+      "placeholder": "600",
+      "default": "600",
+      "required": true,
+      "min": 1,
+      "max": 604800,
+      "env_variable": "DDNSUPDATER_CF_TTL"
+    },
+    {
+      "type": "text",
+      "label": "Token",
+      "hint": "API Token, configured with DNS edit permissions for your DNS name's zone.",
+      "placeholder": "Oh5mSAHQQOr_Gg3FIHd5qekdy2SPpKFR4iXr89cS",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNSUPDATER_CF_TOKEN"
+    },
+    {
+      "type": "text",
+      "label": "IP Version",
+      "hint": "can be ipv4 (A records), or ipv6 (AAAA records) or ipv4 or ipv6 (update one of the two, depending on the public ip found). It defaults to ipv4 or ipv6.",
+      "default": "ipv4 or ipv6",
+      "required": false,
+      "env_variable": "DDNSUPDATER_CF_IP_VERSION",
+      "options": [
+        {
+          "label": "IPv4",
+          "value": "ipv4"
+        },
+        {
+          "label": "IPv6",
+          "value": "ipv6"
+        },
+        {
+          "label": "IPv6 or IPv4",
+          "value": "ipv4 or ipv6"
+        }
+      ]
+    }
+  ],
+  "created_at": 1748503281244,
+  "updated_at": 1748503281244,
+  "dynamic_config": true
+}

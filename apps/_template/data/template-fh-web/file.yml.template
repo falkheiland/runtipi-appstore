@@ -1,0 +1,4 @@
+one:
+  one_one: A
+  one_two: B
+  one_three: {{TEMPLATE_ENV_VAR}}
