@@ -136,17 +136,6 @@
           "value": "ipv4 or ipv6"
         }
       ]
-    },
-    {
-      "type": "text",
-      "label": "IPv6 Suffix",
-      "hint": "IPv6 interface identifier suffix to use. If left empty, it defaults to no suffix and the raw public IPv6 address obtained is used in the record updating.",
-      "placeholder": "empty or 0:0:0:0:72ad:8fbb:a54e:bedd/64",
-      "default": "",
-      "required": true,
-      "min": 3,
-      "max": 100,
-      "env_variable": "DDNSUPDATER_CF_IPV6_SUFFIX"
     }
   ],
   "created_at": 1748503281244,
