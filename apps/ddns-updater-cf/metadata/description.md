@@ -11,7 +11,3 @@ Cloudflare Edition.
 <https://github.com/qdm12/ddns-updater>
 
 <https://hub.docker.com/r/qmcgaw/ddns-updater>
-
-## Misc
-
-Something
