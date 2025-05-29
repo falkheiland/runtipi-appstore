@@ -30,7 +30,7 @@
       "label": "Pushover API Token",
       "hint": "The API Token is displayed at the top of the application page.",
       "placeholder": "aa67g4keevoau18enuh97ofu1coi8v",
-      "required": true,
+      "required": false,
       "min": 8,
       "max": 128,
       "env_variable": "DDNSUPDATER_PUSHOVER_APITOKEN"
@@ -40,7 +40,7 @@
       "label": "Pushover User Key",
       "hint": "At your Pushover dashboard you can view your User Key in the top right.",
       "placeholder": "u51m9v62k4buqkqjeo1nkm1pumcdg1",
-      "required": true,
+      "required": false,
       "min": 8,
       "max": 128,
       "env_variable": "DDNSUPDATER_PUSHOVER_USERKEY"
