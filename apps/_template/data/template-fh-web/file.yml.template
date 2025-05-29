@@ -1,5 +1,3 @@
-data/file.yml.template
-
 one:
   one_one: A
   one_two: B
