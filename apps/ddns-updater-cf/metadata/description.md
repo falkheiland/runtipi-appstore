@@ -4,7 +4,7 @@ Container to update DNS records periodically with WebUI for many DNS providers
 
 Program to keep DNS A and/or AAAA records updated for multiple DNS providers
 
-Cloudflare Settings.
+Cloudflare Edition.
 
 ## Links
 
