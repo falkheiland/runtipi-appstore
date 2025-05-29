@@ -26,6 +26,24 @@
       "env_variable": "DDNSUPDATER_RESOLVER_ADDRESS"
     },
     {
+      "type": "text",
+      "label": "Notifications",
+      "hint": "Enable Pushover notifications to be sent when the public IP address changes.",
+      "default": "none",
+      "required": true,
+      "env_variable": "DDNSUPDATER_PUSHOVER_ENABLED",
+      "options": [
+        {
+          "label": "Pushover",
+          "value": "pushover"
+        },
+        {
+          "label": "none",
+          "value": "generic"
+        }
+      ]
+    },
+    {
       "type": "password",
       "label": "Pushover API Token",
       "hint": "The API Token is displayed at the top of the application page.",
