@@ -53,6 +53,88 @@
       "min": 3,
       "max": 50,
       "env_variable": "DDNSUPDATER_PUSHOVER_DEVICES"
+    },
+    {
+      "type": "text",
+      "label": "Provider",
+      "placeholder": "Cloudflare",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNS_SETTINGS_PROVIDER"
+    },
+    {
+      "type": "text",
+      "label": "Zone ID",
+      "hint": "Zone ID of your site",
+      "placeholder": "dfb50ababdd120a7663b2181eaebab23",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNS_SETTINGS_ZONE_IDENTIFIER"
+    },
+    {
+      "type": "text",
+      "label": "Domain",
+      "hint": "It can be example.com, sub.example.com or *.example.com.",
+      "placeholder": "example.com",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNS_SETTINGS_DOMAIN"
+    },
+    {
+      "type": "number",
+      "label": "TTL",
+      "hint": "integer value for record TTL in seconds (specify 1 for automatic)",
+      "placeholder": "600",
+      "default": "600",
+      "required": false,
+      "min": 1,
+      "max": 604800,
+      "env_variable": "DDNS_SETTINGS_TTL"
+    },
+    {
+      "type": "text",
+      "label": "Token",
+      "hint": "API Token, configured with DNS edit permissions for your DNS name's zone.",
+      "placeholder": "Oh5mSAHQQOr_Gg3FIHd5qekdy2SPpKFR4iXr89cS",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNS_SETTINGS_TOKEN"
+    },
+    {
+      "type": "text",
+      "label": "IP Version",
+      "hint": "can be ipv4 (A records), or ipv6 (AAAA records) or ipv4 or ipv6 (update one of the two, depending on the public ip found). It defaults to ipv4 or ipv6.",
+      "default": "ipv4 or ipv6",
+      "required": false,
+      "env_variable": "DDNS_SETTINGS_IP_VERSION",
+      "options": [
+        {
+          "label": "IPv4",
+          "value": "ipv4"
+        },
+        {
+          "label": "IPv6",
+          "value": "ipv6"
+        },
+        {
+          "label": "IPv6 or IPv4",
+          "value": "ipv4 or ipv6"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "IPv6 Suffix",
+      "hint": "IPv6 interface identifier suffix to use. If left empty, it defaults to no suffix and the raw public IPv6 address obtained is used in the record updating.",
+      "placeholder": "0:0:0:0:72ad:8fbb:a54e:bedd/64",
+      "required": false,
+      "min": 3,
+      "max": 100,
+      "env_variable": "DDNS_SETTINGS_IPV6_SUFFIX"
     }
   ],
   "created_at": 1748503281244,
