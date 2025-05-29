@@ -1,0 +1,61 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "ddns-updater",
+  "id": "ddns-updater",
+  "available": true,
+  "short_desc": "Container to update DNS records periodically with WebUI for many DNS providers,",
+  "author": "Quentin McGaw",
+  "port": 9007,
+  "categories": ["network"],
+  "description": "Program to keep DNS A and/or AAAA records updated for multiple DNS providers.",
+  "tipi_version": 1,
+  "version": "v2",
+  "source": "https://github.com/qdm12/ddns-updater",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "fqdnip",
+      "label": "Resolver Address",
+      "hint": "A plaintext DNS address to use to resolve your domain names defined in your settings only.",
+      "placeholder": "{{DNS_IP}}",
+      "default": "{{DNS_IP}}",
+      "required": false,
+      "min": 8,
+      "max": 128,
+      "env_variable": "DDNSUPDATER_RESOLVER_ADDRESS"
+    },
+    {
+      "type": "password",
+      "label": "Pushover API Token",
+      "hint": "The API Token is displayed at the top of the application page.",
+      "placeholder": "placeholder",
+      "required": true,
+      "min": 8,
+      "max": 128,
+      "env_variable": "DDNSUPDATER_PUSHOVER_APITOKEN"
+    },
+    {
+      "type": "password",
+      "label": "Pushover USer Key",
+      "hint": "At your Pushover dashboard you can view your User Key in the top right.",
+      "placeholder": "placeholder",
+      "required": true,
+      "min": 8,
+      "max": 128,
+      "env_variable": "DDNSUPDATER_PUSHOVER_USERKEY"
+    },
+    {
+      "type": "text",
+      "label": "Pushover Devices",
+      "hint": "Comma separated list of Pushover Devices",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "DDNSUPDATER_PUSHOVER_DEVICES"
+    }
+  ],
+  "created_at": 1748503281244,
+  "updated_at": 1748503281244,
+  "dynamic_config": true
+}
