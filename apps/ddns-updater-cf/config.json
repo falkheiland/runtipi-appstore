@@ -142,6 +142,7 @@
       "label": "IPv6 Suffix",
       "hint": "IPv6 interface identifier suffix to use. If left empty, it defaults to no suffix and the raw public IPv6 address obtained is used in the record updating.",
       "placeholder": "0:0:0:0:72ad:8fbb:a54e:bedd/64",
+      "default": "",
       "required": false,
       "min": 3,
       "max": 100,
