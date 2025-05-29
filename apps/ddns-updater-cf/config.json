@@ -30,7 +30,7 @@
       "label": "Notifications",
       "hint": "pushover, none",
       "placeholder": "none",
-      "default": "none",
+      "default": "generic",
       "required": false,
       "env_variable": "DDNSUPDATER_PUSHOVER_ENABLED",
       "options": [
