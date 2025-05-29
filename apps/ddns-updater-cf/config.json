@@ -28,10 +28,10 @@
     {
       "type": "text",
       "label": "Notifications",
-      "hint": "Enable Pushover notifications to be sent when the public IP address changes.",
+      "hint": "pushover, none",
       "placeholder": "none",
       "default": "none",
-      "required": true,
+      "required": false,
       "env_variable": "DDNSUPDATER_PUSHOVER_ENABLED",
       "options": [
         {
