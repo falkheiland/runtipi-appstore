@@ -62,7 +62,7 @@
       "required": true,
       "min": 3,
       "max": 50,
-      "env_variable": "DDNS_SETTINGS_ZONE_IDENTIFIER"
+      "env_variable": "DDNSUPDATER_CF_ZONE_IDENTIFIER"
     },
     {
       "type": "text",
@@ -72,7 +72,7 @@
       "required": true,
       "min": 3,
       "max": 50,
-      "env_variable": "DDNS_SETTINGS_DOMAIN"
+      "env_variable": "DDNSUPDATER_CF_DOMAIN"
     },
     {
       "type": "number",
@@ -83,7 +83,7 @@
       "required": false,
       "min": 1,
       "max": 604800,
-      "env_variable": "DDNS_SETTINGS_TTL"
+      "env_variable": "DDNSUPDATER_CF_TTL"
     },
     {
       "type": "text",
@@ -93,7 +93,7 @@
       "required": true,
       "min": 3,
       "max": 50,
-      "env_variable": "DDNS_SETTINGS_TOKEN"
+      "env_variable": "DDNSUPDATER_CF_TOKEN"
     },
     {
       "type": "text",
@@ -101,7 +101,7 @@
       "hint": "can be ipv4 (A records), or ipv6 (AAAA records) or ipv4 or ipv6 (update one of the two, depending on the public ip found). It defaults to ipv4 or ipv6.",
       "default": "ipv4 or ipv6",
       "required": false,
-      "env_variable": "DDNS_SETTINGS_IP_VERSION",
+      "env_variable": "DDNSUPDATER_CF_IP_VERSION",
       "options": [
         {
           "label": "IPv4",
@@ -125,7 +125,7 @@
       "required": false,
       "min": 3,
       "max": 100,
-      "env_variable": "DDNS_SETTINGS_IPV6_SUFFIX"
+      "env_variable": "DDNSUPDATER_CF_IPV6_SUFFIX"
     }
   ],
   "created_at": 1748503281244,

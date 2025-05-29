@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
   "services": [
     {
-      "image": "qmcgaw/ddns-updater:v2.9.0",
+      "image": "qmcgaw/ddns-updater:v2",
       "name": "ddns-updater",
       "internalPort": 8000,
       "isMain": true,
@@ -13,7 +13,9 @@
         }
       ],
       "environment": {
-        "RESOLVER_ADDRESS": "${DDNSUPDATER_RESOLVER_ADDRESS:-{{DNS_IP}}}"
+        "TZ": "${TZ}",
+        "RESOLVER_ADDRESS": "${DDNSUPDATER_RESOLVER_ADDRESS}:-${DNS_IP}",
+        "SHOUTRRR_ADDRESSES": "pushover://shoutrrr:${DDNSUPDATER_PUSHOVER_APITOKEN}@${DDNSUPDATER_PUSHOVER_USERKEY}/?devices=${DDNSUPDATER_PUSHOVER_DEVICES}"
       }
     }
   ]
