@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Immich",
+  "id": "immich",
+  "available": true,
+  "short_desc": "Self-hosted photo and video management solution",
+  "author": "Immich",
+  "port": 9008,
+  "categories": [
+    "data",
+    "media",
+    "photography"
+  ],
+  "description": "Easily back up, organize, and manage your photos on your own server. Immich helps you browse, search and organize your photos and videos with ease, without sacrificing your privacy.",
+  "tipi_version": 1,
+  "version": "v1.134.0",
+  "source": "https://github.com/immich-app/immich",
+  "website": "https://immich.app",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "DB Password",
+      "min": 32,
+      "max": 32,
+      "env_variable": "IMMICH_DB_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "JWT Secret",
+      "min": 32,
+      "max": 32,
+      "env_variable": "IMMICH_JWT_SECRET"
+    },
+    {
+      "type": "random",
+      "label": "Typesense API Key",
+      "min": 32,
+      "max": 32,
+      "env_variable": "IMMICH_TYPESENSE_API_KEY"
+    },
+    {
+      "type": "text",
+      "label": "Upload Location",
+      "hint": "Media storage location on your system",
+      "placeholder": "/nfs/tipi/immich",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "IMMICH_UPLOAD_LOCATION"
+    },
+    {
+      "type": "text",
+      "label": "Trusted Proxies",
+      "hint": "List of comma-separated IPs set as trusted proxies",
+      "placeholder": "127.0.0.1,172.16.0.0/12",
+      "default": "127.0.0.1,172.16.0.0/12",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "IMMICH_TRUSTED_PROXIES"
+    }
+  ],
+  "created_at": 1748533850398,
+  "updated_at": 1748533850398,
+  "dynamic_config": true
+}
