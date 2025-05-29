@@ -100,7 +100,7 @@
       "hint": "integer value for record TTL in seconds (specify 1 for automatic)",
       "placeholder": "600",
       "default": "600",
-      "required": false,
+      "required": true,
       "min": 1,
       "max": 604800,
       "env_variable": "DDNSUPDATER_CF_TTL"
@@ -141,9 +141,9 @@
       "type": "text",
       "label": "IPv6 Suffix",
       "hint": "IPv6 interface identifier suffix to use. If left empty, it defaults to no suffix and the raw public IPv6 address obtained is used in the record updating.",
-      "placeholder": "0:0:0:0:72ad:8fbb:a54e:bedd/64",
+      "placeholder": "empty or 0:0:0:0:72ad:8fbb:a54e:bedd/64",
       "default": "",
-      "required": false,
+      "required": true,
       "min": 3,
       "max": 100,
       "env_variable": "DDNSUPDATER_CF_IPV6_SUFFIX"

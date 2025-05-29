@@ -4,10 +4,10 @@
       "provider": "cloudflare",
       "zone_identifier": "{{DDNSUPDATER_CF_ZONE_IDENTIFIER}}",
       "domain": "{{DDNSUPDATER_CF_DOMAIN}}",
-      "ttl": "{{DDNSUPDATER_CF_TTL:-600}}",
+      "ttl": "{{DDNSUPDATER_CF_TTL}}",
       "token": "{{DDNSUPDATER_CF_TOKEN}}",
       "ip_version": "{{DDNSUPDATER_CF_IP_VERSION}}",
-      "ipv6_suffix": "{{DDNSUPDATER_CF_IPV6_SUFFIX:-}}"
+      "ipv6_suffix": "{{DDNSUPDATER_CF_IPV6_SUFFIX}}"
     }
   ]
 }
