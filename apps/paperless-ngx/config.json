@@ -1,0 +1,84 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Paperless-ngx",
+  "id": "paperless-ngx",
+  "available": true,
+  "short_desc": "A community-supported supercharged version of paperless: scan, index and archive all your physical documents",
+  "author": "paperless-ngx",
+  "port": 9009,
+  "categories": [
+    "data"
+  ],
+  "description": "Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
+  "tipi_version": 1,
+  "version": "2.16.2",
+  "source": "https://github.com/paperless-ngx/paperless-ngx>",
+  "website": "http://docs.paperless-ngx.com",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Administrator Username",
+      "required": true,
+      "min": 5,
+      "max": 20,
+      "hint": "Username for the paperless-ngx Admin user",
+      "env_variable": "PAPERLESS_ADMIN_USERNAME"
+    },
+    {
+      "type": "password",
+      "label": "Administrator password",
+      "required": true,
+      "min": 5,
+      "max": 64,
+      "hint": "Password for the paperless-ngx Admin user",
+      "env_variable": "PAPERLESS_ADMIN_PASSWORD"
+    },
+    {
+      "label": "Enable Tika",
+      "type": "text",
+      "hint": "Do you want to enable a Tika server for parsing and converting 'Office' documents (such as '.doc', '.xlsx' and '.odt')",
+      "required": true,
+      "options": [
+        {
+          "label": "Yes",
+          "value": "1"
+        },
+        {
+          "label": "No",
+          "value": "2"
+        }
+      ],
+      "env_variable": "PAPERLESS_TIKA_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Trusted Proxies",
+      "hint": "List of comma-separated IPs set as trusted proxies",
+      "placeholder": "127.0.0.1,172.16.0.0/12",
+      "default": "127.0.0.1,172.16.0.0/12",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "PAPERLESS_TRUSTED_PROXIES"
+    },
+    {
+      "type": "text",
+      "label": "Customize the language that paperless will attempt to use when parsing documents.",
+      "hint": "https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html",
+      "placeholder": "eng",
+      "default": "eng",
+      "required": true,
+      "min": 3,
+      "max": 10,
+      "env_variable": "PAPERLESS_OCR_LANGUAGE"
+    }
+  ],
+  "created_at": 1748701783535,
+  "updated_at": 1748701783535,
+  "dynamic_config": true
+}
