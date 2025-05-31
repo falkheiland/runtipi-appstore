@@ -68,14 +68,93 @@
     },
     {
       "type": "text",
-      "label": "Customize the language that paperless will attempt to use when parsing documents.",
+      "label": "OCR Language",
       "hint": "https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html",
-      "placeholder": "eng",
-      "default": "eng",
-      "required": true,
+      "placeholder": "deu+eng",
+      "default": "deu+eng",
+      "required": false,
       "min": 3,
       "max": 10,
       "env_variable": "PAPERLESS_OCR_LANGUAGE"
+    },
+    {
+      "type": "number",
+      "label": "Consumer polling",
+      "hint": "Periodically check (seconds) your consumption directory for changes.",
+      "placeholder": "300",
+      "default": 0,
+      "required": false,
+      "min": 0,
+      "max": 604800,
+      "env_variable": "PAPERLESS_CONSUMER_POLLING"
+    },
+    {
+      "type": "text",
+      "label": "Apps",
+      "hint": "A comma-separated list of Django apps to be included in Django's INSTALLED_APPS",
+      "placeholder": "allauth.socialaccount.providers.openid_connect",
+      "default": "none",
+      "required": false,
+      "min": 3,
+      "max": 100,
+      "env_variable": "PAPERLESS_APPS"
+    },
+    {
+      "type": "boolean",
+      "label": "Redirect login to SSO",
+      "hint": "Users will automatically be redirected to the first SSO provider login.",
+      "default": false,
+      "required": false,
+      "env_variable": "PAPERLESS_REDIRECT_LOGIN_TO_SSO"
+    },
+    {
+      "type": "boolean",
+      "label": "Disbale regular login",
+      "hint": "Disables the regular frontend username / password login, i.e. once you have setup SSO.",
+      "default": false,
+      "required": false,
+      "env_variable": "PAPERLESS_DISABLE_REGULAR_LOGIN"
+    },
+    {
+      "type": "text",
+      "label": "Socialaccount providers",
+      "hint": "A JSON string of socialaccount providers to be included in Django's SOCIALACCOUNT_PROVIDERS",
+      "placeholder": "{\"openid_connect\": {\"SERVERS\": [{\"id\": \"oidc\", \"name\": \"OIDC\", \"client_id\": \"oidc_client_id\", \"secret\": \"oidc_secret\", \"server_url\": \"https://example.com/oidc\", \"scope\": [\"openid\", \"profile\"]}]}}",
+      "default": "none",
+      "required": false,
+      "min": 3,
+      "max": 500,
+      "env_variable": "PAPERLESS_SOCIALACCOUNT_PROVIDERS"
+    },
+    {
+      "type": "text",
+      "label": "Documents and Thunbnail Location",
+      "hint": "This is where your documents and thumbnails are stored.",
+      "placeholder": "/nfs/tipi/paperlessngx/media",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "PAPERLESS_MEDIA_LOCATION"
+    },
+    {
+      "type": "text",
+      "label": "Export Location",
+      "hint": "This is where exports are stored.",
+      "placeholder": "/nfs/tipi/paperlessngx/export",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "PAPERLESS_EXPORT_LOCATION"
+    },
+    {
+      "type": "text",
+      "label": "Consume Location",
+      "hint": "This is where your documents should go to be consumed.",
+      "placeholder": "/nfs/tipi/scan",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "PAPERLESS_CONSUME_LOCATION"
     }
   ],
   "created_at": 1748701783535,

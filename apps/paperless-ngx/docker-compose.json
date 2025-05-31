@@ -42,8 +42,13 @@
         "PAPERLESS_URL": "https://${APP_DOMAIN}",
         "PAPERLESS_CSRF_TRUSTED_ORIGINS": "https://${APP_ID}.${LOCAL_DOMAIN},https://${APP_DOMAIN},http://${INTERNAL_IP}:${APP_PORT}",
         "PAPERLESS_TRUSTED_PROXIES": "${PAPERLESS_TRUSTED_PROXIES:-127.0.0.1,172.16.0.0/12}",
-        "PAPERLESS_OCR_LANGUAGE": "${PAPERLESS_OCR_LANGUAGE:-eng}",
-        "PAPERLESS_TIME_ZONE": "${TZ}"
+        "PAPERLESS_OCR_LANGUAGE": "${PAPERLESS_OCR_LANGUAGE:-deu+eng}",
+        "PAPERLESS_TIME_ZONE": "${TZ}",
+        "PAPERLESS_CONSUMER_POLLING": "${PAPERLESS_CONSUMER_POLLING:-0}",
+        "PAPERLESS_APPS": "${PAPERLESS_APPS:-none}",
+        "PAPERLESS_REDIRECT_LOGIN_TO_SSO": "{PAPERLESS_REDIRECT_LOGIN_TO_SSO:-false}",
+        "PAPERLESS_DISABLE_REGULAR_LOGIN": "{PAPERLESS_DISABLE_REGULAR_LOGIN:-false}",
+        "PAPERLESS_SOCIALACCOUNT_PROVIDERS": "${PAPERLESS_SOCIALACCOUNT_PROVIDERS:-none}"
       },
       "dependsOn": [
         "paperless-ngx-db",
@@ -57,15 +62,15 @@
           "containerPath": "/usr/src/paperless/data"
         },
         {
-          "hostPath": "${APP_DATA_DIR}/data/paperless_media",
+          "hostPath": "${PAPERLESS_MEDIA_LOCATION}",
           "containerPath": "/usr/src/paperless/media"
         },
         {
-          "hostPath": "${APP_DATA_DIR}/data/paperless_export",
+          "hostPath": "${PAPERLESS_EXPORT_LOCATION}",
           "containerPath": "/usr/src/paperless/export"
         },
         {
-          "hostPath": "${APP_DATA_DIR}/data/paperless_consume",
+          "hostPath": "${PAPERLESS_CONSUME_LOCATION}",
           "containerPath": "/usr/src/paperless/consume"
         }
       ]
