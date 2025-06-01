@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "2FAuth",
+  "id": "2fauth",
+  "available": true,
+  "short_desc": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
+  "author": "Bubka",
+  "port": 9011,
+  "categories": [
+    "security"
+  ],
+  "description": "2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.",
+  "tipi_version": 1,
+  "version": "5.5.2",
+  "source": "https://github.com/Bubka/2FAuth",
+  "website": "https://docs.2fauth.app",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Trusted Proxies",
+      "hint": "A comma separated IP list of trusted proxies.",
+      "placeholder": "127.0.0.1,172.16.0.0/12",
+      "default": "127.0.0.1,172.16.0.0/12",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "2FAUTH_TRUSTED_PROXIES"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Authorize URL",
+      "hint": "https://auth.example.com/application/o/authorize",
+      "placeholder": "https://auth.example.com/application/o/authorize",
+      "required": false,
+      "env_variable": "TWOFAUTH_OPENID_AUTHORIZE_URL"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Token URL",
+      "hint": "https://auth.example.com/application/o/token",
+      "placeholder": "https://auth.example.com/application/o/token",
+      "required": false,
+      "env_variable": "TWOFAUTH_OPENID_TOKEN_URL"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Token URL",
+      "hint": "https://auth.example.com/application/o/userinfo",
+      "placeholder": "https://auth.example.com/application/o/userinfo",
+      "required": false,
+      "env_variable": "TWOFAUTH_OPENID_USERINFO_URL"
+    },
+    {
+      "type": "text",
+      "label": "OIDC: Client ID",
+      "placeholder": "CFMwEDuOICa...tzVRQM4INDg",
+      "required": false,
+      "env_variable": "TWOFAUTH_OPENID_CLIENT_ID"
+    },
+    {
+      "type": "password",
+      "label": "OIDC: Client Secret",
+      "min": 40,
+      "max": 200,
+      "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
+      "required": false,
+      "env_variable": "TWOFAUTH_OPENID_CLIENT_SECRET"
+    }
+  ],
+  "created_at": 1748784391361,
+  "updated_at": 1748784391361,
+  "dynamic_config": true
+}
