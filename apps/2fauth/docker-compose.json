@@ -6,9 +6,10 @@
       "image": "2fauth/2fauth:5.5.2",
       "internalPort": 8000,
       "isMain": true,
+      "user": "1000:1000",
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/2fauth",
+          "hostPath": "${APP_DATA_DIR}/data",
           "containerPath": "/2fauth"
         }
       ],
