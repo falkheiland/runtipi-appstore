@@ -88,7 +88,7 @@
       "label": "SMTP from",
       "hint": "Set SMTP host and SMTP from to enable the mail service.",
       "placeholder": "vaultwarden@example.com",
-      "required": true,
+      "required": false,
       "min": 8,
       "max": 64,
       "env_variable": "VAULTWARDEN_SMTP_FROM"
@@ -98,7 +98,7 @@
       "label": "SMTP port",
       "hint": "Ports 587 (submission) and 25 (smtp) are standard without encryption and with encryption via STARTTLS (Explicit TLS). Port 465 (submissions) is used for encrypted submission (Implicit TLS).",
       "default": "587",
-      "required": true,
+      "required": false,
       "options": [
         {
           "label": "465 (Implicit TLS)",
@@ -120,7 +120,7 @@
       "label": "SMTP security",
       "hint": "(\"starttls\", \"force_tls\", \"off\") Enable a secure connection. Default is \"starttls\" (Explicit - ports 587 or 25), \"force_tls\" (Implicit - port 465) or \"off\", no encryption (port 25)",
       "default": "starttls",
-      "required": true,
+      "required": false,
       "options": [
         {
           "label": "starttls (Explicit TLS)",
