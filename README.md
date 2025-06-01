@@ -24,7 +24,8 @@ This is the repository for my Custom Tipi App Store.
 | [FreshRSS-OIDC](https://freshrss.org)                             | FreshRSS is a self-hosted RSS feed aggregator. OIDC support.                                                                                             | RSS            | yes            | 9003 |
 | [Immich](https://immich.app)                                      | Self-hosted photo and video management solution.                                                                                                         | Media          | yes            | 9008 |
 | [Nextcloud-FPM](https://nextcloud.com)                            | Nextcloud server, a safe home for all your data. php-fpm version.                                                                                        | Groupware      | yes            | 9002 |
-| [Paperless-ngx](http://docs.paperless-ngx.com)                    | Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper | DMS            | yes            | 9009 |
+| [Paperless-ngx](https://docs.paperless-ngx.com)                   | Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper | DMS            | yes            | 9009 |
+| [Vaultwarden](https://github.com/dani-garcia/vaultwarden>)        | Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs                                                                   | Secrets        | yes            | 9010 |
 | [WUD](https://getwud.github.io/wud)                               | WUD (aka What's up Docker?) gets you notified when a new version of your Docker Container is available.                                                  | Updates        | no             | 9001 |
 
 ## Branches
