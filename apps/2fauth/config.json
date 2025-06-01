@@ -49,7 +49,7 @@
     },
     {
       "type": "text",
-      "label": "OIDC: Token URL",
+      "label": "OIDC: Userinfo URL",
       "hint": "https://auth.example.com/application/o/userinfo",
       "placeholder": "https://auth.example.com/application/o/userinfo",
       "required": false,
