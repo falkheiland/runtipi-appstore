@@ -19,11 +19,6 @@ Using argon2:
 ```sh
 sudo apt install argon2
 
-# Using the Bitwarden defaults
-echo -n "MySecretPassword" | argon2 "$(openssl rand -base64 32)" -e -id -k 65540 -t 3 -p 4
-# Output: $argon2id$v=19$m=65540,t=3,p=4$bXBGMENBZUVzT3VUSFErTzQzK25Jck1BN2Z0amFuWjdSdVlIQVZqYzAzYz0$T9m73OdD2mz9+aJKLuOAdbvoARdaKxtOZ+jZcSL9/N0
-
-# Using the OWASP minimum recommended settings
-echo -n "MySecretPassword" | argon2 "$(openssl rand -base64 32)" -e -id -k 19456 -t 2 -p 1
-# Output: $argon2id$v=19$m=19456,t=2,p=1$cXpKdUxHSWhlaUs1QVVsSStkbTRPQVFPSmdpamFCMHdvYjVkWTVKaDdpYz0$E1UgBKjUCD2Roy0jdHAJvXihugpG+N9WcAaR8P6Qn/8
+echo -n '!MySecretPassword' | argon2 "$(openssl rand -hex 16)" -e -id -t 3 -m 16 -p 4 | sed 's/\$/\$\$/g'
+$$argon2id$$v=19$$m=65536,t=3,p=4$$YWJhN2Y5MzA1NTg0ZDk4NDYwZDE5YzQxYTY2ZWQ3ZTI$$e5dMRGT8k2p6ceB/jRFRqOh4RwGIj9Oxpusutf6VUc
 ```
