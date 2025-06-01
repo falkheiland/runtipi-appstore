@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "2fauth",
+      "image": "2fauth/2fauth:5.5.2",
+      "internalPort": 8000,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/2fauth"
+        }
+      ],
+      "environment": {
+        "APP_TIMEZONE": "${TZ}",
+        "ASSET_URL": "https://${APP_DOMAIN}",
+        "APP_URL": "https://${APP_DOMAIN}",
+        "TRUSTED_PROXIES": "${2FAUTH_TRUSTED_PROXIES:-127.0.0.1,172.16.0.0/12}",
+        "OPENID_AUTHORIZE_URL": "${2FAUTH_OPENID_AUTHORIZE_URL}",
+        "OPENID_TOKEN_URL": "${2FAUTH_OPENID_TOKEN_URL}",
+        "OPENID_USERINFO_URL": "${2FAUTH_OPENID_USERINFO_URL}",
+        "OPENID_CLIENT_ID": "${2FAUTH_OPENID_CLIENT_ID}",
+        "OPENID_CLIENT_SECRET": "${2FAUTH_OPENID_CLIENT_SECRET}"
+      }
+    }
+  ]
+}
