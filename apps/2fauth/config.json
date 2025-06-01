@@ -37,7 +37,7 @@
       "hint": "https://auth.example.com/application/o/authorize",
       "placeholder": "https://auth.example.com/application/o/authorize",
       "required": false,
-      "env_variable": "2FAUTH_OPENID_AUTHORIZE_URL"
+      "env_variable": "TWOFAUTH_OPENID_AUTHORIZE_URL"
     },
     {
       "type": "text",
@@ -45,7 +45,7 @@
       "hint": "https://auth.example.com/application/o/token",
       "placeholder": "https://auth.example.com/application/o/token",
       "required": false,
-      "env_variable": "2FAUTH_OPENID_TOKEN_URL"
+      "env_variable": "TWOFAUTH_OPENID_TOKEN_URL"
     },
     {
       "type": "text",
@@ -53,14 +53,14 @@
       "hint": "https://auth.example.com/application/o/userinfo",
       "placeholder": "https://auth.example.com/application/o/userinfo",
       "required": false,
-      "env_variable": "2FAUTH_OPENID_USERINFO_URL"
+      "env_variable": "TWOFAUTH_OPENID_USERINFO_URL"
     },
     {
       "type": "text",
       "label": "OIDC: Client ID",
       "placeholder": "CFMwEDuOICa...tzVRQM4INDg",
       "required": false,
-      "env_variable": "2FAUTH_OPENID_CLIENT_ID"
+      "env_variable": "TWOFAUTH_OPENID_CLIENT_ID"
     },
     {
       "type": "password",
@@ -69,7 +69,7 @@
       "max": 200,
       "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
       "required": false,
-      "env_variable": "2FAUTH_OPENID_CLIENT_SECRET"
+      "env_variable": "TWOFAUTH_OPENID_CLIENT_SECRET"
     }
   ],
   "created_at": 1748784391361,
