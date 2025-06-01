@@ -1,0 +1,171 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "VaultWarden",
+  "id": "vaultwarden",
+  "available": true,
+  "short_desc": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
+  "author": "Daniel García",
+  "port": 9010,
+  "categories": [
+    "data",
+    "security"
+  ],
+  "description": "An alternative server implementation of the Bitwarden Client API, written in Rust and compatible with official Bitwarden clients, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
+  "tipi_version": 1,
+  "version": "1.34.1",
+  "source": "https://github.com/dani-garcia/vaultwarden",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Admin Token (Argon2 PCH string)",
+      "hint": "echo -n \"MySecretPassword\" | argon2 \"$(openssl rand -base64 32)\" -e -id -k 65540 -t 3 -p 4 #escape all the dollar signs `$` with an extra dollar sign like `$$`",
+      "placeholder": "$$argon2id$$v=19$m=65540,t=3,p=4$$MmeKRnGK5RW5mJS7h3TOL89GrpLPXJPAtTK8FTqj9HM$$DqsstvoSAETl9YhnsXbf43WeaUwJC6JhViIvuPoig78'",
+      "required": true,
+      "min": 64,
+      "max": 256,
+      "env_variable": "VAULTWARDEN_ADMIN_TOKEN"
+    },
+    {
+      "type": "boolean",
+      "label": "Signups allowed",
+      "hint": "Controls if new users can register",
+      "default": true,
+      "required": false,
+      "env_variable": "VAULTWARDEN_SIGNUPS_ALLOWED"
+    },
+    {
+      "type": "boolean",
+      "label": "Invitations allowed",
+      "hint": "Invitations org admins to invite users, even when signups are disabled",
+      "default": true,
+      "required": false,
+      "env_variable": "VAULTWARDEN_INVITATIONS_ALLOWED"
+    },
+    {
+      "type": "boolean",
+      "label": "Disbale admin token",
+      "hint": "Enable this to bypass the admin panel security. This option is only meant to be used with the use of a separate auth layer in front.",
+      "default": false,
+      "required": false,
+      "env_variable": "VAULTWARDEN_DISABLE_ADMIN_TOKEN"
+    },
+    {
+      "type": "boolean",
+      "label": "Show password hint",
+      "hint": "Controls whether a password hint should be shown directly in the web page if SMTP service is not configured.",
+      "default": false,
+      "required": false,
+      "env_variable": "VAULTWARDEN_SHOW_PASSWORD_HINT"
+    },
+    {
+      "type": "number",
+      "label": "Password iterations",
+      "hint": "Number of server-side passwords hashing iterations for the password hash.",
+      "default": 600000,
+      "placeholder": "600000",
+      "required": false,
+      "min": 10000,
+      "max": 6000000,
+      "env_variable": "VAULTWARDEN_PASSWORD_ITERATIONS"
+    },
+    {
+      "type": "text",
+      "label": "SMTP host",
+      "hint": "Set SMTP host and SMTP from to enable the mail service.",
+      "placeholder": "smtp.example.com",
+      "required": false,
+      "min": 8,
+      "max": 64,
+      "env_variable": "VAULTWARDEN_SMTP_HOST"
+    },
+    {
+      "type": "text",
+      "label": "SMTP from",
+      "hint": "Set SMTP host and SMTP from to enable the mail service.",
+      "placeholder": "vaultwarden@example.com",
+      "required": false,
+      "min": 8,
+      "max": 64,
+      "env_variable": "VAULTWARDEN_SMTP_FROM"
+    },
+    {
+      "type": "text",
+      "label": "SMTP port",
+      "hint": "Ports 587 (submission) and 25 (smtp) are standard without encryption and with encryption via STARTTLS (Explicit TLS). Port 465 (submissions) is used for encrypted submission (Implicit TLS).",
+      "default": "587",
+      "required": false,
+      "options": [
+        {
+          "label": "465 (Implicit TLS)",
+          "value": "465"
+        },
+        {
+          "label": "587 (Explicit TLS)",
+          "value": "587"
+        },
+        {
+          "label": "25 (No encryption)",
+          "value": "25"
+        }
+      ],
+      "env_variable": "VAULTWARDEN_SMTP_PORT"
+    },
+    {
+      "type": "text",
+      "label": "SMTP security",
+      "hint": "(\"starttls\", \"force_tls\", \"off\") Enable a secure connection. Default is \"starttls\" (Explicit - ports 587 or 25), \"force_tls\" (Implicit - port 465) or \"off\", no encryption (port 25)",
+      "default": "starttls",
+      "required": false,
+      "options": [
+        {
+          "label": "starttls (Explicit TLS)",
+          "value": "starttls"
+        },
+        {
+          "label": "force_tls (Implicit TLS)",
+          "value": "force_tls"
+        },
+        {
+          "label": "off (No encryption)",
+          "value": "off"
+        }
+      ],
+      "env_variable": "VAULTWARDEN_SMTP_SECURITY"
+    },
+    {
+      "type": "text",
+      "label": "SMTP username",
+      "placeholder": "username",
+      "required": false,
+      "min": 8,
+      "max": 64,
+      "env_variable": "VAULTWARDEN_SMTP_USERNAME"
+    },
+    {
+      "type": "password",
+      "label": "SMTP password",
+      "required": false,
+      "min": 8,
+      "max": 128,
+      "env_variable": "VAULTWARDEN_SMTP_PASSWORD"
+    },
+    {
+      "type": "text",
+      "label": "SMTP from name",
+      "default": "Vaultwarden",
+      "placeholder": "Vaultwarden",
+      "required": false,
+      "min": 8,
+      "max": 64,
+      "env_variable": "VAULTWARDEN_SMTP_FROM_NAME"
+    }
+  ],
+  "created_at": 1748763958430,
+  "updated_at": 1748763958430,
+  "dynamic_config": true
+}
