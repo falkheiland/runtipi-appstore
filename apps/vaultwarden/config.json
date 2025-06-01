@@ -32,7 +32,7 @@
     },
     {
       "type": "boolean",
-      "label": "Disbale admin token",
+      "label": "Disable admin token",
       "hint": "Enable this to bypass the admin panel security. This option is only meant to be used with the use of a separate auth layer in front.",
       "default": false,
       "required": false,
