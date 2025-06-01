@@ -12,6 +12,8 @@
   "description": "2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.",
   "tipi_version": 1,
   "version": "5.5.2",
+  "uid": 1000,
+  "gid": 1000,
   "source": "https://github.com/Bubka/2FAuth",
   "website": "https://docs.2fauth.app",
   "exposable": true,
