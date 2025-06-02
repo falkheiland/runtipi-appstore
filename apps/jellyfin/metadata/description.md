@@ -17,7 +17,3 @@ Jellyfin is a Free Software Media System that puts you in control of managing an
 traefik:
 
 <https://jellyfin.org/docs/general/post-install/networking/advanced/traefik#docker-composeyml>
-
-/cache/.jellyfin-cache
-
-Unhandled exception. System.UnauthorizedAccessException: Access to the path '/cache/.jellyfin-cache' is denied.
