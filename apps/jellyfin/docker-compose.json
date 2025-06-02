@@ -6,7 +6,6 @@
       "image": "jellyfin/jellyfin:2025060205",
       "internalPort": 8096,
       "isMain": true,
-      "user": "1000:1000",
       "volumes": [
         {
           "hostPath": "/etc/localtime",
