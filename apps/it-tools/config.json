@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "IT-Tools",
+  "id": "it-tools",
+  "available": true,
+  "short_desc": "Collection of handy online tools for developers, with great UX.",
+  "author": "Corentin Thomasset",
+  "port": 9014,
+  "categories": [
+    "development",
+    "utilities"
+  ],
+  "description": "Useful tools for developer and people working in IT.",
+  "tipi_version": 1,
+  "version": "latest",
+  "source": "https://github.com/CorentinTh/it-tools",
+  "website": "https://it-tools.tech",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "created_at": 1748866405516,
+  "updated_at": 1748866405516,
+  "dynamic_config": true
+}
