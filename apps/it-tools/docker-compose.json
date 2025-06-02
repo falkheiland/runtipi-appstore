@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "it-tools",
+      "image": "ghcr.io/corentinth/it-tools:latest",
+      "internalPort": 80,
+      "isMain": true
+    }
+  ]
+}
