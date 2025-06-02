@@ -11,7 +11,7 @@
   ],
   "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.",
   "tipi_version": 1,
-  "version": "2025060205",
+  "version": "10.10.7",
   "source": "https://github.com/jellyfin/jellyfin",
   "website": "https://jellyfin.org",
   "exposable": true,
