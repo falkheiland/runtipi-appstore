@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Home Assistant",
+  "id": "homeassistant",
+  "available": true,
+  "short_desc": "Open source home automation that puts local control and privacy first.",
+  "author": "home-assistant",
+  "port": 9013,
+  "categories": [
+    "automation"
+  ],
+  "description": "Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
+  "tipi_version": 1,
+  "version": "stable",
+  "source": "https://github.com/home-assistant/core",
+  "website": "https://www.home-assistant.io",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "created_at": 1748862205158,
+  "updated_at": 1748862205158,
+  "dynamic_config": true
+}
