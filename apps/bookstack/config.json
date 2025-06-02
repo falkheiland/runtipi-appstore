@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Bookstack",
+  "id": "bookstack",
+  "available": true,
+  "short_desc": "A platform to create documentation/wiki content built with PHP & Laravel",
+  "author": "Dan Brown",
+  "port": 9012,
+  "categories": [
+    "data"
+  ],
+  "description": "A platform for storing and organising information and documentation. Details for BookStack can be found on the official website at https://www.bookstackapp.com/.",
+  "tipi_version": 1,
+  "version": "25.05.20250531",
+  "source": "https://github.com/BookStackApp/BookStack",
+  "website": "https://www.bookstackapp.com/",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "random",
+      "encoding": "base64",
+      "label": "App key",
+      "hint": "https://github.com/linuxserver/docker-bookstack?tab=readme-ov-file#parameters",
+      "min": 32,
+      "max": 32,
+      "env_variable": "BOOKSTACK_APP_KEY"
+    },
+    {
+      "type": "random",
+      "label": "Database root password",
+      "min": 32,
+      "env_variable": "BOOKSTACK_MYSQL_ROOT_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Database password",
+      "min": 32,
+      "env_variable": "BOOKSTACK_MYSQL_PASSWORD"
+    }
+  ],
+  "created_at": 1748854039907,
+  "updated_at": 1748854039907,
+  "dynamic_config": true
+}

@@ -6,7 +6,7 @@ A Web app to manage your Two-Factor Authentication (2FA) accounts and generate t
 
 ## Links
 
-<https://docs.2fauth.app/>
+<https://docs.2fauth.app>
 
 <https://github.com/Bubka/2FAuth>
 
