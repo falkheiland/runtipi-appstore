@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Jellyfin",
+  "id": "jellyfin",
+  "available": true,
+  "short_desc": "The Free Software Media System - Server Backend & API",
+  "author": "jellyfin",
+  "port": 9014,
+  "categories": [
+    "media"
+  ],
+  "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.",
+  "tipi_version": 1,
+  "version": "2025060205",
+  "source": "https://github.com/jellyfin/jellyfin",
+  "website": "https://jellyfin.org",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Media Location",
+      "hint": "Media storage location on your system",
+      "placeholder": "/nfs",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "JELLYFIN_MEDIA_LOCATION"
+    }
+  ],
+  "created_at": 1748873457333,
+  "updated_at": 1748873457333,
+  "dynamic_config": true
+}
