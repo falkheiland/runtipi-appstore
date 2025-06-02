@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "bookstack",
+      "image": "lscr.io/linuxserver/bookstack:25.05.20250531",
+      "internalPort": 80,
+      "isMain": true,
+      "dependsOn": [
+        "bookstack-db"
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/bookstack/config",
+          "containerPath": "/config"
+        }
+      ],
+      "environment": {
+        "TZ": "${TZ}",
+        "PUID": "1000",
+        "PGID": "1000",
+        "APP_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
+        "APP_KEY": "base64:${BOOKSTACK_APP_KEY}",
+        "DB_HOST": "bookstack-db",
+        "DB_PORT": "3306",
+        "DB_USERNAME": "bookstack",
+        "DB_PASSWORD": "${BOOKSTACK_MYSQL_PASSWORD}",
+        "DB_DATABASE": "bookstack"
+      }
+    },
+    {
+      "name": "bookstack-db",
+      "image": "lscr.io/linuxserver/mariadb:11.4.4",
+      "isMain": false,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/bookstack-db",
+          "containerPath": "/config"
+        }
+      ],
+      "environment": {
+        "TZ": "${TZ}",
+        "PUID": "1000",
+        "PGID": "1000",
+        "MYSQL_ROOT_PASSWORD": "${BOOKSTACK_MYSQL_ROOT_PASSWORD}",
+        "MYSQL_DATABASE": "bookstack",
+        "MYSQL_USER": "bookstack",
+        "MYSQL_PASSWORD": "${BOOKSTACK_MYSQL_PASSWORD}"
+      }
+    }
+  ]
+}
