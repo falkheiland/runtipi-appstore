@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "jellyfin",
+      "image": "jellyfin/jellyfin:2025060205",
+      "internalPort": 8096,
+      "isMain": true,
+      "user": "1000:1000",
+      "volumes": [
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime:ro"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/config",
+          "containerPath": "/config"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/cache",
+          "containerPath": "/cache"
+        },
+        {
+          "hostPath": "${JELLYFIN_MEDIA_LOCATION}",
+          "containerPath": "/media"
+        }
+      ],
+      "environment": {
+        "JELLYFIN_PublishedServerUrl": "${APP_PROTOCOL:-http}://${APP_DOMAIN}/"
+      }
+    }
+  ]
+}
