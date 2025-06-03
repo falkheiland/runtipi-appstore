@@ -5,7 +5,7 @@
   "available": true,
   "short_desc": "Joplin - the privacy-focused note taking app with sync capabilities for Windows, macOS, Linux, Android and iOS.",
   "author": "Laurent Cozic",
-  "port": 9014,
+  "port": 9015,
   "categories": [
     "data"
   ],
