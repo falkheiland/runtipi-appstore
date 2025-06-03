@@ -12,6 +12,7 @@
 
 <<ImageRepo>>
 
-## Misc
+## Credentials
 
-Something
+Username: admin@localhost
+Password: admin
