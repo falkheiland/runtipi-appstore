@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Joplin Server",
+  "id": "joplin",
+  "available": true,
+  "short_desc": "Joplin - the privacy-focused note taking app with sync capabilities for Windows, macOS, Linux, Android and iOS.",
+  "author": "Laurent Cozic",
+  "port": 9014,
+  "categories": [
+    "data"
+  ],
+  "description": "Joplin is a free, open source note taking and to-do application, which can handle a large number of notes organised into notebooks.",
+  "tipi_version": 1,
+  "version": "3.3.13",
+  "source": "https://github.com/laurent22/joplin",
+  "website": "https://joplinapp.org",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Joplin DB password",
+      "max": 50,
+      "min": 8,
+      "env_variable": "JOPLIN_POSTGRES_PASSWORD"
+    }
+  ],
+  "created_at": 1748945899085,
+  "updated_at": 1748945899085,
+  "dynamic_config": true
+}

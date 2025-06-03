@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "joplin",
+      "image": "joplin/server:3.3.13",
+      "internalPort": 22300,
+      "isMain": true,
+      "environment": {
+        "APP_PORT": "22300",
+        "APP_BASE_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}/",
+        "DB_CLIENT": "pg",
+        "POSTGRES_PASSWORD": "${JOPLIN_POSTGRES_PASSWORD}",
+        "POSTGRES_DATABASE": "joplin",
+        "POSTGRES_USER": "joplin",
+        "POSTGRES_PORT": "5432",
+        "POSTGRES_HOST": "joplin-db",
+        "MAX_TIME_DRIFT": "0"
+      },
+      "volumes": [
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true
+        }
+      ],
+      "dependsOn": [
+        "joplin-db"
+      ]
+    },
+    {
+      "name": "joplin-db",
+      "image": "postgres:16",
+      "environment": {
+        "POSTGRES_PASSWORD": "${JOPLIN_POSTGRES_PASSWORD}",
+        "POSTGRES_USER": "joplin",
+        "POSTGRES_DB": "joplin"
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/postgres",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ]
+    }
+  ]
+}
