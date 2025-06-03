@@ -7,7 +7,7 @@ Joplin is a free, open source note taking and to-do application, which can handl
 
 ## Links
 
-<https://joplinapp.org/>
+<https://joplinapp.org>
 
 <https://github.com/laurent22/joplin>
 

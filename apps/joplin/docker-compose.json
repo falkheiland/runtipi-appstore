@@ -15,7 +15,15 @@
         "POSTGRES_USER": "joplin",
         "POSTGRES_PORT": "5432",
         "POSTGRES_HOST": "joplin-db",
-        "MAX_TIME_DRIFT": "0"
+        "MAX_TIME_DRIFT": "0",
+        "MAILER_ENABLED": "${JOPLIN_MAILER_ENABLED:-0}",
+        "MAILER_HOST": "${JOPLIN_MAILER_HOST}",
+        "MAILER_PORT": "${JOPLIN_MAILER_PORT:-587}",
+        "MAILER_SECURITY": "${JOPLIN_MAILER_SECURITY:-starttls}",
+        "MAILER_AUTH_USER": "${JOPLIN_MAILER_AUTH_USER}",
+        "MAILER_AUTH_PASSWORD": "${JOPLIN_MAILER_AUTH_PASSWORD}",
+        "MAILER_NOREPLY_NAME": "${JOPLIN_MAILER_NOREPLY_NAME:-Joplin Server}",
+        "MAILER_NOREPLY_EMAIL": "${JOPLIN_MAILER_NOREPLY_EMAIL}"
       },
       "volumes": [
         {

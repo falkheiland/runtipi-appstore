@@ -26,6 +26,100 @@
       "max": 50,
       "min": 8,
       "env_variable": "JOPLIN_POSTGRES_PASSWORD"
+    },
+    {
+      "type": "boolean",
+      "label": "Mailer enabled",
+      "default": false,
+      "env_variable": "JOPLIN_MAILER_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Mailer Host",
+      "placeholder": "smtp.example.com",
+      "min": 3,
+      "max": 50,
+      "env_variable": "JOPLIN_MAILER_HOST"
+    },
+    {
+      "type": "text",
+      "label": "Mailer Port",
+      "placeholder": "placeholder",
+      "default": "587",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "JOPLIN_MAILER_PORT",
+      "options": [
+        {
+          "label": "25 (plain text)",
+          "value": "25"
+        },
+        {
+          "label": "465 (Implicit SSL/TLS)",
+          "value": "465"
+        },
+        {
+          "label": "587 (STARTTLS)",
+          "value": "587"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Mailer Security",
+      "placeholder": "placeholder",
+      "default": "starttls",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "JOPLIN_MAILER_SECURITY",
+      "options": [
+        {
+          "label": "none",
+          "value": "25"
+        },
+        {
+          "label": "Implicit SSL/TLS",
+          "value": "ssl"
+        },
+        {
+          "label": "STARTTLS",
+          "value": "starttls"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Mailer Auth User",
+      "placeholder": "user@example.com",
+      "min": 3,
+      "max": 50,
+      "env_variable": "JOPLIN_MAILER_AUTH_USER"
+    },
+    {
+      "type": "password",
+      "label": "Mailer Auth Password",
+      "min": 8,
+      "max": 128,
+      "env_variable": "JOPLIN_MAILER_AUTH_PASSWORD"
+    },
+    {
+      "type": "text",
+      "label": "Mailer NoReply Name",
+      "placeholder": "Joplin Server",
+      "default": "Joplin Server",
+      "min": 3,
+      "max": 50,
+      "env_variable": "JOPLIN_MAILER_NOREPLY_NAME"
+    },
+    {
+      "type": "text",
+      "label": "Mailer NoReply Email",
+      "placeholder": "joplin@example.com",
+      "min": 3,
+      "max": 50,
+      "env_variable": "JOPLIN_MAILER_NOREPLY_EMAIL"
     }
   ],
   "created_at": 1748945899085,
