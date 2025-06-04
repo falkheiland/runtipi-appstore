@@ -11,7 +11,11 @@
           "hostPath": "${METUBE_DOWNLOAD_LOCATION}",
           "containerPath": "/downloads"
         }
-      ]
+      ],
+      "environment": {
+        "DOWNLOAD_DIRS_INDEXABLE": "${METUBE_DOWNLOAD_DIRS_INDEXABLE:-false}",
+        "DELETE_FILE_ON_TRASHCAN": "${METUBE_DELETE_FILE_ON_TRASHCAN:-false}"
+      }
     }
   ]
 }
