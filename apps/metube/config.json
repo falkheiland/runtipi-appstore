@@ -22,13 +22,27 @@
   "form_fields": [
     {
       "type": "text",
-      "label": "label",
+      "label": "Download Location",
       "hint": "hint",
       "placeholder": "/home/user/runtipi/media/downloads/complete/",
       "required": true,
       "min": 3,
       "max": 100,
       "env_variable": "METUBE_DOWNLOAD_LOCATION"
+    },
+    {
+      "type": "boolean",
+      "label": "Download dirs indexable",
+      "hint": "if true, the download dirs (DOWNLOAD_DIR and AUDIO_DOWNLOAD_DIR) are indexable on the webserver.",
+      "default": false,
+      "env_variable": "METUBE_DOWNLOAD_DIRS_INDEXABLE"
+    },
+    {
+      "type": "boolean",
+      "label": "Delete file on trashcan",
+      "hint": "if true, downloaded files are deleted on the server, when they are trashed from the \"Completed\" section of the UI.",
+      "default": false,
+      "env_variable": "METUBE_DELETE_FILE_ON_TRASHCAN"
     }
   ],
   "created_at": 1749044739852,
