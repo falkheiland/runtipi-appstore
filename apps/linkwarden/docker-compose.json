@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "linkwarden",
+      "image": "ghcr.io/linkwarden/linkwarden:v2.10.2",
+      "internalPort": 3000,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/linkwarden",
+          "containerPath": "/data/data"
+        }
+      ],
+      "environment": {
+        "DATABASE_URL": "postgresql://linkwarden:${LINKWARDEN_POSTGRES_PASSWORD}@linkwarden-db:5432/linkwarden",
+        "NEXTAUTH_SECRET": "${LINKWARDEN_NEXTAUTH_SECRET}",
+        "NEXTAUTH_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}/api/v1/auth",
+        "NEXT_PUBLIC_DISABLE_REGISTRATION": "${LINKWARDEN_NEXT_PUBLIC_DISABLE_REGISTRATION:-false}",
+        "NEXT_PUBLIC_CREDENTIALS_ENABLED": "${LINKWARDEN_NEXT_PUBLIC_CREDENTIALS_ENABLED:-true}",
+        "DISABLE_NEW_SSO_USERS": "${LINKWARDEN_DISABLE_NEW_SSO_USERS:-false}",
+        "NEXT_PUBLIC_AUTHENTIK_ENABLED": "${LINKWARDEN_NEXT_PUBLIC_AUTHENTIK_ENABLED:-false}",
+        "AUTHENTIK_CUSTOM_NAME": "${LINKWARDEN_AUTHENTIK_CUSTOM_NAME:-Authentik}",
+        "AUTHENTIK_ISSUER": "${LINKWARDEN_AUTHENTIK_ISSUER}",
+        "AUTHENTIK_CLIENT_ID": "${LINKWARDEN_AUTHENTIK_CLIENT_ID}",
+        "AUTHENTIK_CLIENT_SECRET": "${LINKWARDEN_AUTHENTIK_CLIENT_SECRET}",
+        "IGNORE_UNAUTHORIZED_CA": "true"
+      },
+      "dependsOn": [
+        "linkwarden-db"
+      ]
+    },
+    {
+      "name": "linkwarden-db",
+      "image": "postgres:16-alpine",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/linkwarden-db",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ],
+      "environment": {
+        "POSTGRES_USER": "linkwarden",
+        "POSTGRES_PASSWORD": "${LINKWARDEN_POSTGRES_PASSWORD}",
+        "POSTGRES_DB": "linkwarden"
+      }
+    }
+  ]
+}
