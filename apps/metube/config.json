@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "MeTube",
+  "id": "metube",
+  "available": true,
+  "short_desc": "Self-hosted YouTube downloader (web UI for youtube-dl / yt-dlp)",
+  "author": "alexta69",
+  "port": 9017,
+  "categories": [
+    "media"
+  ],
+  "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
+  "tipi_version": 1,
+  "version": "2025-06-02",
+  "force_pull": false,
+  "source": "https://github.com/alexta69/metube",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "label",
+      "hint": "hint",
+      "placeholder": "/home/user/runtipi/media/downloads/complete/",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "METUBE_DOWNLOAD_LOCATION"
+    }
+  ],
+  "created_at": 1749044739852,
+  "updated_at": 1749044739852,
+  "dynamic_config": true
+}
