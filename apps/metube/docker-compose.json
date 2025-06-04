@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "metube",
+      "image": "ghcr.io/alexta69/metube:2025-06-02",
+      "internalPort": 8081,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${METUBE_DOWNLOAD_LOCATION}",
+          "containerPath": "/downloads"
+        }
+      ]
+    }
+  ]
+}
