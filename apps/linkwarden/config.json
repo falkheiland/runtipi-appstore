@@ -1,0 +1,131 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Linkwarden",
+  "id": "linkwarden",
+  "available": true,
+  "short_desc": "Bookmark Preservation for Individuals and Teams",
+  "author": "linkwarden",
+  "port": 9016,
+  "categories": [
+    "data"
+  ],
+  "description": "Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages, articles, and documents.",
+  "tipi_version": 1,
+  "version": "2.10.2",
+  "source": "https://github.com/linkwarden/linkwarden",
+  "website": "https://linkwarden.app",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Linkwarden DB Password",
+      "min": 32,
+      "env_variable": "LINKWARDEN_POSTGRES_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Linkwarden Nextauth Secret",
+      "min": 32,
+      "env_variable": "LINKWARDEN_NEXTAUTH_SECRET"
+    },
+    {
+      "type": "boolean",
+      "label": "Disable Registration",
+      "hint": "If set to true, registration will be disabled.",
+      "default": "false",
+      "env_variable": "LINKWARDEN_NEXT_PUBLIC_DISABLE_REGISTRATION"
+    },
+    {
+      "type": "boolean",
+      "label": "Disable Registration",
+      "hint": "If set to true, users will be able to login with username and password.",
+      "default": "true",
+      "env_variable": "LINKWARDEN_NEXT_PUBLIC_CREDENTIALS_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Disable Registration",
+      "hint": "If set to true, new SSO users will not be able to register.",
+      "default": "false",
+      "env_variable": "LINKWARDEN_DISABLE_NEW_SSO_USERS"
+    },
+    {
+      "type": "boolean",
+      "label": "Credentials Enabled",
+      "hint": "If set to true, new users will not be able to login with SSO.",
+      "default": "false",
+      "env_variable": "LINKWARDEN_NEXT_PUBLIC_CREDENTIALS_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "Authentik Enabled",
+      "hint": "If set to true, Authentik will be enabled and you'll need to define the variables below.",
+      "default": "false",
+      "env_variable": "LINKWARDEN_NEXT_PUBLIC_AUTHENTIK_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "Authentik Custom Name",
+      "hint": "Optionally set a custom provider name.",
+      "placeholder": "Authentik",
+      "default": "Authentik",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "LINKWARDEN_AUTHENTIK_CUSTOM_NAME"
+    },
+    {
+      "type": "text",
+      "label": "Authentik Issuer",
+      "hint": "This is the \"OpenID Configuration Issuer\" shown in the Provider Overview.",
+      "placeholder": "https://authentik.example.com/application/o/linkwarden",
+      "required": false,
+      "min": 3,
+      "max": 200,
+      "env_variable": "LINKWARDEN_AUTHENTIK_ISSUER"
+    },
+    {
+      "type": "text",
+      "label": "Authentik Client ID",
+      "hint": "Client ID copied from the Provider Overview screen in Authentik",
+      "placeholder": "CFMwEDuOICa...tzVRQM4INDg",
+      "required": false,
+      "min": 40,
+      "max": 200,
+      "env_variable": "LINKWARDEN_AUTHENTIK_CLIENT_ID"
+    },
+    {
+      "type": "text",
+      "label": "Authentik Client Secret",
+      "hint": "Client Secret copied from the Provider Overview screen in Authentik",
+      "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
+      "required": false,
+      "min": 40,
+      "max": 200,
+      "env_variable": "LINKWARDEN_AUTHENTIK_CLIENT_SECRET"
+    },
+    {
+      "type": "random",
+      "label": "Linkwarden DB Password",
+      "hint": "hint",
+      "min": 32,
+      "max": 32,
+      "env_variable": "LINKWARDEN_POSTGRES_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Linkwarden Nextauth Secret",
+      "hint": "Secret key for Nextauth authentication.",
+      "min": 32,
+      "max": 64,
+      "env_variable": "LINKWARDEN_NEXTAUTH_SECRET"
+    }
+  ],
+  "created_at": 1749035540375,
+  "updated_at": 1749035540375,
+  "dynamic_config": true
+}
