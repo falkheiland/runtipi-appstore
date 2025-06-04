@@ -92,10 +92,9 @@
       "env_variable": "LINKWARDEN_AUTHENTIK_CLIENT_ID"
     },
     {
-      "type": "text",
+      "type": "password",
       "label": "Authentik Client Secret",
       "hint": "Client Secret copied from the Provider Overview screen in Authentik",
-      "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
       "required": false,
       "min": 40,
       "max": 200,
