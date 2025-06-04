@@ -41,24 +41,17 @@
     },
     {
       "type": "boolean",
-      "label": "Disable Registration",
+      "label": "Enable Credentials",
       "hint": "If set to true, users will be able to login with username and password.",
       "default": "true",
       "env_variable": "LINKWARDEN_NEXT_PUBLIC_CREDENTIALS_ENABLED"
     },
     {
       "type": "boolean",
-      "label": "Disable Registration",
+      "label": "Disable New SSO Users",
       "hint": "If set to true, new SSO users will not be able to register.",
       "default": "false",
       "env_variable": "LINKWARDEN_DISABLE_NEW_SSO_USERS"
-    },
-    {
-      "type": "boolean",
-      "label": "Credentials Enabled",
-      "hint": "If set to true, new users will not be able to login with SSO.",
-      "default": "false",
-      "env_variable": "LINKWARDEN_NEXT_PUBLIC_CREDENTIALS_ENABLED"
     },
     {
       "type": "boolean",
