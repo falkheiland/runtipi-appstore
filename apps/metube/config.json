@@ -27,7 +27,7 @@
       "placeholder": "/home/user/runtipi/media/downloads/complete/",
       "required": true,
       "min": 3,
-      "max": 50,
+      "max": 100,
       "env_variable": "METUBE_DOWNLOAD_LOCATION"
     }
   ],
