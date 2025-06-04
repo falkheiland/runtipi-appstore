@@ -23,7 +23,7 @@
     {
       "type": "text",
       "label": "Download Location",
-      "hint": "hint",
+      "hint": "/home/user/runtipi/media/downloads/complete/",
       "placeholder": "/home/user/runtipi/media/downloads/complete/",
       "required": true,
       "min": 3,
