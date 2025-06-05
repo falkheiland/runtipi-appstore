@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "navidrome",
+      "image": "deluan/navidrome:latest",
+      "internalPort": 4533,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/data"
+        },
+        {
+          "hostPath": "${ND_MEDIA_LOCATION}",
+          "containerPath": "/music",
+          "readOnly": true
+        }
+      ],
+      "environment": {
+        "ND_BASEURL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}/",
+        "ND_ENABLEINSIGHTSCOLLECTOR": "${ND_ENABLEINSIGHTSCOLLECTOR:-true}",
+        "ND_ENABLESHARING": "${ND_ENABLESHARING:-false}",
+        "ND_REVERSEPROXYUSERHEADER": "${ND_REVERSEPROXYUSERHEADER:-Remote-User}",
+        "ND_REVERSEPROXYWHITELIST": "${ND_REVERSEPROXYWHITELIST:-127.0.0.1,172.16.0.0/12}",
+        "ND_SCANNER_SCHEDULE": "${ND_SCANNER_SCHEDULE:-0 * * * *}",
+        "ND_SESSIONTIMEOUT": "${ND_SESSIONTIMEOUT:-48}h"
+      }
+    }
+  ]
+}

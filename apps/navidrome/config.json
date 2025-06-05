@@ -1,0 +1,103 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Navidrome",
+  "id": "navidrome",
+  "available": true,
+  "short_desc": "Your Personal Streaming Service",
+  "author": "Navidrome",
+  "port": 9019,
+  "categories": [
+    "media",
+    "music"
+  ],
+  "description": "Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device. It's like your personal Spotify!",
+  "tipi_version": 1,
+  "version": "latest",
+  "force_pull": false,
+  "source": "https://github.com/navidrome/navidrome",
+  "website": "https://navidrome.org",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Media Location",
+      "hint": "Media storage location on your system",
+      "placeholder": "/nfs",
+      "required": true,
+      "min": 3,
+      "max": 50,
+      "env_variable": "ND_MEDIA_LOCATION"
+    },
+    {
+      "type": "boolean",
+      "label": "Enable insights collector",
+      "hint": "Controls whether the server will run its Anonymous Data Collection feature to help improve the project.",
+      "default": true,
+      "env_variable": "ND_ENABLEINSIGHTSCOLLECTOR"
+    },
+    {
+      "type": "boolean",
+      "label": "Enable sharing",
+      "hint": "Enable the Sharing feature.",
+      "default": false,
+      "env_variable": "ND_ENABLESHARING"
+    },
+    {
+      "type": "text",
+      "label": "Reverse Proxy User Header",
+      "hint": "HTTP header containing the user name from an authenticating proxy.",
+      "placeholder": "Remote-User",
+      "default": "Remote-User",
+      "min": 3,
+      "max": 50,
+      "env_variable": "ND_REVERSEPROXYUSERHEADER",
+      "options": [
+        {
+          "label": "Remote-User",
+          "value": "Remote-User"
+        },
+        {
+          "label": "X-authentik-username",
+          "value": "X-authentik-username"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Reverse Proxy Whitelist",
+      "hint": "Comma separated list of IP CIDRs which are allowed to use reverse proxy authentication.",
+      "placeholder": "127.0.0.1,172.16.0.0/12",
+      "default": "127.0.0.1,172.16.0.0/12",
+      "min": 3,
+      "max": 50,
+      "env_variable": "ND_REVERSEPROXYWHITELIST"
+    },
+    {
+      "type": "text",
+      "label": "Scanner Schedule",
+      "hint": "Schedule for automatic scans. Use Cron syntax",
+      "placeholder": "0 * * * *",
+      "default": "0 * * * *",
+      "min": 3,
+      "max": 50,
+      "env_variable": "ND_SCANNER_SCHEDULE"
+    },
+    {
+      "type": "number",
+      "label": "Session Timeout",
+      "hint": "How long (hours) Navidrome will wait before closing web ui idle sessions",
+      "placeholder": "48",
+      "default": 48,
+      "min": 1,
+      "max": 65535,
+      "env_variable": "ND_SESSIONTIMEOUT"
+    }
+  ],
+  "created_at": 1749121449135,
+  "updated_at": 1749121449135,
+  "dynamic_config": true
+}
