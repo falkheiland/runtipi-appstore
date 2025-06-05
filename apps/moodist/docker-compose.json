@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "moodist",
+      "image": "ghcr.io/remvze/moodist:latest",
+      "internalPort": 8080,
+      "isMain": true
+    }
+  ]
+}

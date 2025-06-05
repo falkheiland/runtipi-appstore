@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Moodist",
+  "id": "moodist",
+  "available": true,
+  "short_desc": "Ambient sounds for focus and calm.",
+  "author": "remvze",
+  "port": 9018,
+  "categories": [
+    "media"
+  ],
+  "tipi_version": 1,
+  "version": "latest",
+  "force_pull": false,
+  "source": "https://github.com/remvze/moodist",
+  "website": "https://moodist.app",
+  "exposable": true,
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1749115425793,
+  "updated_at": 1749115425793,
+  "dynamic_config": true
+}
