@@ -6,7 +6,6 @@
       "image": "deluan/navidrome:latest",
       "internalPort": 4533,
       "isMain": true,
-      "user": "1000:1000",
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/navidrome/data",
