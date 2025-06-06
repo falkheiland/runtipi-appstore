@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "NocoDB",
+  "id": "nocodb",
+  "available": true,
+  "short_desc": "Open Source Airtable Alternative",
+  "author": "nocodb",
+  "port": 9020,
+  "categories": [
+    "data"
+  ],
+  "description": "NocoDB is the fastest and easiest way to build databases online.",
+  "tipi_version": 1,
+  "version": "0.263.4",
+  "force_pull": false,
+  "source": "https://github.com/nocodb/nocodb",
+  "website": "https://nocodb.com/",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Redis Password",
+      "min": 32,
+      "env_variable": "NC_REDIS_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Database Password",
+      "min": 32,
+      "env_variable": "NC_POSTGRES_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Auth JWT Secret",
+      "min": 32,
+      "env_variable": "NC_AUTH_JWT_SECRET"
+    },
+    {
+      "type": "text",
+      "label": "Admin Login Email",
+      "hint": "Super admin email address. This is useful in case you need to recover your username and password.",
+      "placeholder": "nc-admin@example.com",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "NC_ADMIN_EMAIL",
+      "regex": "^[\\w\\-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$",
+      "pattern_error": "Invalid email address"
+    },
+    {
+      "type": "password",
+      "label": "Admin Password",
+      "hint": "Super admin password. Must be at least 8 characters long, including one uppercase letter, one number, and one special character. This is useful for username and password recovery.",
+      "required": false,
+      "min": 8,
+      "max": 128,
+      "env_variable": "NC_ADMIN_PASSWORD"
+    },
+    {
+      "type": "number",
+      "label": "Default pagination limit for data tables.",
+      "hint": "Defaults to 25. Maximum is 100",
+      "required": false,
+      "env_variable": "NC_DB_QUERY_LIMIT_DEFAULT"
+    },
+    {
+      "type": "boolean",
+      "label": "Disable Telemetry",
+      "hint": "Disables the telemetry to prevent sending anonymous usage data. Please keep it enabled to help us understand the usage of the product and the impact that any new breaking change can cause.",
+      "default": true,
+      "required": false,
+      "env_variable": "NC_DISABLE_TELE"
+    }
+  ],
+  "created_at": 1749197215781,
+  "updated_at": 1749197215781,
+  "dynamic_config": true
+}

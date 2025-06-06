@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "nocodb",
+      "image": "nocodb/nocodb:0.263.4",
+      "internalPort": 8080,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/nocodb",
+          "containerPath": "/usr/app/data"
+        }
+      ],
+      "environment": {
+        "NC_PUBLIC_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
+        "NC_REDIS_URL": "redis://default:${NC_REDIS_PASSWORD}@nocodb-redis:6379",
+        "NC_DB": "pg://nocodb-db:5432?u=postgres&p=${NC_POSTGRES_PASSWORD}&d=nocodb",
+        "NC_AUTH_JWT_SECRET": "${NC_AUTH_JWT_SECRET}",
+        "NC_ADMIN_EMAIL": "${NC_ADMIN_EMAIL}",
+        "NC_ADMIN_PASSWORD": "${NC_ADMIN_PASSWORD}",
+        "DB_QUERY_LIMIT_DEFAULT": "${NC_DB_QUERY_LIMIT_DEFAULT:-25}",
+        "NC_DISABLE_TELE": "${NC_DISABLE_TELE:-true}"
+      },
+      "dependsOn": [
+        "nocodb-db",
+        "nocodb-redis"
+      ]
+    },
+    {
+      "name": "nocodb-redis",
+      "image": "redis:alpine",
+      "command": "redis-server --requirepass ${NC_REDIS_PASSWORD}",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/redis",
+          "containerPath": "/data"
+        }
+      ]
+    },
+    {
+      "name": "nocodb-db",
+      "image": "postgres:16",
+      "environment": {
+        "POSTGRES_DB": "nocodb",
+        "POSTGRES_USER": "postgres",
+        "POSTGRES_PASSWORD": "${NC_POSTGRES_PASSWORD}"
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/postgres",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ]
+    }
+  ]
+}
