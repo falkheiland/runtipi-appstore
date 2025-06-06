@@ -56,7 +56,7 @@
         }
       ],
       "regex": "^[\\w\\-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$",
-      "pattern_error": "Invalid email"
+      "pattern_error": "Invalid email address"
     },
     {
       "type": "random",
