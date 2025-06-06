@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "pinchflat",
+      "image": "keglin/pinchflat:v2025.3.17",
+      "internalPort": 8945,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/config",
+          "containerPath": "/config"
+        },
+        {
+          "hostPath": "${PINCHFLAT_DOWNLOAD_LOCATION}",
+          "containerPath": "/downloads"
+        }
+      ],
+      "environment": {
+        "TZ": "${TZ}",
+        "LOG_LEVEL": "${PINCHFLAT_LOG_LEVEL:-debug}",
+        "BASIC_AUTH_USERNAME": "${PINCHFLAT_BASIC_AUTH_USERNAME}",
+        "BASIC_AUTH_PASSWORD": "${PINCHFLAT_BASIC_AUTH_PASSWORD}"
+      }
+    }
+  ]
+}
