@@ -1,8 +1,8 @@
 # NocoDB
 
-Open Source Airtable Alternative 
+Open Source Airtable Alternative
 
-NocoDB is the fastest and easiest way to build databases online. 
+NocoDB is the fastest and easiest way to build databases online.
 
 ## Links
 
