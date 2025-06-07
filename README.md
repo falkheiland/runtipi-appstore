@@ -39,6 +39,7 @@ This is the repository for my Custom Tipi App Store.
 | [Pinchflat](https://github.com/kieraneglin/pinchflat)             | Your next YouTube media manager                                                                                                                          | Media           | yes            | 9021 |
 | [SearXNG](https://docs.searxng.org)                               | Privacy-respecting, hackable metasearch engine                                                                                                           | Search Engine   | yes            | 9022 |
 | [Vaultwarden](https://github.com/dani-garcia/vaultwarden)         | Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs                                                                   | Secrets         | yes            | 9010 |
+| [Wallos](https://wallosapp.com)                                   | Wallos: Open-Source Personal Subscription Tracker                                                                                                        | Finance         | yes            | 9023 |
 | [WUD](https://getwud.github.io/wud)                               | WUD (aka What's up Docker?) gets you notified when a new version of your Docker Container is available.                                                  | Updates         | no             | 9001 |
 
 ## Branches

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "wallos",
+      "image": "bellamy/wallos:latest",
+      "internalPort": 80,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/db",
+          "containerPath": "/var/www/html/db"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/logos",
+          "containerPath": "/var/www/html/images/uploads/logos"
+        }
+      ],
+      "environment": {
+        "TZ": "${TZ}"
+      }
+    }
+  ]
+}
