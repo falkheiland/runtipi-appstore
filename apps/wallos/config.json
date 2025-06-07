@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Wallos",
+  "id": "wallos",
+  "available": true,
+  "short_desc": "Wallos: Open-Source Personal Subscription Tracker",
+  "author": "Miguel Ribeiro",
+  "port": 9023,
+  "categories": [
+    "finance"
+  ],
+  "description": "Wallos is a powerful, open-source, and self-hostable web application designed to empower you in managing your finances with ease.",
+  "tipi_version": 1,
+  "version": "latest",
+  "force_pull": false,
+  "source": "https://github.com/ellite/Wallos",
+  "website": "https://wallos.app",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "created_at": 1749301283458,
+  "updated_at": 1749301283458,
+  "dynamic_config": true
+}
