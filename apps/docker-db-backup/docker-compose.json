@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "docker-db-backup",
-      "image": "tiredofit/db-backup:4.1.18",
+      "image": "tiredofit/db-backup:4.1.19",
       "isMain": false,
       "volumes": [
         {
