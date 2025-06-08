@@ -26,16 +26,16 @@
       "label": "Email Address",
       "hint": "Email address used to send notifications",
       "placeholder": "user@example.com",
-      "required": true,
+      "required": false,
       "min": 6,
       "max": 64,
-      "env_variable": "MWEKAN_MAIL_ADDRESS"
+      "env_variable": "WEKAN_MAIL_ADDRESS"
     },
     {
       "type": "password",
       "label": "Email Password",
       "hint": "Password for the email account used to send notifications",
-      "required": true,
+      "required": false,
       "min": 8,
       "max": 128,
       "env_variable": "WEKAN_MAIL_PASSWORD"
@@ -45,7 +45,7 @@
       "label": "Email Server",
       "hint": "SMTP server address for sending emails",
       "placeholder": "smtp.example.com",
-      "required": true,
+      "required": false,
       "min": 3,
       "max": 50,
       "env_variable": "WEKAN_MAIL_SERVER"
