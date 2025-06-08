@@ -10,9 +10,9 @@
     "data"
   ],
   "description": "Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
-  "tipi_version": 1,
-  "version": "2.16.2",
-  "source": "https://github.com/paperless-ngx/paperless-ngx>",
+  "tipi_version": 3,
+  "version": "2.16.3",
+  "source": "https://github.com/paperless-ngx/paperless-ngx",
   "website": "http://docs.paperless-ngx.com",
   "exposable": true,
   "supported_architectures": [

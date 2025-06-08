@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "authentik",
-      "image": "ghcr.io/goauthentik/server:2025.4.1",
+      "image": "ghcr.io/goauthentik/server:2025.6.1",
       "command": "server",
       "isMain": true,
       "internalPort": 9000,
@@ -24,7 +24,10 @@
         "AUTHENTIK_DISABLE_UPDATE_CHECK": "${AUTHENTIK_DISABLE_UPDATE_CHECK}",
         "AUTHENTIK_ERROR_REPORTING__ENABLED": "${AUTHENTIK_ERROR_REPORTING__ENABLED}"
       },
-      "dependsOn": ["authentik-db", "authentik-redis"],
+      "dependsOn": [
+        "authentik-db",
+        "authentik-redis"
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/authentik-media",
@@ -38,7 +41,7 @@
     },
     {
       "name": "authentik-worker",
-      "image": "ghcr.io/goauthentik/server:2025.4.1",
+      "image": "ghcr.io/goauthentik/server:2025.6.1",
       "command": "worker",
       "environment": {
         "AUTHENTIK_REDIS__HOST": "authentik-redis",
@@ -50,7 +53,10 @@
         "AUTHENTIK_DISABLE_STARTUP_ANALYTICS": "${AUTHENTIK_DISABLE_STARTUP_ANALYTICS}",
         "AUTHENTIK_ERROR_REPORTING__ENABLED": "${AUTHENTIK_ERROR_REPORTING__ENABLED}"
       },
-      "dependsOn": ["authentik-db", "authentik-redis"],
+      "dependsOn": [
+        "authentik-db",
+        "authentik-redis"
+      ],
       "volumes": [
         {
           "hostPath": "/var/run/docker.sock",
