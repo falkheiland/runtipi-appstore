@@ -11,13 +11,3 @@ Experience efficient task management with WeKan - the Open-Source, customizable,
 <https://github.com/wekan/wekan>
 
 <https://github.com/wekan/wekan/pkgs/container/wekan>
-
-## Mail
-
-Wekan requires a working email to register a user. This app is configured to use a google mail account with an app-password.
-
-<https://support.google.com/mail/answer/185833?hl=en>
-
-For the use with other email providers use a user-config and configure env via:
-
-<https://github.com/wekan/wekan/wiki/Troubleshooting-Mail>
