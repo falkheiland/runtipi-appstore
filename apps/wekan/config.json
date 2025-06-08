@@ -1,0 +1,119 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Wekan",
+  "id": "wekan",
+  "available": true,
+  "short_desc": "Open-Source Kanban",
+  "author": "Lauri Ojansivu",
+  "port": 9024,
+  "categories": [
+    "utilities"
+  ],
+  "description": "Experience efficient task management with WeKan - the Open-Source, customizable, and privacy-focused kanban",
+  "tipi_version": 1,
+  "version": "7.91",
+  "force_pull": false,
+  "source": "https://github.com/wekan/wekan",
+  "website": "https://wekan.github.io/",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "type": "email",
+      "label": "Email Address",
+      "hint": "Email address used to send notifications",
+      "placeholder": "user@example.com",
+      "required": false,
+      "min": 6,
+      "max": 64,
+      "env_variable": "WEKAN_MAIL_ADDRESS"
+    },
+    {
+      "type": "password",
+      "label": "Email Password",
+      "hint": "Password for the email account used to send notifications",
+      "required": false,
+      "min": 8,
+      "max": 128,
+      "env_variable": "WEKAN_MAIL_PASSWORD"
+    },
+    {
+      "type": "text",
+      "label": "Email Server",
+      "hint": "SMTP server address for sending emails",
+      "placeholder": "smtp.example.com",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "env_variable": "WEKAN_MAIL_SERVER"
+    },
+    {
+      "type": "number",
+      "label": "Email Server Port",
+      "hint": "Port number for the SMTP server",
+      "placeholder": "465",
+      "default": 465,
+      "required": false,
+      "min": 1,
+      "max": 65535,
+      "env_variable": "WEKAN_MAIL_SERVER_PORT"
+    },
+    {
+      "type": "boolean",
+      "label": "Debug",
+      "hint": "Debug OIDC OAuth2 etc",
+      "default": true,
+      "required": false,
+      "env_variable": "WEKAN_DEBUG"
+    },
+    {
+      "type": "boolean",
+      "label": "OAuth2 Enabled",
+      "hint": "Enable OAuth2 authentication",
+      "default": false,
+      "required": false,
+      "env_variable": "WEKAN_OAUTH2_ENABLED"
+    },
+    {
+      "type": "boolean",
+      "label": "OIDC Redirection Enabled",
+      "hint": "Enable OIDC redirection for authentication",
+      "default": true,
+      "required": false,
+      "env_variable": "WEKAN_OIDC_REDIRECTION_ENABLED"
+    },
+    {
+      "type": "text",
+      "label": "OAuth2 URL",
+      "hint": "URL of your OAuth2 server",
+      "placeholder": "https://authentik.example.com",
+      "required": false,
+      "min": 3,
+      "max": 200,
+      "env_variable": "WEKAN_OAUTH2_SERVER_URL"
+    },
+    {
+      "type": "text",
+      "label": "OAuth2 Client ID",
+      "placeholder": "CFMwEDuOICa...tzVRQM4INDg",
+      "required": false,
+      "min": 40,
+      "max": 200,
+      "env_variable": "WEKAN_OAUTH2_CLIENT_ID"
+    },
+    {
+      "type": "password",
+      "label": "OAuth2 Client Secret",
+      "required": false,
+      "min": 40,
+      "max": 200,
+      "env_variable": "WEKAN_OAUTH2_SECRET"
+    }
+  ],
+  "created_at": 1749374394952,
+  "updated_at": 1749374394952,
+  "dynamic_config": true
+}
