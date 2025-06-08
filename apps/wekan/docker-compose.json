@@ -21,7 +21,7 @@
         "MONGO_URL": "mongodb://wekan-db:27017/wekan",
         "ROOT_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}/",
         "MAIL_URL": "smtps://${WEKAN_MAIL_ADDRESS}:${WEKAN_MAIL_PASSWORD}@${WEKAN_MAIL_SERVER}:${WEKAN_MAIL_SERVER_PORT}",
-        "MAIL_FROM": "Wekan Notifications <noreply.wekan@${APP_DOMAIN}>",
+        "MAIL_FROM": "Wekan Notifications <${WEKAN_MAIL_ADDRESS}>",
         "DEBUG": "${WEKAN_DEBUG:-true}",
         "OAUTH2_ENABLED": "${WEKAN_OAUTH2_ENABLED:-false}",
         "OIDC_REDIRECTION_ENABLED": "${WEKAN_OIDC_REDIRECTION_ENABLED:-true}",
