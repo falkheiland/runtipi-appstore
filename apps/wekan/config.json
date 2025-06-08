@@ -46,7 +46,7 @@
       "hint": "SMTP server address for sending emails",
       "placeholder": "smtp.example.com",
       "default": "default",
-      "required": true,
+      "required": false,
       "min": 3,
       "max": 50,
       "env_variable": "WEKAN_MAIL_SERVER"
