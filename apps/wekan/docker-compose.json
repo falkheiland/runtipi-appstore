@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "wekan-app",
+      "image": "ghcr.io/wekan/wekan:v7.91",
+      "internalPort": 8080,
+      "isMain": true,
+      "volumes": [
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/wekan",
+          "containerPath": "/data"
+        }
+      ],
+      "environment": {
+        "MONGO_URL": "mongodb://wekan-db:27017/wekan",
+        "ROOT_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}/",
+        "MAIL_URL": "smtp: //${WEKAN_MAIL_ADDRESS}:${WEKAN_MAIL_PASSWORD}@${WEKAN_MAIL_SERVER}:${WEKAN_MAIL_SERVER_PORT}",
+        "MAIL_FROM": "Wekan Notifications <noreply.wekan@${APP_DOMAIN}>",
+        "DEBUG": "${WEKAN_DEBUG:-true}",
+        "OAUTH2_ENABLED": "${WEKAN_OAUTH2_ENABLED:-false}",
+        "OIDC_REDIRECTION_ENABLED": "${WEKAN_OIDC_REDIRECTION_ENABLED:-true}",
+        "OAUTH2_LOGIN_STYLE": "redirect",
+        "OAUTH2_CLIENT_ID": "${WEKAN_OAUTH2_CLIENT_ID}",
+        "OAUTH2_SERVER_URL": "${WEKAN_OAUTH2_SERVER_URL}",
+        "OAUTH2_AUTH_ENDPOINT": "/application/o/authorize/",
+        "OAUTH2_USERINFO_ENDPOINT": "/application/o/userinfo/",
+        "OAUTH2_TOKEN_ENDPOINT": "/application/o/token/",
+        "OAUTH2_SECRET": "${WEKAN_OAUTH2_SECRET}",
+        "OAUTH2_ID_MAP": "sub",
+        "OAUTH2_USERNAME_MAP": "email",
+        "OAUTH2_EMAIL_MAP": "email",
+        "OAUTH2_FULLNAME_MAP": "given_name"
+      },
+      "dependsOn": [
+        "wekan-db"
+      ]
+    },
+    {
+      "name": "wekan-db",
+      "image": "mongo:6",
+      "command": "mongod --logpath /dev/null --oplogSize 128 --quiet",
+      "volumes": [
+        {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/wekan-db",
+          "containerPath": "/data/db"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/wekan-db-dump",
+          "containerPath": "/dump"
+        }
+      ]
+    }
+  ]
+}
