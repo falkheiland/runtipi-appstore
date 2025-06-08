@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Uptime Kuma",
+  "id": "uptime-kuma",
+  "available": true,
+  "short_desc": "A fancy self-hosted monitoring tool.",
+  "author": "Louis Lam",
+  "port": 9025,
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uptime Kuma is an easy-to-use self-hosted monitoring tool.",
+  "tipi_version": 1,
+  "version": "1",
+  "force_pull": true,
+  "source": "https://github.com/louislam/uptime-kuma",
+  "website": "https://uptime.kuma.pet",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "created_at": 1749385951730,
+  "updated_at": 1749385951730,
+  "dynamic_config": true
+}
