@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "arkanum",
-      "image": "gitea.ocram85.com/arkanum/arkanum:next",
+      "image": "gitea.ocram85.com/arkanum/arkanum:latest",
       "isMain": true,
       "internalPort": 8443,
       "environment": {
