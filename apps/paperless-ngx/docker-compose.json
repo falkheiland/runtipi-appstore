@@ -73,7 +73,7 @@
     },
     {
       "name": "paperless-ngx-gotenberg",
-      "image": "gotenberg/gotenberg:8.20",
+      "image": "gotenberg/gotenberg:8.21",
       "command": [
         "gotenberg",
         "--chromium-disable-javascript=true",
