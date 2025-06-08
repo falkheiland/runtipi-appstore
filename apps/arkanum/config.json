@@ -11,7 +11,7 @@
     "development"
   ],
   "description": "An opinionated VS Code distribution. Start coding remotely with a containerized editor.",
-  "tipi_version": 4,
+  "tipi_version": 5,
   "version": "latest",
   "source": "https://gitea.ocram85.com/arkanum/arkanum",
   "website": "https://arkanum.dev/",
