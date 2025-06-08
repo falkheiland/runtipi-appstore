@@ -41,7 +41,7 @@
     },
     {
       "name": "authentik-worker",
-      "image": "ghcr.io/goauthentik/server:2025.4.1",
+      "image": "ghcr.io/goauthentik/server:2025.6.1",
       "command": "worker",
       "environment": {
         "AUTHENTIK_REDIS__HOST": "authentik-redis",
