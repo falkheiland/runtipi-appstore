@@ -10,8 +10,8 @@
     "media"
   ],
   "description": "Pinchflat is a self-hosted app for downloading YouTube content built using yt-dlp.",
-  "tipi_version": 1,
-  "version": "v2025.3.17",
+  "tipi_version": 2,
+  "version": "v2025.6.6",
   "force_pull": false,
   "source": "https://github.com/kieraneglin/pinchflat",
   "exposable": true,
