@@ -6,14 +6,19 @@
   "short_desc": "Nextcloud server, a safe home for all your data.",
   "author": "nextcloud",
   "port": 9002,
-  "categories": ["data"],
+  "categories": [
+    "data"
+  ],
   "description": "Remote collaboration made easy.",
-  "tipi_version": 2,
-  "version": "31.0.5-fpm-alpine",
+  "tipi_version": 3,
+  "version": "31.0.6-fpm-alpine",
   "source": "https://github.com/nextcloud/server",
   "website": "https://nextcloud.com",
   "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "form_fields": [
     {
       "type": "text",

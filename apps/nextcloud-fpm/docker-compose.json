@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "nextcloud",
-      "image": "nextcloud:31.0.5-fpm-alpine",
+      "image": "nextcloud:31.0.6-fpm-alpine",
       "isMain": false,
       "volumes": [
         {
@@ -22,7 +22,10 @@
         "TRUSTED_PROXIES": "127.0.0.1 172.16.0.0/12",
         "REDIS_HOST": "nextcloud-redis"
       },
-      "dependsOn": ["nextcloud-db", "nextcloud-redis"]
+      "dependsOn": [
+        "nextcloud-db",
+        "nextcloud-redis"
+      ]
     },
     {
       "name": "nextcloud-web",
@@ -42,19 +45,26 @@
       "environment": {
         "VIRTUAL_HOST": "${APP_DOMAIN}"
       },
-      "dependsOn": ["nextcloud"]
+      "dependsOn": [
+        "nextcloud"
+      ]
     },
     {
       "name": "nextcloud-cron",
-      "image": "nextcloud:31.0.5-fpm-alpine",
+      "image": "nextcloud:31.0.6-fpm-alpine",
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/nextcloud",
           "containerPath": "/var/www/html"
         }
       ],
-      "entrypoint": ["/cron.sh"],
-      "dependsOn": ["nextcloud", "nextcloud-redis"]
+      "entrypoint": [
+        "/cron.sh"
+      ],
+      "dependsOn": [
+        "nextcloud",
+        "nextcloud-redis"
+      ]
     },
     {
       "name": "nextcloud-redis",
