@@ -10,8 +10,8 @@
     "utilities"
   ],
   "description": "Experience efficient task management with WeKan - the Open-Source, customizable, and privacy-focused kanban",
-  "tipi_version": 1,
-  "version": "7.91",
+  "tipi_version": 2,
+  "version": "7.92",
   "force_pull": false,
   "source": "https://github.com/wekan/wekan",
   "website": "https://wekan.github.io/",
@@ -114,6 +114,6 @@
     }
   ],
   "created_at": 1749374394952,
-  "updated_at": 1749374394952,
+  "updated_at": 1750506925204,
   "dynamic_config": true
 }
