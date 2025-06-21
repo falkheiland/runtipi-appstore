@@ -10,7 +10,7 @@
     "finance"
   ],
   "description": "Wallos is a powerful, open-source, and self-hostable web application designed to empower you in managing your finances with ease.",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "latest",
   "force_pull": false,
   "source": "https://github.com/ellite/Wallos",
@@ -22,6 +22,6 @@
   ],
   "form_fields": [],
   "created_at": 1749301283458,
-  "updated_at": 1749301283458,
+  "updated_at": 1750509931842,
   "dynamic_config": true
 }
