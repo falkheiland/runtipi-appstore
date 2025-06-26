@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "wallos",
-      "image": "bellamy/wallos:latest",
+      "image": "ghcr.io/ellite/wallos:latest",
       "internalPort": 80,
       "isMain": true,
       "volumes": [

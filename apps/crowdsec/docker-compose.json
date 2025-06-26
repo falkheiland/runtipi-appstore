@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "crowdsec",
-      "image": "crowdsecurity/crowdsec:v1.6.8",
+      "image": "crowdsecurity/crowdsec:v1.6.9",
       "isMain": false,
       "volumes": [
         {
@@ -52,7 +52,9 @@
         "CROWDSEC_BOUNCER_API_KEY": "${CROWDSEC_BOUNCER_API_KEY}",
         "CROWDSEC_AGENT_HOST": "crowdsec:8080"
       },
-      "dependsOn": ["crowdsec"]
+      "dependsOn": [
+        "crowdsec"
+      ]
     },
     {
       "name": "crowdsec-dashboard",
@@ -73,7 +75,9 @@
         "MB_DB_FILE": "/data/metabase.db",
         "MGID": "${GID-1000}"
       },
-      "dependsOn": ["crowdsec"]
+      "dependsOn": [
+        "crowdsec"
+      ]
     }
   ]
 }
