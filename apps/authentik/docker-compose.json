@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "authentik",
-      "image": "ghcr.io/goauthentik/server:2025.6.2",
+      "image": "ghcr.io/goauthentik/server:2025.6.3",
       "command": "server",
       "isMain": true,
       "internalPort": 9000,
@@ -41,7 +41,7 @@
     },
     {
       "name": "authentik-worker",
-      "image": "ghcr.io/goauthentik/server:2025.6.2",
+      "image": "ghcr.io/goauthentik/server:2025.6.3",
       "command": "worker",
       "environment": {
         "AUTHENTIK_REDIS__HOST": "authentik-redis",
