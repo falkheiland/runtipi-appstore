@@ -14,11 +14,11 @@ Backup multiple database types on a scheduled basis with many customizable optio
 
 create network `shared_docker-db-backup_network`:
 
-```
+```bash
 docker network create shared_docker-db-backup_network
 ```
 
-```
+```bash
 # docker network ls | grep shared_docker-db-backup_network
 c2317150d36e   shared_docker-db-backup_network                               bridge    local
 ```
@@ -30,12 +30,12 @@ c2317150d36e   shared_docker-db-backup_network                               bri
 ## Usage
 
 - set network `shared_docker-db-backup_network` on all necessary containers
- 
+
 - edit docker-db-backup user-config:
 
-  `runtipi/user-config/appstore/docker-db-backup/docker-compose.yml`
+  `runtipi/user-config/{{app-store}}/docker-db-backup/docker-compose.yml`
 
-  ```
+  ```yaml
   services:
     docker-db-backup:
       networks:
@@ -51,7 +51,7 @@ c2317150d36e   shared_docker-db-backup_network                               bri
 
   `runtipi/user-config/tipi-compose.yml`
 
-  ```
+  ```yaml
   services:
     runtipi-db:
       networks:
@@ -65,15 +65,15 @@ c2317150d36e   shared_docker-db-backup_network                               bri
 
   - restart tipi:
 
-  ```
+  ```bash
   sudo ./runtipi-cli restart
   ```
 
   - edit user-configs:
 
-  `runtipi/user-config/appstore/my-app/docker-compose.yml`
+  `runtipi/user-config/{{app-store}}/my-app/docker-compose.yml`
 
-  ```
+  ```yaml
   services:
     my-app-db:
       networks:
@@ -84,11 +84,12 @@ c2317150d36e   shared_docker-db-backup_network                               bri
     shared_docker-db-backup_network:
       external: true
   ```
+
 ## Jobs
 
-To define jobs you have to use a user-config. Create a folder `user-config/{{appstore}}/docker-db-backup` with a file `docker-compose.yml`. Configure your jobs as environment vars.
+To define jobs you have to use a user-config. Create a folder `user-config/{{app-store}}/docker-db-backup` with a file `docker-compose.yml`. Configure your jobs as environment vars.
 
-Consult the backup configuration [here](https://github.com/tiredofit/docker-db-backup?tab=readme-ov-file#job-backup-options) for more.
+Consult the [backup configuration options](https://github.com/tiredofit/docker-db-backup?tab=readme-ov-file#job-backup-options) for more details.
 
 - docker-compose.yml
 

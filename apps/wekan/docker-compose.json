@@ -43,7 +43,7 @@
     },
     {
       "name": "wekan-db",
-      "image": "mongo:6",
+      "image": "mongo:7",
       "command": "mongod --logpath /dev/null --oplogSize 128 --quiet",
       "volumes": [
         {

@@ -13,8 +13,8 @@ Joplin is a free, open source note taking and to-do application, which can handl
 
 <https://hub.docker.com/r/joplin/server>
 
-
 ## Credentials
 
-Username: admin@localhost
-Password: admin
+Username: `admin@localhost`
+
+Password: `admin`

@@ -1,18 +1,19 @@
 # Template
 
-<Description 1>
+Description 1
 
-<Description 2>
+Description 2
 
 ## Links
 
-<<Website>>
+<https://example.com>
 
-<<ProjectRepo>>
+<https://github.com/example/project>
 
-<<ImageRepo>>
+<https://hub.docker.com/r/example/project>
 
-## Credentials
+## Notes
 
-Username: admin@localhost
-Password: admin
+Note 1
+
+Note 2

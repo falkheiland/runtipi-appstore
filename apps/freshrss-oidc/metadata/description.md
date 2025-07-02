@@ -37,13 +37,13 @@ When setting up a new FreshRSS instance with OIDC, follow these steps carefully 
 
 ## RSS reader app
 
-https://freshrss.example.com/i/?c=auth
+<https://freshrss.example.com/i/?c=auth>
 
 - Allow API access (required for mobile apps and sharing user queries)
 
-https://freshrss.example.com/i/?c=user
+<https://freshrss.example.com/i/?c=user>
 
 - External access via API
 - set API password
-- click: Check API status via: https://freshrss.example.com/api/
+- click: Check API status via: <https://freshrss.example.com/api/>
 - use API address for your RSS reader app (Google Reader compatible API for FeedMe)

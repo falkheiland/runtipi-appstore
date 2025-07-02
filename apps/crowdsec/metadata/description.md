@@ -19,7 +19,7 @@ CrowdSec is a free, modern & collaborative behavior detection engine, coupled wi
 The app stack contains the crowdsec service and a bouncer. The bouncer needs an API Key to connect to the service.
 Since the API Key needs to be generated after the initial start, you must provide a temporary dummy Bouncer API Key for the stack to run.
 
-After you started the app, head to a console and use 
+After you started the app, head to a console and use
 
 ```bash
 docker exec -t crowdsec cscli bouncers add crowdsec-bouncer-traefik
@@ -36,20 +36,15 @@ Please keep this key since you will not be able to retrieve it!
 
 To get the Bouncer API Key, use this Key in the settings of the app instead of the dummy Bouncer API Key and restart the app.
 
-
-
 ### Integrate in crowdsec Console
 
-https://app.crowdsec.net/security-engines
+<https://app.crowdsec.net/security-engines>
 
 With the key from the command line in the section `Enroll your CrowdSec Security Engine`execute:
 
 ```bash
 docker exec crowdsec cscli console enroll {{ KEY }}
 ```
-
-
-
 
 ### Traefik Integration
 
@@ -77,15 +72,15 @@ restart runtipi to apply the settings.
 
 ### Dashboard
 
-The dashboard comes with a preconfigured user:
+The dashboard comes with a pre configured user:
 
-Email address: crowdsec@crowdsec.net
+Email address: `crowdsec@crowdsec.net`
 
-Password: !!Cr0wdS3c_M3t4b4s3??
+Password: `!!Cr0wdS3c_M3t4b4s3??`
 
 ## cscli
 
-### list collections:
+### list collections
 
 ```bash
 8ee1637a8c9e:/# cscli collections list
@@ -367,7 +362,6 @@ Whitelist Metrics:
 ╰──────────────────────────┴─────────────────────────────┴──────┴─────────────╯
 ```
 
-
 ### set acquisitions
 
 `~/runtipi/app-data/crowdsec/data/crowdsec/acquis.yaml`
@@ -521,7 +515,7 @@ headers:
 
 ### test http_default notification
 
-[Crowdsec Pushover Notification (using API and HTTP notifier) ](https://gist.github.com/JigSawFr/1104d6b619d3523500f00ab68d8bf841)
+[Crowdsec Pushover Notification (using API and HTTP notifier)](https://gist.github.com/JigSawFr/1104d6b619d3523500f00ab68d8bf841)
 
 ```cscli notifications test http_default
 bf788e1b64ad:/# cscli notifications test http_default
@@ -571,7 +565,7 @@ tipi host:
 sudo vim /etc/crowdsec/bouncers/crowdsec-firewall-bouncer.yaml
 ```
 
-```
+```yml
 api_url: http://127.0.0.1:8081/
 api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 disable_ipv6: true
@@ -587,6 +581,6 @@ sudo systemctl restart crowdsec-firewall-bouncer.service
 
 check for servicer failures
 
-```
+```bash
 journalctl -u crowdsec-firewall-bouncer -n 50 --no-pager
-``` 
+```

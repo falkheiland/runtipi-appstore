@@ -14,7 +14,7 @@ An alternative server implementation of the Bitwarden Client API, written in Rus
 
 Using argon2:
 
-```sh
+```bash
 sudo apt install argon2
 
 echo -n '!MySecretPassword' | argon2 "$(openssl rand -hex 16)" -e -id -t 3 -m 16 -p 4 | sed 's/\$/\$\$/g'
