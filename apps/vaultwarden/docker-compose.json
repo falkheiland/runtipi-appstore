@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "vaultwarden",
-      "image": "ghcr.io/dani-garcia/vaultwarden:1.34.1",
+      "image": "ghcr.io/dani-garcia/vaultwarden:1.34.3",
       "internalPort": 80,
       "isMain": true,
       "volumes": [
