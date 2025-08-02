@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "nextcloud",
-      "image": "nextcloud:31.0.6-fpm-alpine",
+      "image": "nextcloud:31.0.7-fpm-alpine",
       "isMain": false,
       "volumes": [
         {
@@ -51,7 +51,7 @@
     },
     {
       "name": "nextcloud-cron",
-      "image": "nextcloud:31.0.6-fpm-alpine",
+      "image": "nextcloud:31.0.7-fpm-alpine",
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/nextcloud",

@@ -10,8 +10,8 @@
     "data"
   ],
   "description": "NocoDB is the fastest and easiest way to build databases online.",
-  "tipi_version": 2,
-  "version": "0.263.8",
+  "tipi_version": 3,
+  "version": "0.264.2",
   "force_pull": false,
   "source": "https://github.com/nocodb/nocodb",
   "website": "https://nocodb.com/",

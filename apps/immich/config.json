@@ -12,8 +12,8 @@
     "photography"
   ],
   "description": "Easily back up, organize, and manage your photos on your own server. Immich helps you browse, search and organize your photos and videos with ease, without sacrificing your privacy.",
-  "tipi_version": 5,
-  "version": "v1.135.3",
+  "tipi_version": 6,
+  "version": "v1.137.3",
   "source": "https://github.com/immich-app/immich",
   "website": "https://immich.app",
   "exposable": true,
