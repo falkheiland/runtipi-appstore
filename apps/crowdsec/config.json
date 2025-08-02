@@ -11,8 +11,8 @@
     "network"
   ],
   "description": "CrowdSec is a free, modern & collaborative behavior detection engine, coupled with a global IP reputation network. It stacks on fail2ban's philosophy but is IPV6 compatible and 60x faster (Go vs Python), it uses Grok patterns to parse logs and YAML scenarios to identify behaviors. CrowdSec is engineered for modern Cloud / Containers / VM-based infrastructures (by decoupling detection and remediation). Once detected you can remedy threats with various bouncers (firewall block, nginx http 403, Captchas, etc.) while the aggressive IP can be sent to CrowdSec for curation before being shared among all users to further improve everyone's security. See FAQ or read below for more.",
-  "tipi_version": 2,
-  "version": "1.6.9",
+  "tipi_version": 3,
+  "version": "1.6.11",
   "source": "https://github.com/crowdsecurity/crowdsec",
   "website": "https://crowdsec.net",
   "exposable": true,

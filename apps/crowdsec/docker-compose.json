@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "crowdsec",
-      "image": "crowdsecurity/crowdsec:v1.6.9",
+      "image": "crowdsecurity/crowdsec:v1.6.11",
       "isMain": false,
       "volumes": [
         {
