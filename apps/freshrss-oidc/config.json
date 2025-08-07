@@ -10,7 +10,7 @@
     "media"
   ],
   "description": "It is lightweight, easy to work with, powerful, and customizable. This version supports OIDC auth",
-  "tipi_version": 3,
+  "tipi_version": 4,
   "min_tipi_version": "v4.1.0",
   "version": "1.26.3",
   "source": "https://github.com/FreshRSS/FreshRSS",
@@ -57,7 +57,7 @@
     {
       "type": "password",
       "label": "OIDC: Client Secret",
-      "min": 40,
+      "min": 32,
       "max": 200,
       "placeholder": "Mi87W1Q8dVJCVwGfl...LoZ9RmRTj9AI",
       "required": false,
