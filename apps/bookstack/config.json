@@ -10,8 +10,8 @@
     "data"
   ],
   "description": "A platform for storing and organising information and documentation. Details for BookStack can be found on the official website at https://www.bookstackapp.com/.",
-  "tipi_version": 2,
-  "version": "25.05.20250531",
+  "tipi_version": 3,
+  "version": "25.07.20250804",
   "source": "https://github.com/BookStackApp/BookStack",
   "website": "https://www.bookstackapp.com/",
   "exposable": true,
