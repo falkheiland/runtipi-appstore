@@ -10,9 +10,9 @@
     "media"
   ],
   "description": "It is lightweight, easy to work with, powerful, and customizable. This version supports OIDC auth",
-  "tipi_version": 4,
+  "tipi_version": 5,
   "min_tipi_version": "v4.1.0",
-  "version": "1.26.3",
+  "version": "1.27.0",
   "source": "https://github.com/FreshRSS/FreshRSS",
   "website": "https://freshrss.org/",
   "exposable": true,

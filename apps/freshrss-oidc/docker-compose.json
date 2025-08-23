@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "freshrss",
-      "image": "freshrss/freshrss:1.26.3",
+      "image": "freshrss/freshrss:1.27.0",
       "internalPort": 80,
       "isMain": true,
       "volumes": [
