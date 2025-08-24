@@ -10,9 +10,9 @@
     "data"
   ],
   "description": "Backup multiple database types on a scheduled basis with many customizable options.",
-  "tipi_version": 2,
+  "tipi_version": 3,
   "port": 65535,
-  "version": "4.1.19",
+  "version": "4.1.21",
   "source": "https://github.com/tiredofit/docker-db-backup",
   "exposable": false,
   "no_gui": true,
