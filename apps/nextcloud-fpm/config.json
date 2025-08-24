@@ -10,8 +10,8 @@
     "data"
   ],
   "description": "Remote collaboration made easy.",
-  "tipi_version": 6,
-  "version": "31.0.7-fpm-alpine",
+  "tipi_version": 7,
+  "version": "31.0.8-fpm-alpine",
   "source": "https://github.com/nextcloud/server",
   "website": "https://nextcloud.com",
   "exposable": true,
