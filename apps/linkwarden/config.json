@@ -10,8 +10,8 @@
     "data"
   ],
   "description": "Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages, articles, and documents.",
-  "tipi_version": 3,
-  "version": "2.11.5",
+  "tipi_version": 4,
+  "version": "2.11.8",
   "source": "https://github.com/linkwarden/linkwarden",
   "website": "https://linkwarden.app",
   "exposable": true,
