@@ -10,8 +10,8 @@
     "data"
   ],
   "description": "Joplin is a free, open source note taking and to-do application, which can handle a large number of notes organised into notebooks.",
-  "tipi_version": 2,
-  "version": "3.4.1",
+  "tipi_version": 3,
+  "version": "3.4.2",
   "source": "https://github.com/laurent22/joplin",
   "website": "https://joplinapp.org",
   "exposable": true,
