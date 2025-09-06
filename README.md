@@ -1,3 +1,5 @@
+Repository moved to <https://codeberg.org/falkheiland/runtipi-appstore>
+
 # runtipi-appstore
 
 This is the repository for my Custom Tipi App Store.
